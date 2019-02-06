@@ -66,39 +66,22 @@ extension WeatherStationPacket {
     }
 }
 
-struct WeatherForecastData: PacketDataRappresentable {
-    let icon: UInt8
-    let tempMin: Float
-    let tempMax: Float
-    
-    private let padding = PacketDataArray(hex: "FF:FF")
-    var packetData: PacketDataArray {
-        
-        let utempMin = WeatherTemperature(celsius: tempMin).packetData
-        let utempMax = WeatherTemperature(celsius: tempMax).packetData
-        return [icon] + padding + utempMax + utempMin
-    }
-}
+//struct WeatherForecastData: PacketDataRappresentable {
+//    let icon: UInt8
+//    let tempMin: Float
+//    let tempMax: Float
+//
+//    private let padding = PacketDataArray(hex: "FF:FF")
+//    var packetData: PacketDataArray {
+//
+//        let utempMin = WeatherTemperature(celsius: tempMin).packetData
+//        let utempMax = WeatherTemperature(celsius: tempMax).packetData
+//        return [icon] + padding + utempMax + utempMin
+//    }
+//}
 
 enum WeatherCountry: String, PacketDataRappresentable {
     case uk = "0c:13"
-}
-
-struct WeatherTemperature: PacketDataRappresentable {
-    let temp: Float
-    
-    init(celsius: Float) {
-        temp = 32 + celsius * 9/5
-    }
-    
-    init(farenheit: Float) {
-        temp = farenheit
-    }
-    
-    var packetData: PacketDataArray {
-        let weatherTemp = 900 + (temp.uint16Rounded * 10)
-        return weatherTemp.uint8Array
-    }
 }
 
 struct WeatherWindPressure: PacketDataRappresentable {
@@ -118,24 +101,8 @@ struct WindDirection: PacketDataRappresentable {
     }
 }
 
-struct WeatherDate: PacketDataRappresentable {
-    let date: Date
-    
-    var packetData: PacketDataArray {
-        let calendar = Calendar.current
-       
-        let month = calendar.component(.month, from: date)
-        let day = calendar.component(.day, from: date)
-        let hour = calendar.component(.hour, from: date)
-        let minutes = calendar.component(.minute, from: date)
-        let seconds = calendar.component(.second, from: date)
-        
-        return [UInt8(month), UInt8(day), UInt8(hour), UInt8(minutes), UInt8(seconds)]
-    }
-}
-
 struct ForecastPacket: WeatherStationPacket {
-    let date: WeatherDate
+    let date: Date
     let commandID = ProtocolCommand.resForecast
     let country = WeatherCountry.uk
     
@@ -153,31 +120,31 @@ struct ForecastPacket: WeatherStationPacket {
     var MACAddress: PacketDataArray
 }
 
-struct CurrentWeatherPacket: WeatherStationPacket {
-    let date: WeatherDate
-    let commandID = ProtocolCommand.resCurrentWeather
-    let country = WeatherCountry.uk
-
-    private let packetFooter = PacketDataArray(hex: "ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff")
-    let packetHeader = PacketDataArray(hex: "FF:FF:FF:FF:FF")
-    
-    var payload: PacketDataArray {
-        var currentConditions = packetHeader
-        currentConditions += WeatherTemperature(celsius: feelsLike).packetData
-        currentConditions += WeatherWindPressure(value: pressure).packetData
-        currentConditions += WeatherWindPressure(value: windSpeed).packetData
-        currentConditions += PacketDataArray(hex: "FF")
-        currentConditions += [UInt8(windDirection)]
-        return country.packetData +
-               date.packetData +
-               currentConditions +
-               packetFooter
-    }
-    
-    var MACAddress: PacketDataArray
-    
-    let feelsLike: Float
-    let pressure: Int
-    let windSpeed: Int
-    let windDirection: Int
-}
+//struct CurrentWeatherPacket: WeatherStationPacket {
+//    let date: Date
+//    let commandID = ProtocolCommand.resCurrentWeather
+//    let country = WeatherCountry.uk
+//
+//    private let packetFooter = PacketDataArray(hex: "ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff")
+//    let packetHeader = PacketDataArray(hex: "FF:FF:FF:FF:FF")
+//    
+//    var payload: PacketDataArray {
+//        var currentConditions = packetHeader
+//        currentConditions += WeatherTemperature(celsius: feelsLike).packetData
+//        currentConditions += WeatherWindPressure(value: pressure).packetData
+//        currentConditions += WeatherWindPressure(value: windSpeed).packetData
+//        currentConditions += PacketDataArray(hex: "FF")
+//        currentConditions += [UInt8(windDirection)]
+//        return country.packetData +
+//               date.packetData +
+//               currentConditions +
+//               packetFooter
+//    }
+//    
+//    var MACAddress: PacketDataArray
+//    
+//    let feelsLike: Float
+//    let pressure: Int
+//    let windSpeed: Int
+//    let windDirection: Int
+//}

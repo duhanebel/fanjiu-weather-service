@@ -6,8 +6,6 @@
 //  Copyright © 2019 Fabio Gallonetto. All rights reserved.
 //
 
-@testable import WeatherStationService
-
 import XCTest
 
 class ForecastPacketTests: XCTestCase {
