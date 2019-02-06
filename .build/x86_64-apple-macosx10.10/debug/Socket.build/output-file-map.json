@@ -1,0 +1,23 @@
+{
+  "": {
+    "swift-dependencies": "/Users/fabiogallonetto/Development/WeatherStationService/.build/x86_64-apple-macosx10.10/debug/Socket.build/master.swiftdeps"
+  },
+  "/Users/fabiogallonetto/Development/WeatherStationService/.build/checkouts/BlueSocket.git--2553392031450431476/Sources/Socket/Socket.swift": {
+    "dependencies": "/Users/fabiogallonetto/Development/WeatherStationService/.build/x86_64-apple-macosx10.10/debug/Socket.build/Socket.d",
+    "object": "/Users/fabiogallonetto/Development/WeatherStationService/.build/x86_64-apple-macosx10.10/debug/Socket.build/Socket.swift.o",
+    "swiftmodule": "/Users/fabiogallonetto/Development/WeatherStationService/.build/x86_64-apple-macosx10.10/debug/Socket.build/Socket~partial.swiftmodule",
+    "swift-dependencies": "/Users/fabiogallonetto/Development/WeatherStationService/.build/x86_64-apple-macosx10.10/debug/Socket.build/Socket.swiftdeps"
+  },
+  "/Users/fabiogallonetto/Development/WeatherStationService/.build/checkouts/BlueSocket.git--2553392031450431476/Sources/Socket/SocketProtocols.swift": {
+    "dependencies": "/Users/fabiogallonetto/Development/WeatherStationService/.build/x86_64-apple-macosx10.10/debug/Socket.build/SocketProtocols.d",
+    "object": "/Users/fabiogallonetto/Development/WeatherStationService/.build/x86_64-apple-macosx10.10/debug/Socket.build/SocketProtocols.swift.o",
+    "swiftmodule": "/Users/fabiogallonetto/Development/WeatherStationService/.build/x86_64-apple-macosx10.10/debug/Socket.build/SocketProtocols~partial.swiftmodule",
+    "swift-dependencies": "/Users/fabiogallonetto/Development/WeatherStationService/.build/x86_64-apple-macosx10.10/debug/Socket.build/SocketProtocols.swiftdeps"
+  },
+  "/Users/fabiogallonetto/Development/WeatherStationService/.build/checkouts/BlueSocket.git--2553392031450431476/Sources/Socket/SocketUtils.swift": {
+    "dependencies": "/Users/fabiogallonetto/Development/WeatherStationService/.build/x86_64-apple-macosx10.10/debug/Socket.build/SocketUtils.d",
+    "object": "/Users/fabiogallonetto/Development/WeatherStationService/.build/x86_64-apple-macosx10.10/debug/Socket.build/SocketUtils.swift.o",
+    "swiftmodule": "/Users/fabiogallonetto/Development/WeatherStationService/.build/x86_64-apple-macosx10.10/debug/Socket.build/SocketUtils~partial.swiftmodule",
+    "swift-dependencies": "/Users/fabiogallonetto/Development/WeatherStationService/.build/x86_64-apple-macosx10.10/debug/Socket.build/SocketUtils.swiftdeps"
+  }
+}

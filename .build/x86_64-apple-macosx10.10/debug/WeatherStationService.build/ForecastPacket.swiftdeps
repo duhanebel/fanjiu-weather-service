@@ -1,0 +1,410 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "PacketDataArray"
+- "ProtocolConstants"
+- "ProtocolCommand"
+- "PacketDataRappresentable"
+- "WeatherStationPacket"
+- "WeatherCountry"
+- "WeatherWindPressure"
+- "WindDirection"
+- "ForecastPacket"
+provides-nominal:
+- "21WeatherStationService17ProtocolConstantsO"
+- "21WeatherStationService15ProtocolCommandO"
+- "21WeatherStationService24PacketDataRappresentableP"
+- "21WeatherStationService0aB6PacketP"
+- "21WeatherStationService0A7CountryO"
+- "21WeatherStationService0A12WindPressureV"
+- "21WeatherStationService13WindDirectionV"
+- "21WeatherStationService14ForecastPacketV"
+provides-member:
+- ["21WeatherStationService17ProtocolConstantsO", ""]
+- ["21WeatherStationService15ProtocolCommandO", ""]
+- ["21WeatherStationService24PacketDataRappresentableP", ""]
+- ["21WeatherStationService0aB6PacketP", ""]
+- ["21WeatherStationService0A7CountryO", ""]
+- ["21WeatherStationService0A12WindPressureV", ""]
+- ["21WeatherStationService13WindDirectionV", ""]
+- ["21WeatherStationService14ForecastPacketV", ""]
+- ["21WeatherStationService15ProtocolCommandO", "init"]
+- ["21WeatherStationService24PacketDataRappresentableP", "packetData"]
+- ["21WeatherStationService0aB6PacketP", "packetData"]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "%"
+- !private "*"
+- !private "+"
+- !private "/"
+- "=="
+- "Array"
+- "AssignmentPrecedence"
+- "Date"
+- !private "Float"
+- "FloatLiteralType"
+- "ForecastPacket"
+- "Int"
+- "IntegerLiteralType"
+- "PacketDataArray"
+- "PacketDataRappresentable"
+- "ProtocolCommand"
+- "ProtocolConstants"
+- "RawRepresentable"
+- "String"
+- "StringLiteralType"
+- "UInt8"
+- "WeatherCountry"
+- "WeatherForecastData"
+- "WeatherStationPacket"
+- "WeatherWindPressure"
+- "WindDirection"
+- !private "_findStringSwitchCase"
+- !private "~="
+depends-member:
+- ["SK", "init"]
+- ["SK", "init"]
+- !private ["21WeatherStationService15BinaryDecodableP", "init"]
+- !private ["21WeatherStationService15BinaryEncodableP", "init"]
+- !private ["SB", "init"]
+- !private ["SB", "rounded"]
+- !private ["Sz", "init"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["s7CVarArgP", "_getBuiltinLogicValue"]
+- ["s7CVarArgP", "init"]
+- ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "rounded"]
+- ["Sl", "init"]
+- ["Sl", "init"]
+- ["SL", "init"]
+- ["SL", "init"]
+- !private ["SL", "rounded"]
+- ["s28CustomDebugStringConvertibleP", "init"]
+- ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "rounded"]
+- !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
+- ["s29CustomPlaygroundQuickLookableP", "init"]
+- ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s29CustomPlaygroundQuickLookableP", "rounded"]
+- !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
+- ["s17CustomReflectableP", "init"]
+- ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "rounded"]
+- !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
+- ["s23CustomStringConvertibleP", "init"]
+- ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "rounded"]
+- !private ["Se", "_getBuiltinLogicValue"]
+- ["Se", "init"]
+- ["Se", "init"]
+- !private ["Se", "rounded"]
+- !private ["SE", "_getBuiltinLogicValue"]
+- ["SE", "init"]
+- ["SE", "init"]
+- !private ["SE", "rounded"]
+- ["SQ", "RawValue"]
+- !private ["SQ", "String"]
+- ["SQ", ""]
+- ["SQ", "_Default_RawValue"]
+- !private ["SQ", "_findStringSwitchCase"]
+- !private ["SQ", "_getBuiltinLogicValue"]
+- ["SQ", "hash"]
+- ["SQ", "hashValue"]
+- !private ["SQ", "header"]
+- ["SQ", "init"]
+- ["SQ", "init"]
+- !private ["SQ", "packetData"]
+- ["SQ", "rawValue"]
+- ["SQ", "resForecast"]
+- !private ["SQ", "rounded"]
+- ["SQ", "uk"]
+- !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
+- ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s25ExpressibleByFloatLiteralP", "init"]
+- !private ["s25ExpressibleByFloatLiteralP", "rounded"]
+- !private ["s27ExpressibleByIntegerLiteralP", "init"]
+- !private ["s27ExpressibleByIntegerLiteralP", "rounded"]
+- ["s26ExpressibleByStringLiteralP", "init"]
+- ["s26ExpressibleByStringLiteralP", "init"]
+- ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["s17FixedWidthIntegerP", "init"]
+- !private ["Sf", "init"]
+- !private ["Sf", "rounded"]
+- !private ["SF", "init"]
+- !private ["SF", "rounded"]
+- ["21WeatherStationService14ForecastPacketV", "Date"]
+- ["21WeatherStationService14ForecastPacketV", "PacketDataArray"]
+- ["21WeatherStationService14ForecastPacketV", "ProtocolCommand"]
+- ["21WeatherStationService14ForecastPacketV", "WeatherCountry"]
+- ["21WeatherStationService14ForecastPacketV", "WeatherForecastData"]
+- ["21WeatherStationService14ForecastPacketV", "commandID"]
+- ["21WeatherStationService14ForecastPacketV", "country"]
+- ["21WeatherStationService14ForecastPacketV", "date"]
+- ["21WeatherStationService14ForecastPacketV", "deinit"]
+- ["SH", "RawValue"]
+- !private ["SH", "String"]
+- ["SH", ""]
+- ["SH", "_Default_RawValue"]
+- !private ["SH", "_findStringSwitchCase"]
+- !private ["SH", "_getBuiltinLogicValue"]
+- ["SH", "hash"]
+- ["SH", "hashValue"]
+- !private ["SH", "header"]
+- ["SH", "init"]
+- ["SH", "init"]
+- !private ["SH", "packetData"]
+- ["SH", "rawValue"]
+- ["SH", "resForecast"]
+- !private ["SH", "rounded"]
+- ["SH", "uk"]
+- !private ["s6HasherV", "combine"]
+- !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
+- ["s25LosslessStringConvertibleP", "init"]
+- ["s25LosslessStringConvertibleP", "init"]
+- !private ["s25LosslessStringConvertibleP", "rounded"]
+- ["s10MirrorPathP", "init"]
+- ["s10MirrorPathP", "init"]
+- !private ["Sj", "init"]
+- !private ["Sj", "rounded"]
+- !private ["21WeatherStationService24PacketDataRappresentableP", "Float"]
+- !private ["21WeatherStationService24PacketDataRappresentableP", "MACAddress"]
+- ["21WeatherStationService24PacketDataRappresentableP", "PacketDataArray"]
+- ["21WeatherStationService24PacketDataRappresentableP", "ProtocolCommand"]
+- !private ["21WeatherStationService24PacketDataRappresentableP", "ProtocolConstants"]
+- ["21WeatherStationService24PacketDataRappresentableP", "RawRepresentable"]
+- ["21WeatherStationService24PacketDataRappresentableP", "RawValue"]
+- ["21WeatherStationService24PacketDataRappresentableP", "String"]
+- !private ["21WeatherStationService24PacketDataRappresentableP", "UInt8"]
+- ["21WeatherStationService24PacketDataRappresentableP", "WeatherCountry"]
+- ["21WeatherStationService24PacketDataRappresentableP", "WeatherForecastData"]
+- ["21WeatherStationService24PacketDataRappresentableP", ""]
+- ["21WeatherStationService24PacketDataRappresentableP", "_Default_RawValue"]
+- !private ["21WeatherStationService24PacketDataRappresentableP", "_findStringSwitchCase"]
+- ["21WeatherStationService24PacketDataRappresentableP", "commandID"]
+- !private ["21WeatherStationService24PacketDataRappresentableP", "degrees"]
+- ["21WeatherStationService24PacketDataRappresentableP", "hash"]
+- ["21WeatherStationService24PacketDataRappresentableP", "hashValue"]
+- !private ["21WeatherStationService24PacketDataRappresentableP", "header"]
+- ["21WeatherStationService24PacketDataRappresentableP", "init"]
+- !private ["21WeatherStationService24PacketDataRappresentableP", "packetData"]
+- !private ["21WeatherStationService24PacketDataRappresentableP", "payload"]
+- !private ["21WeatherStationService24PacketDataRappresentableP", "positionCount"]
+- ["21WeatherStationService24PacketDataRappresentableP", "rawValue"]
+- ["21WeatherStationService24PacketDataRappresentableP", "resForecast"]
+- ["21WeatherStationService24PacketDataRappresentableP", "uk"]
+- ["21WeatherStationService15ProtocolCommandO", "PacketDataArray"]
+- ["21WeatherStationService15ProtocolCommandO", "RawValue"]
+- !private ["21WeatherStationService15ProtocolCommandO", "String"]
+- ["21WeatherStationService15ProtocolCommandO", "_Default_RawValue"]
+- !private ["21WeatherStationService15ProtocolCommandO", "_findStringSwitchCase"]
+- ["21WeatherStationService15ProtocolCommandO", "deinit"]
+- ["21WeatherStationService15ProtocolCommandO", "hash"]
+- ["21WeatherStationService15ProtocolCommandO", "hashValue"]
+- ["21WeatherStationService15ProtocolCommandO", "init"]
+- !private ["21WeatherStationService15ProtocolCommandO", "packetData"]
+- ["21WeatherStationService15ProtocolCommandO", "rawValue"]
+- ["21WeatherStationService15ProtocolCommandO", "reqCurrentWeather"]
+- ["21WeatherStationService15ProtocolCommandO", "reqForecast"]
+- ["21WeatherStationService15ProtocolCommandO", "reqHello1"]
+- ["21WeatherStationService15ProtocolCommandO", "reqHello2"]
+- ["21WeatherStationService15ProtocolCommandO", "reqLocalData"]
+- ["21WeatherStationService15ProtocolCommandO", "reqMultiReq"]
+- ["21WeatherStationService15ProtocolCommandO", "resCurrentWeather"]
+- ["21WeatherStationService15ProtocolCommandO", "resForecast"]
+- ["21WeatherStationService15ProtocolCommandO", "resHello1"]
+- ["21WeatherStationService15ProtocolCommandO", "resHello2"]
+- ["21WeatherStationService15ProtocolCommandO", "resLocalData"]
+- ["21WeatherStationService15ProtocolCommandO", "resMultiReq"]
+- ["21WeatherStationService17ProtocolConstantsO", "RawValue"]
+- ["21WeatherStationService17ProtocolConstantsO", "_Default_RawValue"]
+- !private ["21WeatherStationService17ProtocolConstantsO", "_findStringSwitchCase"]
+- ["21WeatherStationService17ProtocolConstantsO", "deinit"]
+- ["21WeatherStationService17ProtocolConstantsO", "footer"]
+- ["21WeatherStationService17ProtocolConstantsO", "hash"]
+- ["21WeatherStationService17ProtocolConstantsO", "hashValue"]
+- ["21WeatherStationService17ProtocolConstantsO", "header"]
+- ["21WeatherStationService17ProtocolConstantsO", "init"]
+- !private ["21WeatherStationService17ProtocolConstantsO", "packetData"]
+- ["21WeatherStationService17ProtocolConstantsO", "rawValue"]
+- ["Sm", "init"]
+- ["Sm", "init"]
+- ["SY", "PacketDataArray"]
+- ["SY", "RawValue"]
+- !private ["SY", "String"]
+- ["SY", ""]
+- ["SY", "_Default_RawValue"]
+- !private ["SY", "_findStringSwitchCase"]
+- ["SY", "hash"]
+- ["SY", "hashValue"]
+- !private ["SY", "header"]
+- ["SY", "init"]
+- !private ["SY", "packetData"]
+- ["SY", "rawValue"]
+- ["SY", "resForecast"]
+- ["SY", "uk"]
+- ["ST", "init"]
+- ["ST", "init"]
+- !private ["s13SignedNumericP", "init"]
+- !private ["s13SignedNumericP", "rounded"]
+- !private ["s12StaticStringV", "init"]
+- !private ["s12StaticStringV", "init"]
+- !private ["Sx", "init"]
+- !private ["Sx", "rounded"]
+- ["SS", "init"]
+- ["SS", "init"]
+- ["Sy", "init"]
+- ["Sy", "init"]
+- ["s16TextOutputStreamP", "init"]
+- ["s16TextOutputStreamP", "init"]
+- ["s20TextOutputStreamableP", "init"]
+- ["s20TextOutputStreamableP", "init"]
+- !private ["s5UInt8V", "deinit"]
+- !private ["s5UInt8V", "init"]
+- !private ["SU", "init"]
+- ["21WeatherStationService0A7CountryO", "RawValue"]
+- ["21WeatherStationService0A7CountryO", "_Default_RawValue"]
+- !private ["21WeatherStationService0A7CountryO", "_findStringSwitchCase"]
+- ["21WeatherStationService0A7CountryO", "deinit"]
+- ["21WeatherStationService0A7CountryO", "hash"]
+- ["21WeatherStationService0A7CountryO", "hashValue"]
+- ["21WeatherStationService0A7CountryO", "init"]
+- ["21WeatherStationService0A7CountryO", "rawValue"]
+- ["21WeatherStationService0A7CountryO", "uk"]
+- !private ["21WeatherStationService0aB6PacketP", "MACAddress"]
+- ["21WeatherStationService0aB6PacketP", "PacketDataArray"]
+- ["21WeatherStationService0aB6PacketP", "ProtocolCommand"]
+- !private ["21WeatherStationService0aB6PacketP", "ProtocolConstants"]
+- ["21WeatherStationService0aB6PacketP", "WeatherCountry"]
+- ["21WeatherStationService0aB6PacketP", "WeatherForecastData"]
+- ["21WeatherStationService0aB6PacketP", ""]
+- ["21WeatherStationService0aB6PacketP", "commandID"]
+- !private ["21WeatherStationService0aB6PacketP", "payload"]
+- ["21WeatherStationService0A12WindPressureV", "Int"]
+- ["21WeatherStationService0A12WindPressureV", "PacketDataArray"]
+- ["21WeatherStationService0A12WindPressureV", "deinit"]
+- ["21WeatherStationService0A12WindPressureV", "init"]
+- ["21WeatherStationService0A12WindPressureV", "value"]
+- !private ["21WeatherStationService13WindDirectionV", "Float"]
+- ["21WeatherStationService13WindDirectionV", "Int"]
+- ["21WeatherStationService13WindDirectionV", "PacketDataArray"]
+- !private ["21WeatherStationService13WindDirectionV", "UInt8"]
+- ["21WeatherStationService13WindDirectionV", "degrees"]
+- ["21WeatherStationService13WindDirectionV", "deinit"]
+- ["21WeatherStationService13WindDirectionV", "init"]
+- ["21WeatherStationService13WindDirectionV", "positionCount"]
+- !private ["s18_BitwiseOperationsP", "init"]
+- !private ["s15_CVarArgAlignedP", "init"]
+- !private ["s15_CVarArgAlignedP", "rounded"]
+- !private ["s22_CVarArgPassedAsDoubleP", "init"]
+- !private ["s22_CVarArgPassedAsDoubleP", "rounded"]
+- !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
+- ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s33_ExpressibleByBuiltinFloatLiteralP", "init"]
+- !private ["s33_ExpressibleByBuiltinFloatLiteralP", "rounded"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "rounded"]
+- ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- ["s33_ExpressibleByStringInterpolationP", "init"]
+- ["s33_ExpressibleByStringInterpolationP", "init"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "init"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "rounded"]
+- !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
+- ["s21_ObjectiveCBridgeableP", "init"]
+- ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "rounded"]
+- !private ["s14_StringElementP", "init"]
+- ["s16_SwiftStringViewP", "init"]
+- ["s16_SwiftStringViewP", "init"]
+depends-nominal:
+- "SK"
+- !private "21WeatherStationService15BinaryDecodableP"
+- !private "21WeatherStationService15BinaryEncodableP"
+- !private "SB"
+- !private "Sz"
+- !private "Sb"
+- "s7CVarArgP"
+- "Sl"
+- "SL"
+- "s28CustomDebugStringConvertibleP"
+- "s29CustomPlaygroundQuickLookableP"
+- "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- "Se"
+- "SE"
+- "SQ"
+- !private "s27ExpressibleByBooleanLiteralP"
+- "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s25ExpressibleByFloatLiteralP"
+- !private "s27ExpressibleByIntegerLiteralP"
+- "s26ExpressibleByStringLiteralP"
+- "s33ExpressibleByUnicodeScalarLiteralP"
+- !private "s17FixedWidthIntegerP"
+- !private "Sf"
+- !private "SF"
+- "21WeatherStationService14ForecastPacketV"
+- "SH"
+- !private "s6HasherV"
+- "s25LosslessStringConvertibleP"
+- "s10MirrorPathP"
+- !private "Sj"
+- "21WeatherStationService24PacketDataRappresentableP"
+- "21WeatherStationService15ProtocolCommandO"
+- "21WeatherStationService17ProtocolConstantsO"
+- "Sm"
+- "SY"
+- "ST"
+- !private "s13SignedNumericP"
+- !private "s12StaticStringV"
+- !private "Sx"
+- "SS"
+- "Sy"
+- "s16TextOutputStreamP"
+- "s20TextOutputStreamableP"
+- !private "s5UInt8V"
+- !private "SU"
+- "21WeatherStationService0A7CountryO"
+- "21WeatherStationService0aB6PacketP"
+- "21WeatherStationService0A12WindPressureV"
+- "21WeatherStationService13WindDirectionV"
+- !private "s18_BitwiseOperationsP"
+- !private "s15_CVarArgAlignedP"
+- !private "s22_CVarArgPassedAsDoubleP"
+- !private "s35_ExpressibleByBuiltinBooleanLiteralP"
+- "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- !private "s33_ExpressibleByBuiltinFloatLiteralP"
+- !private "s35_ExpressibleByBuiltinIntegerLiteralP"
+- "s34_ExpressibleByBuiltinStringLiteralP"
+- "s39_ExpressibleByBuiltinUTF16StringLiteralP"
+- "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- "s33_ExpressibleByStringInterpolationP"
+- !private "s35_HasCustomAnyHashableRepresentationP"
+- "s21_ObjectiveCBridgeableP"
+- !private "s14_StringElementP"
+- "s16_SwiftStringViewP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/ApplicationServices.framework/Headers/ApplicationServices.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "63455911586eb925e53d2d1001462ac6"

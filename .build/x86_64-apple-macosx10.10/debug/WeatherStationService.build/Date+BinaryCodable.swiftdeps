@@ -1,0 +1,335 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+provides-nominal:
+- "10Foundation4DateV"
+provides-member:
+- ["10Foundation4DateV", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "Array"
+- "AssignmentPrecedence"
+- "BinaryCodable"
+- "BinaryDecoder"
+- "BinaryEncoder"
+- !private "Calendar"
+- "Date"
+- !private "Int"
+- !private "UInt8"
+depends-member:
+- !private ["21WeatherStationService15BinaryDecodableP", "BinaryDecoder"]
+- !private ["21WeatherStationService15BinaryDecodableP", "Calendar"]
+- !private ["21WeatherStationService15BinaryDecodableP", "Date"]
+- !private ["21WeatherStationService15BinaryDecodableP", "Int"]
+- !private ["21WeatherStationService15BinaryDecodableP", "UInt8"]
+- ["21WeatherStationService15BinaryDecodableP", ""]
+- ["21WeatherStationService15BinaryDecodableP", "binaryEncode"]
+- ["21WeatherStationService15BinaryDecodableP", "init"]
+- !private ["21WeatherStationService13BinaryDecoderC", "Error"]
+- !private ["21WeatherStationService13BinaryDecoderC", "decode"]
+- !private ["21WeatherStationService15BinaryEncodableP", "BinaryDecoder"]
+- !private ["21WeatherStationService15BinaryEncodableP", "Calendar"]
+- !private ["21WeatherStationService15BinaryEncodableP", "Date"]
+- !private ["21WeatherStationService15BinaryEncodableP", "Int"]
+- !private ["21WeatherStationService15BinaryEncodableP", "UInt8"]
+- ["21WeatherStationService15BinaryEncodableP", ""]
+- ["21WeatherStationService15BinaryEncodableP", "binaryEncode"]
+- ["21WeatherStationService15BinaryEncodableP", "init"]
+- !private ["Sz", "binaryEncode"]
+- !private ["Sz", "init"]
+- !private ["s7CVarArgP", "binaryEncode"]
+- !private ["s7CVarArgP", "init"]
+- !private ["10Foundation8CalendarV", "component"]
+- !private ["10Foundation8CalendarV", "current"]
+- !private ["10Foundation8CalendarV", "date"]
+- !private ["10Foundation8CalendarV", "dateComponents"]
+- !private ["10Foundation8CalendarV", "init"]
+- !private ["SL", "BinaryDecoder"]
+- !private ["SL", "Calendar"]
+- !private ["SL", "Date"]
+- !private ["SL", "Int"]
+- !private ["SL", "UInt8"]
+- ["SL", "binaryEncode"]
+- ["SL", "init"]
+- !private ["10Foundation8CalendarV9ComponentO", "day"]
+- !private ["10Foundation8CalendarV9ComponentO", "hour"]
+- !private ["10Foundation8CalendarV9ComponentO", "minute"]
+- !private ["10Foundation8CalendarV9ComponentO", "month"]
+- !private ["10Foundation8CalendarV9ComponentO", "second"]
+- !private ["10Foundation8CalendarV9ComponentO", "year"]
+- !private ["s28CustomDebugStringConvertibleP", "BinaryDecoder"]
+- !private ["s28CustomDebugStringConvertibleP", "Calendar"]
+- !private ["s28CustomDebugStringConvertibleP", "Date"]
+- !private ["s28CustomDebugStringConvertibleP", "Int"]
+- !private ["s28CustomDebugStringConvertibleP", "UInt8"]
+- ["s28CustomDebugStringConvertibleP", "binaryEncode"]
+- !private ["s28CustomDebugStringConvertibleP", "component"]
+- !private ["s28CustomDebugStringConvertibleP", "current"]
+- !private ["s28CustomDebugStringConvertibleP", "date"]
+- !private ["s28CustomDebugStringConvertibleP", "dateComponents"]
+- !private ["s28CustomDebugStringConvertibleP", "day"]
+- !private ["s28CustomDebugStringConvertibleP", "hour"]
+- ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "minute"]
+- !private ["s28CustomDebugStringConvertibleP", "month"]
+- !private ["s28CustomDebugStringConvertibleP", "second"]
+- !private ["s29CustomPlaygroundQuickLookableP", "BinaryDecoder"]
+- !private ["s29CustomPlaygroundQuickLookableP", "Calendar"]
+- !private ["s29CustomPlaygroundQuickLookableP", "Date"]
+- !private ["s29CustomPlaygroundQuickLookableP", "Int"]
+- !private ["s29CustomPlaygroundQuickLookableP", "UInt8"]
+- ["s29CustomPlaygroundQuickLookableP", "binaryEncode"]
+- ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s17CustomReflectableP", "BinaryDecoder"]
+- !private ["s17CustomReflectableP", "Calendar"]
+- !private ["s17CustomReflectableP", "Date"]
+- !private ["s17CustomReflectableP", "Int"]
+- !private ["s17CustomReflectableP", "UInt8"]
+- ["s17CustomReflectableP", "binaryEncode"]
+- !private ["s17CustomReflectableP", "component"]
+- !private ["s17CustomReflectableP", "current"]
+- !private ["s17CustomReflectableP", "date"]
+- !private ["s17CustomReflectableP", "dateComponents"]
+- !private ["s17CustomReflectableP", "day"]
+- !private ["s17CustomReflectableP", "hour"]
+- ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "minute"]
+- !private ["s17CustomReflectableP", "month"]
+- !private ["s17CustomReflectableP", "second"]
+- !private ["s23CustomStringConvertibleP", "BinaryDecoder"]
+- !private ["s23CustomStringConvertibleP", "Calendar"]
+- !private ["s23CustomStringConvertibleP", "Date"]
+- !private ["s23CustomStringConvertibleP", "Int"]
+- !private ["s23CustomStringConvertibleP", "UInt8"]
+- ["s23CustomStringConvertibleP", "binaryEncode"]
+- !private ["s23CustomStringConvertibleP", "component"]
+- !private ["s23CustomStringConvertibleP", "current"]
+- !private ["s23CustomStringConvertibleP", "date"]
+- !private ["s23CustomStringConvertibleP", "dateComponents"]
+- !private ["s23CustomStringConvertibleP", "day"]
+- !private ["s23CustomStringConvertibleP", "hour"]
+- ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "minute"]
+- !private ["s23CustomStringConvertibleP", "month"]
+- !private ["s23CustomStringConvertibleP", "second"]
+- ["10Foundation4DateV", "BinaryDecoder"]
+- ["10Foundation4DateV", "BinaryEncoder"]
+- !private ["10Foundation4DateV", "Calendar"]
+- !private ["10Foundation4DateV", "Date"]
+- !private ["10Foundation4DateV", "Int"]
+- !private ["10Foundation4DateV", "UInt8"]
+- ["10Foundation4DateV", "binaryEncode"]
+- ["10Foundation4DateV", "deinit"]
+- ["10Foundation4DateV", "init"]
+- !private ["10Foundation14DateComponentsV", "day"]
+- !private ["10Foundation14DateComponentsV", "hour"]
+- !private ["10Foundation14DateComponentsV", "minute"]
+- !private ["10Foundation14DateComponentsV", "month"]
+- !private ["10Foundation14DateComponentsV", "second"]
+- !private ["Se", "BinaryDecoder"]
+- !private ["Se", "Calendar"]
+- !private ["Se", "Date"]
+- !private ["Se", "Int"]
+- !private ["Se", "UInt8"]
+- ["Se", "binaryEncode"]
+- !private ["Se", "component"]
+- !private ["Se", "current"]
+- !private ["Se", "date"]
+- !private ["Se", "dateComponents"]
+- !private ["Se", "day"]
+- !private ["Se", "hour"]
+- ["Se", "init"]
+- !private ["Se", "minute"]
+- !private ["Se", "month"]
+- !private ["Se", "second"]
+- !private ["s7DecoderP", "Error"]
+- !private ["s7DecoderP", "decode"]
+- !private ["SE", "BinaryDecoder"]
+- !private ["SE", "Calendar"]
+- !private ["SE", "Date"]
+- !private ["SE", "Int"]
+- !private ["SE", "UInt8"]
+- ["SE", "binaryEncode"]
+- !private ["SE", "component"]
+- !private ["SE", "current"]
+- !private ["SE", "date"]
+- !private ["SE", "dateComponents"]
+- !private ["SE", "day"]
+- !private ["SE", "hour"]
+- ["SE", "init"]
+- !private ["SE", "minute"]
+- !private ["SE", "month"]
+- !private ["SE", "second"]
+- !private ["SQ", "BinaryDecoder"]
+- !private ["SQ", "Calendar"]
+- !private ["SQ", "Date"]
+- !private ["SQ", "Int"]
+- !private ["SQ", "UInt8"]
+- ["SQ", "binaryEncode"]
+- !private ["SQ", "component"]
+- !private ["SQ", "current"]
+- !private ["SQ", "date"]
+- !private ["SQ", "dateComponents"]
+- !private ["SQ", "day"]
+- !private ["SQ", "gregorian"]
+- !private ["SQ", "hour"]
+- ["SQ", "init"]
+- !private ["SQ", "minute"]
+- !private ["SQ", "month"]
+- !private ["SQ", "second"]
+- !private ["SQ", "year"]
+- !private ["21WeatherStationService13BinaryDecoderC5ErrorO", "deinit"]
+- !private ["21WeatherStationService13BinaryDecoderC5ErrorO", "invalidDate"]
+- !private ["s5ErrorP", "invalidDate"]
+- !private ["s27ExpressibleByIntegerLiteralP", "binaryEncode"]
+- !private ["s27ExpressibleByIntegerLiteralP", "init"]
+- !private ["s23ExpressibleByNilLiteralP", "binaryEncode"]
+- !private ["s17FixedWidthIntegerP", "binaryEncode"]
+- !private ["s17FixedWidthIntegerP", "init"]
+- !private ["SH", "BinaryDecoder"]
+- !private ["SH", "Calendar"]
+- !private ["SH", "Date"]
+- !private ["SH", "Int"]
+- !private ["SH", "UInt8"]
+- ["SH", "binaryEncode"]
+- !private ["SH", "component"]
+- !private ["SH", "current"]
+- !private ["SH", "date"]
+- !private ["SH", "dateComponents"]
+- !private ["SH", "day"]
+- !private ["SH", "gregorian"]
+- !private ["SH", "hour"]
+- ["SH", "init"]
+- !private ["SH", "minute"]
+- !private ["SH", "month"]
+- !private ["SH", "second"]
+- !private ["SH", "year"]
+- !private ["10Foundation8CalendarV10IdentifierO", "gregorian"]
+- !private ["Si", "init"]
+- !private ["s25LosslessStringConvertibleP", "binaryEncode"]
+- !private ["s25LosslessStringConvertibleP", "init"]
+- !private ["s10MirrorPathP", "init"]
+- !private ["Sj", "binaryEncode"]
+- !private ["Sj", "init"]
+- !private ["Sq", "binaryEncode"]
+- !private ["10Foundation20ReferenceConvertibleP", "BinaryDecoder"]
+- !private ["10Foundation20ReferenceConvertibleP", "Calendar"]
+- !private ["10Foundation20ReferenceConvertibleP", "Date"]
+- !private ["10Foundation20ReferenceConvertibleP", "Int"]
+- !private ["10Foundation20ReferenceConvertibleP", "UInt8"]
+- ["10Foundation20ReferenceConvertibleP", "binaryEncode"]
+- !private ["10Foundation20ReferenceConvertibleP", "component"]
+- !private ["10Foundation20ReferenceConvertibleP", "current"]
+- !private ["10Foundation20ReferenceConvertibleP", "date"]
+- !private ["10Foundation20ReferenceConvertibleP", "dateComponents"]
+- !private ["10Foundation20ReferenceConvertibleP", "day"]
+- !private ["10Foundation20ReferenceConvertibleP", "hour"]
+- ["10Foundation20ReferenceConvertibleP", "init"]
+- !private ["10Foundation20ReferenceConvertibleP", "minute"]
+- !private ["10Foundation20ReferenceConvertibleP", "month"]
+- !private ["10Foundation20ReferenceConvertibleP", "second"]
+- !private ["SZ", "init"]
+- !private ["s13SignedNumericP", "init"]
+- !private ["Sx", "binaryEncode"]
+- !private ["Sx", "init"]
+- !private ["s5UInt8V", "binaryEncode"]
+- !private ["s5UInt8V", "deinit"]
+- !private ["s5UInt8V", "init"]
+- !private ["SU", "binaryEncode"]
+- !private ["SU", "init"]
+- !private ["s18_BitwiseOperationsP", "binaryEncode"]
+- !private ["s18_BitwiseOperationsP", "init"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "binaryEncode"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "binaryEncode"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "init"]
+- !private ["10Foundation14_MutableBoxingP", "component"]
+- !private ["10Foundation14_MutableBoxingP", "current"]
+- !private ["10Foundation14_MutableBoxingP", "date"]
+- !private ["10Foundation14_MutableBoxingP", "dateComponents"]
+- !private ["10Foundation14_MutableBoxingP", "day"]
+- !private ["10Foundation14_MutableBoxingP", "hour"]
+- !private ["10Foundation14_MutableBoxingP", "init"]
+- !private ["10Foundation14_MutableBoxingP", "minute"]
+- !private ["10Foundation14_MutableBoxingP", "month"]
+- !private ["10Foundation14_MutableBoxingP", "second"]
+- !private ["s21_ObjectiveCBridgeableP", "BinaryDecoder"]
+- !private ["s21_ObjectiveCBridgeableP", "Calendar"]
+- !private ["s21_ObjectiveCBridgeableP", "Date"]
+- !private ["s21_ObjectiveCBridgeableP", "Int"]
+- !private ["s21_ObjectiveCBridgeableP", "UInt8"]
+- ["s21_ObjectiveCBridgeableP", "binaryEncode"]
+- !private ["s21_ObjectiveCBridgeableP", "component"]
+- !private ["s21_ObjectiveCBridgeableP", "current"]
+- !private ["s21_ObjectiveCBridgeableP", "date"]
+- !private ["s21_ObjectiveCBridgeableP", "dateComponents"]
+- !private ["s21_ObjectiveCBridgeableP", "day"]
+- !private ["s21_ObjectiveCBridgeableP", "hour"]
+- ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "minute"]
+- !private ["s21_ObjectiveCBridgeableP", "month"]
+- !private ["s21_ObjectiveCBridgeableP", "second"]
+- !private ["s14_StringElementP", "binaryEncode"]
+- !private ["s14_StringElementP", "init"]
+depends-nominal:
+- "21WeatherStationService15BinaryDecodableP"
+- !private "21WeatherStationService13BinaryDecoderC"
+- "21WeatherStationService15BinaryEncodableP"
+- !private "Sz"
+- !private "s7CVarArgP"
+- !private "10Foundation8CalendarV"
+- "SL"
+- !private "10Foundation8CalendarV9ComponentO"
+- "s28CustomDebugStringConvertibleP"
+- "s29CustomPlaygroundQuickLookableP"
+- "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- "10Foundation4DateV"
+- !private "10Foundation14DateComponentsV"
+- "Se"
+- !private "s7DecoderP"
+- "SE"
+- "SQ"
+- !private "21WeatherStationService13BinaryDecoderC5ErrorO"
+- !private "s5ErrorP"
+- !private "s27ExpressibleByIntegerLiteralP"
+- !private "s23ExpressibleByNilLiteralP"
+- !private "s17FixedWidthIntegerP"
+- "SH"
+- !private "10Foundation8CalendarV10IdentifierO"
+- !private "Si"
+- !private "s25LosslessStringConvertibleP"
+- !private "s10MirrorPathP"
+- !private "Sj"
+- !private "Sq"
+- "10Foundation20ReferenceConvertibleP"
+- !private "SZ"
+- !private "s13SignedNumericP"
+- !private "Sx"
+- !private "s5UInt8V"
+- !private "SU"
+- !private "s18_BitwiseOperationsP"
+- !private "s35_ExpressibleByBuiltinIntegerLiteralP"
+- !private "s35_HasCustomAnyHashableRepresentationP"
+- !private "10Foundation14_MutableBoxingP"
+- "s21_ObjectiveCBridgeableP"
+- !private "s14_StringElementP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/ApplicationServices.framework/Headers/ApplicationServices.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "6b81cd64ef28f20e70690cf94a1cc04c"

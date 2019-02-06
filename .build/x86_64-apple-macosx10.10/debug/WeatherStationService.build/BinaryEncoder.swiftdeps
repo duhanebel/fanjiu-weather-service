@@ -1,0 +1,309 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "BinaryEncodable"
+- "BinaryEncoder"
+provides-nominal:
+- "21WeatherStationService15BinaryEncodableP"
+- "21WeatherStationService13BinaryEncoderC"
+- "21WeatherStationService13BinaryEncoderC5ErrorO"
+provides-member:
+- ["21WeatherStationService15BinaryEncodableP", ""]
+- ["21WeatherStationService13BinaryEncoderC", ""]
+- ["21WeatherStationService13BinaryEncoderC5ErrorO", ""]
+- ["21WeatherStationService15BinaryEncodableP", "binaryEncode"]
+- ["21WeatherStationService13BinaryEncoderC", "encode"]
+- ["21WeatherStationService13BinaryEncoderC", "Error"]
+- ["21WeatherStationService13BinaryEncoderC", "encode"]
+- ["21WeatherStationService13BinaryEncoderC", "encode"]
+- ["21WeatherStationService13BinaryEncoderC", "encode"]
+- ["21WeatherStationService13BinaryEncoderC", "appendBytes"]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "*"
+- "BinaryEncodable"
+- "BinaryEncoder"
+- "CodingKey"
+- "CodingUserInfoKey"
+- "Double"
+- "Encodable"
+- "Encoder"
+- "Float"
+- !private "FloatLiteralType"
+- "Int"
+- !private "Int16"
+- !private "Int64"
+- !private "IntegerLiteralType"
+- "KeyedEncodingContainer"
+- "KeyedEncodingContainerProtocol"
+- "SingleValueEncodingContainer"
+- "Swift"
+- !private "UInt"
+- "UInt16"
+- !private "UInt64"
+- "UInt8"
+- "UnkeyedEncodingContainer"
+- !private "type"
+- !private "withUnsafeBytes"
+depends-member:
+- !private ["Sa", "append"]
+- !private ["Sa", "sum16CheckSum"]
+- !private ["s13ArrayProtocolP", "append"]
+- !private ["s13ArrayProtocolP", "sum16CheckSum"]
+- !private ["SK", "append"]
+- !private ["SK", "sum16CheckSum"]
+- ["21WeatherStationService15BinaryEncodableP", "BinaryEncoder"]
+- !private ["21WeatherStationService15BinaryEncodableP", "append"]
+- ["21WeatherStationService15BinaryEncodableP", "binaryEncode"]
+- !private ["21WeatherStationService15BinaryEncodableP", "encode"]
+- !private ["21WeatherStationService15BinaryEncodableP", "sum16CheckSum"]
+- ["21WeatherStationService13BinaryEncoderC", "BinaryEncodable"]
+- ["21WeatherStationService13BinaryEncoderC", "BinaryEncoder"]
+- ["21WeatherStationService13BinaryEncoderC", "CodingKey"]
+- ["21WeatherStationService13BinaryEncoderC", "CodingUserInfoKey"]
+- ["21WeatherStationService13BinaryEncoderC", "Double"]
+- ["21WeatherStationService13BinaryEncoderC", "Encodable"]
+- ["21WeatherStationService13BinaryEncoderC", "Encoder"]
+- ["21WeatherStationService13BinaryEncoderC", "Error"]
+- ["21WeatherStationService13BinaryEncoderC", "Float"]
+- ["21WeatherStationService13BinaryEncoderC", "Int"]
+- !private ["21WeatherStationService13BinaryEncoderC", "Int16"]
+- !private ["21WeatherStationService13BinaryEncoderC", "Int64"]
+- !private ["21WeatherStationService13BinaryEncoderC", "KeyedContainer"]
+- ["21WeatherStationService13BinaryEncoderC", "KeyedEncodingContainer"]
+- ["21WeatherStationService13BinaryEncoderC", "KeyedEncodingContainerProtocol"]
+- ["21WeatherStationService13BinaryEncoderC", "SingleValueEncodingContainer"]
+- ["21WeatherStationService13BinaryEncoderC", "Swift"]
+- !private ["21WeatherStationService13BinaryEncoderC", "UInt"]
+- ["21WeatherStationService13BinaryEncoderC", "UInt16"]
+- !private ["21WeatherStationService13BinaryEncoderC", "UInt64"]
+- ["21WeatherStationService13BinaryEncoderC", "UInt8"]
+- !private ["21WeatherStationService13BinaryEncoderC", "UnkeyedContanier"]
+- ["21WeatherStationService13BinaryEncoderC", "UnkeyedEncodingContainer"]
+- ["21WeatherStationService13BinaryEncoderC", "appendBytes"]
+- ["21WeatherStationService13BinaryEncoderC", "calculateChecksum"]
+- ["21WeatherStationService13BinaryEncoderC", "codingPath"]
+- ["21WeatherStationService13BinaryEncoderC", "container"]
+- !private ["21WeatherStationService13BinaryEncoderC", "data"]
+- ["21WeatherStationService13BinaryEncoderC", "deinit"]
+- ["21WeatherStationService13BinaryEncoderC", "encode"]
+- ["21WeatherStationService13BinaryEncoderC", "init"]
+- ["21WeatherStationService13BinaryEncoderC", "singleValueContainer"]
+- !private ["21WeatherStationService13BinaryEncoderC", "type"]
+- ["21WeatherStationService13BinaryEncoderC", "unkeyedContainer"]
+- ["21WeatherStationService13BinaryEncoderC", "userInfo"]
+- !private ["21WeatherStationService13BinaryEncoderC", "withUnsafeBytes"]
+- !private ["Sz", "init"]
+- !private ["s7CVarArgP", "append"]
+- !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "sum16CheckSum"]
+- !private ["Sl", "append"]
+- !private ["Sl", "sum16CheckSum"]
+- !private ["SL", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "append"]
+- !private ["s28CustomDebugStringConvertibleP", "sum16CheckSum"]
+- !private ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s17CustomReflectableP", "append"]
+- !private ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "sum16CheckSum"]
+- !private ["s23CustomStringConvertibleP", "append"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "sum16CheckSum"]
+- !private ["Se", "append"]
+- !private ["Se", "init"]
+- !private ["Se", "sum16CheckSum"]
+- ["SE", "BinaryEncoder"]
+- ["SE", ""]
+- !private ["SE", "append"]
+- !private ["SE", "binaryEncode"]
+- !private ["SE", "encode"]
+- !private ["SE", "init"]
+- !private ["SE", "sum16CheckSum"]
+- !private ["s7EncoderP", "BinaryEncoder"]
+- !private ["s7EncoderP", "Error"]
+- !private ["s7EncoderP", "Int16"]
+- !private ["s7EncoderP", "Int64"]
+- !private ["s7EncoderP", "KeyedContainer"]
+- !private ["s7EncoderP", "KeyedEncodingContainer"]
+- !private ["s7EncoderP", "UInt64"]
+- !private ["s7EncoderP", "UnkeyedContanier"]
+- ["s7EncoderP", ""]
+- !private ["s7EncoderP", "appendBytes"]
+- ["s7EncoderP", "codingPath"]
+- ["s7EncoderP", "container"]
+- !private ["s7EncoderP", "data"]
+- !private ["s7EncoderP", "encode"]
+- !private ["s7EncoderP", "init"]
+- ["s7EncoderP", "singleValueContainer"]
+- !private ["s7EncoderP", "type"]
+- ["s7EncoderP", "unkeyedContainer"]
+- ["s7EncoderP", "userInfo"]
+- !private ["s7EncoderP", "withUnsafeBytes"]
+- !private ["SQ", "append"]
+- !private ["SQ", "init"]
+- !private ["SQ", "sum16CheckSum"]
+- ["21WeatherStationService13BinaryEncoderC5ErrorO", "Encodable"]
+- ["s5ErrorP", ""]
+- ["21WeatherStationService13BinaryEncoderC5ErrorO", "_code"]
+- ["s5ErrorP", "_code"]
+- ["21WeatherStationService13BinaryEncoderC5ErrorO", "_domain"]
+- ["s5ErrorP", "_domain"]
+- ["21WeatherStationService13BinaryEncoderC5ErrorO", "_getEmbeddedNSError"]
+- ["s5ErrorP", "_getEmbeddedNSError"]
+- ["21WeatherStationService13BinaryEncoderC5ErrorO", "_userInfo"]
+- ["s5ErrorP", "_userInfo"]
+- ["21WeatherStationService13BinaryEncoderC5ErrorO", "deinit"]
+- ["21WeatherStationService13BinaryEncoderC5ErrorO", "typeNotConformingToBinaryEncodable"]
+- !private ["s5ErrorP", "typeNotConformingToBinaryEncodable"]
+- ["21WeatherStationService13BinaryEncoderC5ErrorO", "typeNotConformingToEncodable"]
+- ["21WeatherStationService13BinaryEncoderC5ErrorO", "valueOutOfBounds"]
+- !private ["s5ErrorP", "valueOutOfBounds"]
+- !private ["s25ExpressibleByArrayLiteralP", "append"]
+- !private ["s25ExpressibleByArrayLiteralP", "sum16CheckSum"]
+- !private ["s27ExpressibleByIntegerLiteralP", "init"]
+- !private ["s17FixedWidthIntegerP", "init"]
+- !private ["SH", "append"]
+- !private ["SH", "init"]
+- !private ["SH", "sum16CheckSum"]
+- !private ["s5Int16V", "init"]
+- !private ["s5Int64V", "init"]
+- !private ["s22KeyedEncodingContainerV", "init"]
+- ["s30KeyedEncodingContainerProtocolP", "Key"]
+- !private ["s30KeyedEncodingContainerProtocolP", ""]
+- ["s30KeyedEncodingContainerProtocolP", "_Default_Key"]
+- ["s30KeyedEncodingContainerProtocolP", "codingPath"]
+- ["s30KeyedEncodingContainerProtocolP", "encode"]
+- ["s30KeyedEncodingContainerProtocolP", "encodeConditional"]
+- ["s30KeyedEncodingContainerProtocolP", "encodeIfPresent"]
+- ["s30KeyedEncodingContainerProtocolP", "encodeNil"]
+- !private ["s30KeyedEncodingContainerProtocolP", "encoder"]
+- !private ["s30KeyedEncodingContainerProtocolP", "init"]
+- ["s30KeyedEncodingContainerProtocolP", "nestedContainer"]
+- ["s30KeyedEncodingContainerProtocolP", "nestedUnkeyedContainer"]
+- ["s30KeyedEncodingContainerProtocolP", "superEncoder"]
+- !private ["s25LosslessStringConvertibleP", "init"]
+- !private ["SM", "append"]
+- !private ["SM", "sum16CheckSum"]
+- !private ["Sj", "init"]
+- !private ["Sk", "append"]
+- !private ["Sk", "sum16CheckSum"]
+- !private ["Sm", "append"]
+- !private ["Sm", "sum16CheckSum"]
+- !private ["ST", "append"]
+- !private ["ST", "sum16CheckSum"]
+- !private ["SZ", "init"]
+- !private ["s13SignedNumericP", "init"]
+- !private ["s28SingleValueEncodingContainerP", ""]
+- ["s28SingleValueEncodingContainerP", "codingPath"]
+- ["s28SingleValueEncodingContainerP", "count"]
+- ["s28SingleValueEncodingContainerP", "encode"]
+- ["s28SingleValueEncodingContainerP", "encodeConditional"]
+- ["s28SingleValueEncodingContainerP", "encodeNil"]
+- !private ["s28SingleValueEncodingContainerP", "encoder"]
+- !private ["s28SingleValueEncodingContainerP", "init"]
+- ["s28SingleValueEncodingContainerP", "nestedContainer"]
+- ["s28SingleValueEncodingContainerP", "nestedUnkeyedContainer"]
+- ["s28SingleValueEncodingContainerP", "superEncoder"]
+- !private ["Sx", "init"]
+- !private ["s6UInt64V", "init"]
+- !private ["s24UnkeyedEncodingContainerP", ""]
+- ["s24UnkeyedEncodingContainerP", "codingPath"]
+- ["s24UnkeyedEncodingContainerP", "count"]
+- ["s24UnkeyedEncodingContainerP", "encode"]
+- ["s24UnkeyedEncodingContainerP", "encodeConditional"]
+- ["s24UnkeyedEncodingContainerP", "encodeNil"]
+- !private ["s24UnkeyedEncodingContainerP", "encoder"]
+- !private ["s24UnkeyedEncodingContainerP", "init"]
+- ["s24UnkeyedEncodingContainerP", "nestedContainer"]
+- ["s24UnkeyedEncodingContainerP", "nestedUnkeyedContainer"]
+- ["s24UnkeyedEncodingContainerP", "superEncoder"]
+- !private ["SU", "init"]
+- !private ["s18_BitwiseOperationsP", "init"]
+- !private ["s15_CVarArgAlignedP", "init"]
+- !private ["s24_DestructorSafeContainerP", "append"]
+- !private ["s24_DestructorSafeContainerP", "sum16CheckSum"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "append"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "init"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "sum16CheckSum"]
+- !private ["s21_ObjectiveCBridgeableP", "append"]
+- !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "sum16CheckSum"]
+depends-nominal:
+- !private "Sa"
+- !private "s13ArrayProtocolP"
+- !private "SK"
+- "21WeatherStationService15BinaryEncodableP"
+- "21WeatherStationService13BinaryEncoderC"
+- !private "Sz"
+- !private "s7CVarArgP"
+- !private "Sl"
+- !private "SL"
+- !private "s28CustomDebugStringConvertibleP"
+- !private "s29CustomPlaygroundQuickLookableP"
+- !private "s17CustomReflectableP"
+- !private "s23CustomStringConvertibleP"
+- !private "Se"
+- "SE"
+- "s7EncoderP"
+- !private "SQ"
+- "21WeatherStationService13BinaryEncoderC5ErrorO"
+- "s5ErrorP"
+- "21WeatherStationService13BinaryEncoderC5ErrorO"
+- "s5ErrorP"
+- "21WeatherStationService13BinaryEncoderC5ErrorO"
+- "s5ErrorP"
+- "21WeatherStationService13BinaryEncoderC5ErrorO"
+- "s5ErrorP"
+- "21WeatherStationService13BinaryEncoderC5ErrorO"
+- "s5ErrorP"
+- "21WeatherStationService13BinaryEncoderC5ErrorO"
+- !private "s5ErrorP"
+- "21WeatherStationService13BinaryEncoderC5ErrorO"
+- !private "s5ErrorP"
+- !private "s25ExpressibleByArrayLiteralP"
+- !private "s27ExpressibleByIntegerLiteralP"
+- !private "s17FixedWidthIntegerP"
+- !private "SH"
+- !private "s5Int16V"
+- !private "s5Int64V"
+- !private "s22KeyedEncodingContainerV"
+- "s30KeyedEncodingContainerProtocolP"
+- !private "s25LosslessStringConvertibleP"
+- !private "SM"
+- !private "Sj"
+- !private "Sk"
+- !private "Sm"
+- !private "ST"
+- !private "SZ"
+- !private "s13SignedNumericP"
+- "s28SingleValueEncodingContainerP"
+- !private "Sx"
+- !private "s6UInt64V"
+- "s24UnkeyedEncodingContainerP"
+- !private "SU"
+- !private "s18_BitwiseOperationsP"
+- !private "s15_CVarArgAlignedP"
+- !private "s24_DestructorSafeContainerP"
+- !private "s35_ExpressibleByBuiltinIntegerLiteralP"
+- !private "s35_HasCustomAnyHashableRepresentationP"
+- !private "s21_ObjectiveCBridgeableP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/ApplicationServices.framework/Headers/ApplicationServices.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "8ba3661fb2ed608443f6fcc57e09cceb"

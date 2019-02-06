@@ -1,0 +1,378 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "DeserializationError"
+- "ForecastRequestPacket"
+provides-nominal:
+- "21WeatherStationService20DeserializationErrorO"
+- "21WeatherStationService21ForecastRequestPacketV"
+provides-member:
+- ["21WeatherStationService20DeserializationErrorO", ""]
+- ["21WeatherStationService21ForecastRequestPacketV", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "&&"
+- "=="
+- !private "Array"
+- "AssignmentPrecedence"
+- "DeserializationError"
+- "Error"
+- !private "FloatLiteralType"
+- "ForecastRequestPacket"
+- !private "IntegerLiteralType"
+- "PacketDataArray"
+- "ProtocolCommand"
+- !private "ProtocolConstants"
+- "WeatherStationPacket"
+depends-member:
+- !private ["Sa", "count"]
+- !private ["Sa", "dropFirst"]
+- !private ["Sa", "init"]
+- !private ["Sa", "starts"]
+- !private ["Sa", "suffix"]
+- !private ["Sa", "sum16CheckSum"]
+- !private ["s13ArrayProtocolP", "count"]
+- !private ["s13ArrayProtocolP", "dropFirst"]
+- !private ["s13ArrayProtocolP", "dropLast"]
+- !private ["s13ArrayProtocolP", "init"]
+- !private ["s13ArrayProtocolP", "prefix"]
+- !private ["s13ArrayProtocolP", "starts"]
+- !private ["s13ArrayProtocolP", "suffix"]
+- !private ["s13ArrayProtocolP", "sum16CheckSum"]
+- !private ["s10ArraySliceV", "dropFirst"]
+- !private ["s10ArraySliceV", "dropLast"]
+- !private ["s10ArraySliceV", "prefix"]
+- !private ["s10ArraySliceV", "suffix"]
+- !private ["SK", "count"]
+- !private ["SK", "dropFirst"]
+- !private ["SK", "dropLast"]
+- !private ["SK", "init"]
+- !private ["SK", "prefix"]
+- !private ["SK", "starts"]
+- !private ["SK", "suffix"]
+- !private ["SK", "sum16CheckSum"]
+- !private ["21WeatherStationService15BinaryDecodableP", "uint8Array"]
+- !private ["21WeatherStationService15BinaryEncodableP", "count"]
+- !private ["21WeatherStationService15BinaryEncodableP", "dropFirst"]
+- !private ["21WeatherStationService15BinaryEncodableP", "init"]
+- !private ["21WeatherStationService15BinaryEncodableP", "starts"]
+- !private ["21WeatherStationService15BinaryEncodableP", "suffix"]
+- !private ["21WeatherStationService15BinaryEncodableP", "sum16CheckSum"]
+- !private ["21WeatherStationService15BinaryEncodableP", "uint8Array"]
+- !private ["Sz", "uint8Array"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["s7CVarArgP", "_getBuiltinLogicValue"]
+- !private ["s7CVarArgP", "count"]
+- !private ["s7CVarArgP", "dropFirst"]
+- !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "starts"]
+- !private ["s7CVarArgP", "suffix"]
+- !private ["s7CVarArgP", "sum16CheckSum"]
+- !private ["s7CVarArgP", "uint8Array"]
+- !private ["Sl", "count"]
+- !private ["Sl", "dropFirst"]
+- !private ["Sl", "dropLast"]
+- !private ["Sl", "init"]
+- !private ["Sl", "prefix"]
+- !private ["Sl", "starts"]
+- !private ["Sl", "suffix"]
+- !private ["Sl", "sum16CheckSum"]
+- !private ["SL", "uint8Array"]
+- !private ["s28CustomDebugStringConvertibleP", "count"]
+- !private ["s28CustomDebugStringConvertibleP", "dropFirst"]
+- !private ["s28CustomDebugStringConvertibleP", "dropLast"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "prefix"]
+- !private ["s28CustomDebugStringConvertibleP", "starts"]
+- !private ["s28CustomDebugStringConvertibleP", "suffix"]
+- !private ["s28CustomDebugStringConvertibleP", "sum16CheckSum"]
+- !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
+- !private ["s29CustomPlaygroundQuickLookableP", "uint8Array"]
+- !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
+- !private ["s17CustomReflectableP", "count"]
+- !private ["s17CustomReflectableP", "dropFirst"]
+- !private ["s17CustomReflectableP", "dropLast"]
+- !private ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "prefix"]
+- !private ["s17CustomReflectableP", "starts"]
+- !private ["s17CustomReflectableP", "suffix"]
+- !private ["s17CustomReflectableP", "sum16CheckSum"]
+- !private ["s17CustomReflectableP", "uint8Array"]
+- !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s23CustomStringConvertibleP", "count"]
+- !private ["s23CustomStringConvertibleP", "dropFirst"]
+- !private ["s23CustomStringConvertibleP", "dropLast"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "prefix"]
+- !private ["s23CustomStringConvertibleP", "starts"]
+- !private ["s23CustomStringConvertibleP", "suffix"]
+- !private ["s23CustomStringConvertibleP", "sum16CheckSum"]
+- !private ["s23CustomStringConvertibleP", "uint8Array"]
+- !private ["Se", "_getBuiltinLogicValue"]
+- !private ["Se", "count"]
+- !private ["Se", "dropFirst"]
+- !private ["Se", "init"]
+- !private ["Se", "starts"]
+- !private ["Se", "suffix"]
+- !private ["Se", "sum16CheckSum"]
+- !private ["Se", "uint8Array"]
+- ["21WeatherStationService20DeserializationErrorO", "__derived_enum_equals"]
+- ["21WeatherStationService20DeserializationErrorO", "_code"]
+- ["21WeatherStationService20DeserializationErrorO", "_domain"]
+- ["21WeatherStationService20DeserializationErrorO", "_getEmbeddedNSError"]
+- ["21WeatherStationService20DeserializationErrorO", "_userInfo"]
+- ["21WeatherStationService20DeserializationErrorO", "deinit"]
+- ["21WeatherStationService20DeserializationErrorO", "hash"]
+- ["21WeatherStationService20DeserializationErrorO", "hashValue"]
+- ["21WeatherStationService20DeserializationErrorO", "invalidChecksum"]
+- ["21WeatherStationService20DeserializationErrorO", "invalidPacketFormat"]
+- !private ["SE", "_getBuiltinLogicValue"]
+- !private ["SE", "count"]
+- !private ["SE", "dropFirst"]
+- !private ["SE", "init"]
+- !private ["SE", "starts"]
+- !private ["SE", "suffix"]
+- !private ["SE", "sum16CheckSum"]
+- !private ["SE", "uint8Array"]
+- ["SQ", ""]
+- ["SQ", "_code"]
+- ["SQ", "_domain"]
+- !private ["SQ", "_getBuiltinLogicValue"]
+- ["SQ", "_getEmbeddedNSError"]
+- ["SQ", "_userInfo"]
+- !private ["SQ", "count"]
+- !private ["SQ", "dropFirst"]
+- !private ["SQ", "dropLast"]
+- !private ["SQ", "footer"]
+- ["SQ", "hash"]
+- ["SQ", "hashValue"]
+- !private ["SQ", "header"]
+- !private ["SQ", "init"]
+- !private ["SQ", "invalidChecksum"]
+- !private ["SQ", "invalidPacketFormat"]
+- !private ["SQ", "packetData"]
+- !private ["SQ", "prefix"]
+- !private ["SQ", "starts"]
+- !private ["SQ", "suffix"]
+- !private ["SQ", "sum16CheckSum"]
+- !private ["SQ", "uint8Array"]
+- ["s5ErrorP", ""]
+- ["s5ErrorP", "_code"]
+- ["s5ErrorP", "_domain"]
+- ["s5ErrorP", "_getEmbeddedNSError"]
+- ["s5ErrorP", "_userInfo"]
+- ["s5ErrorP", "hash"]
+- ["s5ErrorP", "hashValue"]
+- !private ["s5ErrorP", "invalidChecksum"]
+- !private ["s5ErrorP", "invalidPacketFormat"]
+- !private ["s25ExpressibleByArrayLiteralP", "count"]
+- !private ["s25ExpressibleByArrayLiteralP", "dropFirst"]
+- !private ["s25ExpressibleByArrayLiteralP", "dropLast"]
+- !private ["s25ExpressibleByArrayLiteralP", "init"]
+- !private ["s25ExpressibleByArrayLiteralP", "prefix"]
+- !private ["s25ExpressibleByArrayLiteralP", "starts"]
+- !private ["s25ExpressibleByArrayLiteralP", "suffix"]
+- !private ["s25ExpressibleByArrayLiteralP", "sum16CheckSum"]
+- !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["s27ExpressibleByIntegerLiteralP", "uint8Array"]
+- !private ["s17FixedWidthIntegerP", "uint8Array"]
+- !private ["21WeatherStationService21ForecastRequestPacketV", "Array"]
+- !private ["21WeatherStationService21ForecastRequestPacketV", "DeserializationError"]
+- ["21WeatherStationService21ForecastRequestPacketV", "MACAddress"]
+- ["21WeatherStationService21ForecastRequestPacketV", "PacketDataArray"]
+- ["21WeatherStationService21ForecastRequestPacketV", "ProtocolCommand"]
+- !private ["21WeatherStationService21ForecastRequestPacketV", "ProtocolConstants"]
+- ["21WeatherStationService21ForecastRequestPacketV", "commandID"]
+- ["21WeatherStationService21ForecastRequestPacketV", "deinit"]
+- ["21WeatherStationService21ForecastRequestPacketV", "init"]
+- ["21WeatherStationService21ForecastRequestPacketV", "packetData"]
+- ["21WeatherStationService21ForecastRequestPacketV", "payload"]
+- ["SH", ""]
+- ["SH", "_code"]
+- ["SH", "_domain"]
+- !private ["SH", "_getBuiltinLogicValue"]
+- ["SH", "_getEmbeddedNSError"]
+- ["SH", "_userInfo"]
+- !private ["SH", "count"]
+- !private ["SH", "dropFirst"]
+- !private ["SH", "dropLast"]
+- !private ["SH", "footer"]
+- ["SH", "hash"]
+- ["SH", "hashValue"]
+- !private ["SH", "header"]
+- !private ["SH", "init"]
+- !private ["SH", "invalidChecksum"]
+- !private ["SH", "invalidPacketFormat"]
+- !private ["SH", "packetData"]
+- !private ["SH", "prefix"]
+- !private ["SH", "starts"]
+- !private ["SH", "suffix"]
+- !private ["SH", "sum16CheckSum"]
+- !private ["SH", "uint8Array"]
+- !private ["s6HasherV", "combine"]
+- !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s25LosslessStringConvertibleP", "uint8Array"]
+- !private ["SM", "count"]
+- !private ["SM", "dropFirst"]
+- !private ["SM", "dropLast"]
+- !private ["SM", "init"]
+- !private ["SM", "prefix"]
+- !private ["SM", "starts"]
+- !private ["SM", "suffix"]
+- !private ["SM", "sum16CheckSum"]
+- !private ["Sj", "uint8Array"]
+- !private ["21WeatherStationService24PacketDataRappresentableP", "Array"]
+- !private ["21WeatherStationService24PacketDataRappresentableP", "DeserializationError"]
+- ["21WeatherStationService24PacketDataRappresentableP", "MACAddress"]
+- !private ["21WeatherStationService24PacketDataRappresentableP", "PacketDataArray"]
+- !private ["21WeatherStationService24PacketDataRappresentableP", "ProtocolCommand"]
+- !private ["21WeatherStationService24PacketDataRappresentableP", "ProtocolConstants"]
+- ["21WeatherStationService24PacketDataRappresentableP", ""]
+- ["21WeatherStationService24PacketDataRappresentableP", "commandID"]
+- !private ["21WeatherStationService24PacketDataRappresentableP", "footer"]
+- !private ["21WeatherStationService24PacketDataRappresentableP", "header"]
+- !private ["21WeatherStationService24PacketDataRappresentableP", "init"]
+- ["21WeatherStationService24PacketDataRappresentableP", "packetData"]
+- ["21WeatherStationService24PacketDataRappresentableP", "payload"]
+- !private ["21WeatherStationService15ProtocolCommandO", "deinit"]
+- !private ["21WeatherStationService15ProtocolCommandO", "init"]
+- !private ["21WeatherStationService17ProtocolConstantsO", "deinit"]
+- !private ["21WeatherStationService17ProtocolConstantsO", "footer"]
+- !private ["21WeatherStationService17ProtocolConstantsO", "header"]
+- !private ["21WeatherStationService17ProtocolConstantsO", "packetData"]
+- !private ["Sk", "count"]
+- !private ["Sk", "dropFirst"]
+- !private ["Sk", "dropLast"]
+- !private ["Sk", "init"]
+- !private ["Sk", "prefix"]
+- !private ["Sk", "starts"]
+- !private ["Sk", "suffix"]
+- !private ["Sk", "sum16CheckSum"]
+- !private ["Sm", "count"]
+- !private ["Sm", "dropFirst"]
+- !private ["Sm", "dropLast"]
+- !private ["Sm", "init"]
+- !private ["Sm", "prefix"]
+- !private ["Sm", "starts"]
+- !private ["Sm", "suffix"]
+- !private ["Sm", "sum16CheckSum"]
+- !private ["SY", "footer"]
+- !private ["SY", "header"]
+- !private ["SY", "init"]
+- !private ["SY", "packetData"]
+- !private ["ST", "count"]
+- !private ["ST", "dropFirst"]
+- !private ["ST", "dropLast"]
+- !private ["ST", "init"]
+- !private ["ST", "prefix"]
+- !private ["ST", "starts"]
+- !private ["ST", "suffix"]
+- !private ["ST", "sum16CheckSum"]
+- !private ["Sx", "uint8Array"]
+- !private ["s6UInt16V", "uint8Array"]
+- !private ["SU", "uint8Array"]
+- !private ["21WeatherStationService0aB6PacketP", "Array"]
+- !private ["21WeatherStationService0aB6PacketP", "DeserializationError"]
+- ["21WeatherStationService0aB6PacketP", "MACAddress"]
+- !private ["21WeatherStationService0aB6PacketP", "PacketDataArray"]
+- !private ["21WeatherStationService0aB6PacketP", "ProtocolCommand"]
+- !private ["21WeatherStationService0aB6PacketP", "ProtocolConstants"]
+- ["21WeatherStationService0aB6PacketP", ""]
+- ["21WeatherStationService0aB6PacketP", "commandID"]
+- ["21WeatherStationService0aB6PacketP", "packetData"]
+- ["21WeatherStationService0aB6PacketP", "payload"]
+- !private ["s18_BitwiseOperationsP", "uint8Array"]
+- !private ["s24_DestructorSafeContainerP", "count"]
+- !private ["s24_DestructorSafeContainerP", "dropFirst"]
+- !private ["s24_DestructorSafeContainerP", "dropLast"]
+- !private ["s24_DestructorSafeContainerP", "init"]
+- !private ["s24_DestructorSafeContainerP", "prefix"]
+- !private ["s24_DestructorSafeContainerP", "starts"]
+- !private ["s24_DestructorSafeContainerP", "suffix"]
+- !private ["s24_DestructorSafeContainerP", "sum16CheckSum"]
+- !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "uint8Array"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "count"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "dropFirst"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "init"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "starts"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "suffix"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "sum16CheckSum"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "uint8Array"]
+- !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
+- !private ["s21_ObjectiveCBridgeableP", "count"]
+- !private ["s21_ObjectiveCBridgeableP", "dropFirst"]
+- !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "starts"]
+- !private ["s21_ObjectiveCBridgeableP", "suffix"]
+- !private ["s21_ObjectiveCBridgeableP", "sum16CheckSum"]
+- !private ["s21_ObjectiveCBridgeableP", "uint8Array"]
+- !private ["s14_StringElementP", "uint8Array"]
+depends-nominal:
+- !private "Sa"
+- !private "s13ArrayProtocolP"
+- !private "s10ArraySliceV"
+- !private "SK"
+- !private "21WeatherStationService15BinaryDecodableP"
+- !private "21WeatherStationService15BinaryEncodableP"
+- !private "Sz"
+- !private "Sb"
+- !private "s7CVarArgP"
+- !private "Sl"
+- !private "SL"
+- !private "s28CustomDebugStringConvertibleP"
+- !private "s29CustomPlaygroundQuickLookableP"
+- !private "s17CustomReflectableP"
+- !private "s23CustomStringConvertibleP"
+- !private "Se"
+- "21WeatherStationService20DeserializationErrorO"
+- !private "SE"
+- "SQ"
+- "s5ErrorP"
+- !private "s25ExpressibleByArrayLiteralP"
+- !private "s27ExpressibleByBooleanLiteralP"
+- !private "s27ExpressibleByIntegerLiteralP"
+- !private "s17FixedWidthIntegerP"
+- "21WeatherStationService21ForecastRequestPacketV"
+- "SH"
+- !private "s6HasherV"
+- !private "s25LosslessStringConvertibleP"
+- !private "SM"
+- !private "Sj"
+- "21WeatherStationService24PacketDataRappresentableP"
+- !private "21WeatherStationService15ProtocolCommandO"
+- !private "21WeatherStationService17ProtocolConstantsO"
+- !private "Sk"
+- !private "Sm"
+- !private "SY"
+- !private "ST"
+- !private "Sx"
+- !private "s6UInt16V"
+- !private "SU"
+- "21WeatherStationService0aB6PacketP"
+- !private "s18_BitwiseOperationsP"
+- !private "s24_DestructorSafeContainerP"
+- !private "s35_ExpressibleByBuiltinBooleanLiteralP"
+- !private "s35_ExpressibleByBuiltinIntegerLiteralP"
+- !private "s35_HasCustomAnyHashableRepresentationP"
+- !private "s21_ObjectiveCBridgeableP"
+- !private "s14_StringElementP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/ApplicationServices.framework/Headers/ApplicationServices.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "5212b768f5bb8838741fc2dbf6c8f33c"
