@@ -31,22 +31,6 @@ class BinaryCoderTests: XCTestCase {
         XCTAssertEqual(try BinaryEncoder.encode(data), generatedData)
     }
    
-//    func testest() throws {
-//        struct Footer: BinaryDecodable {
-//            let value = [0x11, 0x12]
-//        }
-//        struct Header : BinaryDecodable {
-//            let value = [0x23, 0x24]
-//        }
-//        struct Packet: BinaryDecodable {
-//            let h: Header
-//            let f: Footer
-//        }
-//        let x = try BinaryDecoder.decode(Packet.self, data: [0x23,0x24, 0x11, 0x12])
-//        XCTAssertEqual(x.h.value,[0x23,0x24])
-//        XCTAssertEqual(x.f.value,[0x11,0x12])
-//    }
-    
     func testPrimitiveDecoding() throws {
         let data: [UInt8] = [
             1,
@@ -60,28 +44,6 @@ class BinaryCoderTests: XCTestCase {
         XCTAssertEqual(s.f, 3.6)
         XCTAssertEqual(s.d, 4.5)
     }
-
-//
-//    func testComplex() {
-//        struct Company: BinaryCodable {
-//            var name: String
-//            var employees: [Employee]
-//        }
-//
-//        struct Employee: BinaryCodable {
-//            var name: String
-//            var jobTitle: String
-//            var age: Int
-//        }
-//
-//        let company = Company(name: "Joe's Discount Airbags", employees: [
-//            Employee(name: "Joe Johnson", jobTitle: "CEO", age: 27),
-//            Employee(name: "Stan Lee", jobTitle: "Janitor", age: 87),
-//            Employee(name: "Dracula", jobTitle: "Dracula", age: 41),
-//            Employee(name: "Steve Jobs", jobTitle: "Visionary", age: 56),
-//        ])
-//        AssertRoundtrip(company)
-//    }
 }
 
 private func AssertEqual<T>(_ lhs: T, _ rhs: T, file: StaticString = #file, line: UInt = #line) {

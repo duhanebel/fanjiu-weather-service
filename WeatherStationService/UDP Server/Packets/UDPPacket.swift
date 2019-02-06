@@ -11,8 +11,8 @@ import Foundation
 struct UDPPacket<T: BinaryCodable>: BinaryCodable {
     let header: Header
     let mac: MACAddress
-    let command: ResponseCommand
-    let payloadSize: UInt16 // TODO fix this up on tests and parsing!
+    let command: Command
+    let payloadSize: UInt16
     let stationID: UInt8
     let country: Country
     let date: Date
@@ -20,12 +20,12 @@ struct UDPPacket<T: BinaryCodable>: BinaryCodable {
     let checksum: Checksum
     let footer: Footer
     
-    init(command: ResponseCommand, mac: MACAddress, country: Country, date:Date, payload: T) {
+    init(command: Command, mac: MACAddress, country: Country, date:Date, payload: T) {
         // Size is from command onward
         let commandSize = UInt16(
-            1 + // station ID is 1
+            MemoryLayout<UInt8>.size   +  // station ID is 1
             MemoryLayout<Country>.size +
-            5 +// Date is MM:DD:hh:mm:ss
+            5                          +  // Date is MM:DD:hh:mm:ss
             MemoryLayout<T>.size)
         
         self.header = Header.default
@@ -40,3 +40,4 @@ struct UDPPacket<T: BinaryCodable>: BinaryCodable {
         self.footer = Footer.default
     }
 }
+

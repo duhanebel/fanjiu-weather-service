@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D938B241220B425D0006C96A /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D938B240220B425D0006C96A /* Requests.swift */; };
+		D938B243220B44E40006C96A /* Responses.swift in Sources */ = {isa = PBXBuildFile; fileRef = D938B242220B44E40006C96A /* Responses.swift */; };
 		D98688312206209600109422 /* BinaryDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986882D2206209500109422 /* BinaryDecoder.swift */; };
 		D98688322206209600109422 /* BinaryCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986882E2206209600109422 /* BinaryCodable.swift */; };
 		D98688332206209600109422 /* BinaryCodableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986882F2206209600109422 /* BinaryCodableExtensions.swift */; };
@@ -94,7 +96,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D986882A2204607100109422 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		D938B23F220B400B0006C96A /* PROTOCOL.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = PROTOCOL.md; sourceTree = "<group>"; };
+		D938B240220B425D0006C96A /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
+		D938B242220B44E40006C96A /* Responses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Responses.swift; sourceTree = "<group>"; };
 		D986882D2206209500109422 /* BinaryDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryDecoder.swift; sourceTree = "<group>"; };
 		D986882E2206209600109422 /* BinaryCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryCodable.swift; sourceTree = "<group>"; };
 		D986882F2206209600109422 /* BinaryCodableExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryCodableExtensions.swift; sourceTree = "<group>"; };
@@ -116,8 +120,6 @@
 		D9B5CBDC21FDB01300691A77 /* WeatherClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherClient.swift; sourceTree = "<group>"; };
 		D9B5CBDE21FDB15800691A77 /* DataHexConversionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHexConversionTests.swift; sourceTree = "<group>"; };
 		D9B5CBE221FDB17D00691A77 /* ForecastPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastPacket.swift; sourceTree = "<group>"; };
-		D9B5CBE821FDEE4E00691A77 /* ForecastPacketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastPacketTests.swift; sourceTree = "<group>"; };
-		D9B5CBEA21FDF2CB00691A77 /* WeatherStationPacketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherStationPacketTests.swift; sourceTree = "<group>"; };
 		D9B5CBEC21FE03B800691A77 /* ChecksumMathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecksumMathTests.swift; sourceTree = "<group>"; };
 		D9B5CBEE21FE0BDB00691A77 /* Array+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Hex.swift"; sourceTree = "<group>"; };
 		D9B5CBF021FE0BF100691A77 /* Array+SumChecksum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+SumChecksum.swift"; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 		D9B5CBAF21FC5B8000691A77 = {
 			isa = PBXGroup;
 			children = (
+				D938B23F220B400B0006C96A /* PROTOCOL.md */,
 				D9B5CBBA21FC5B8000691A77 /* WeatherStationService */,
 				D9B5CBCD21FC636B00691A77 /* WeatherStationServiceTests */,
 				D9B5CBB921FC5B8000691A77 /* Products */,
@@ -217,11 +220,8 @@
 				D9B5CBCE21FC636B00691A77 /* APIRequestBuilderTests.swift */,
 				D9B5CBD021FC636B00691A77 /* Info.plist */,
 				D9B5CBDE21FDB15800691A77 /* DataHexConversionTests.swift */,
-				D9B5CBE821FDEE4E00691A77 /* ForecastPacketTests.swift */,
-				D9B5CBEA21FDF2CB00691A77 /* WeatherStationPacketTests.swift */,
 				D9B5CBEC21FE03B800691A77 /* ChecksumMathTests.swift */,
 				D9C83A6721FF177500A40689 /* FlatRoundingTests.swift */,
-				D986882A2204607100109422 /* Test.swift */,
 				D9FC94D82208643700801567 /* FloatRoundedTests.swift */,
 				D9FC94F7220A271900801567 /* NextDaysForecastPacketTests.swift */,
 				D9FC94FC220A2C1600801567 /* UDPPacketTests.swift */,
@@ -278,6 +278,8 @@
 				D9FC94EE22088DCC00801567 /* NextDaysForecastPacket.swift */,
 				D9FC9500220AC4D300801567 /* CurrentWeatherPacket.swift */,
 				D9FC9503220AC4E200801567 /* UDPPacket.swift */,
+				D938B240220B425D0006C96A /* Requests.swift */,
+				D938B242220B44E40006C96A /* Responses.swift */,
 			);
 			path = Packets;
 			sourceTree = "<group>";
@@ -389,6 +391,7 @@
 				D9C83A6621FF170600A40689 /* Float+Int16Round.swift in Sources */,
 				D98688312206209600109422 /* BinaryDecoder.swift in Sources */,
 				D9B5CBC721FC609200691A77 /* Result.swift in Sources */,
+				D938B241220B425D0006C96A /* Requests.swift in Sources */,
 				D9FC94EF22088DCC00801567 /* NextDaysForecastPacket.swift in Sources */,
 				D9FC94F22208974900801567 /* Commands.swift in Sources */,
 				D9B5CBF821FE0F6100691A77 /* UInt16+ByteArray.swift in Sources */,
@@ -404,6 +407,7 @@
 				D9C83A6B21FF248000A40689 /* RequestCreator.swift in Sources */,
 				D9B5CBC321FC5F7F00691A77 /* APIClient.swift in Sources */,
 				D9B5CBF421FE0CB200691A77 /* Array+SumChecksum.swift in Sources */,
+				D938B243220B44E40006C96A /* Responses.swift in Sources */,
 				D9FC94D7220863EC00801567 /* Float+Rounded.swift in Sources */,
 				D9B5CBDB21FCD09200691A77 /* APIError.swift in Sources */,
 				D9B5CBD721FC78E800691A77 /* WeatherForecast.swift in Sources */,

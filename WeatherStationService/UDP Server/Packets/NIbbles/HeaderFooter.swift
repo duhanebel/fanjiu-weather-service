@@ -17,7 +17,7 @@ struct Header: BinaryCodable, StaticNibble {
 
     init(value: PacketDataArray = PacketDataArray(hex: "aa:3c:57:01")) throws {
         guard value == defaultHeader else {
-            throw BinaryDecoder.Error.staticMessageDoesNotMatch(value, value)
+            throw BinaryDecoder.Error.staticMessageDoesNotMatch(value, defaultHeader)
         }
         self.value = value
     }
@@ -33,7 +33,7 @@ struct Footer: BinaryCodable, StaticNibble {
 
     init(value: PacketDataArray = PacketDataArray(hex: "cc:3e")) throws {
         guard value == defaultFooter else {
-            throw BinaryDecoder.Error.staticMessageDoesNotMatch(value, value)
+            throw BinaryDecoder.Error.staticMessageDoesNotMatch(value, defaultFooter)
         }
         self.value = value
     }

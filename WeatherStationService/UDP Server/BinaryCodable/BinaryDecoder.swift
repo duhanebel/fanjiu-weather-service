@@ -67,6 +67,8 @@ public extension BinaryDecoder {
         case invalidUTF8([UInt8])
         
         case invalidDate([UInt8])
+        
+        case invalidProtocolCommand([UInt8])
     }
 }
 

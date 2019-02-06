@@ -10,10 +10,6 @@ import XCTest
 
 class TemperatureTests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
@@ -33,7 +29,7 @@ class TemperatureTests: XCTestCase {
         AssertRoundtrip(Temperature(celsius: 0))
         AssertRoundtrip(Temperature(celsius: 10))
         AssertRoundtrip(Temperature(celsius: -5))
-        //AssertRoundtrip(Temperature(celsius: 1))
+        //AssertRoundtrip(Temperature(celsius: 1)) celsius are a problem because of Float rounding. but we don't need celsius really
     }
 
 }

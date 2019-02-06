@@ -28,4 +28,11 @@ extension Array where Element: BinaryInteger, Element.IntegerLiteralType == UInt
         return Data(buffer: UnsafeBufferPointer(start: self, count: self.count))
     }
     
+    public var hexString: String {
+        let result = self.reduce("") { (res, val) -> String in
+            res + String(format: "%02x", UInt8(val)) + ":"
+        }
+        return String(result.dropLast())
+    }
+    
 }
