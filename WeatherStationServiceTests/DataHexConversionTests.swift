@@ -45,6 +45,12 @@ class DataHexConversionTests: XCTestCase {
         XCTAssertEqual(array[2], 0xee)
         XCTAssertEqual(array[3], 0xff)
     }
+    
+    func testHexFromArray() {
+        let hexString = "11:22:ee:ff"
+        let array: Array<UInt8> = [ 0x11, 0x22, 0xee, 0xff]
+        XCTAssertEqual(hexString, array.hexString)
+    }
 }
 
 
