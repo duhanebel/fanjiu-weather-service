@@ -5,17 +5,28 @@ import PackageDescription
 
 let package = Package(
     name: "WeatherStationService",
+    products: [
+      .executable(name: "WeatherStationService", targets: ["WeatherStationService"]),
+      .library(name: "WeatherUDPProtocol", targets: ["WeatherUDPProtocol"]),
+      .library(name: "WeatherRESTClient", targets: ["WeatherRESTClient"])],
     dependencies: [
       .package(url: "https://github.com/IBM-Swift/BlueSocket.git", from:"1.0.8"),
     ],
     targets: [
-        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
             name: "WeatherStationService",
-            dependencies: ["Socket"]),
+            dependencies: ["Socket", "WeatherUDPProtocol", "WeatherRESTClient"]),
+        .target(
+            name: "WeatherUDPProtocol",
+            dependencies: []),
+        .target(
+            name: "WeatherRESTClient",
+            dependencies: []),
         .testTarget(
-            name: "WeatherStationServiceTests",
-            dependencies: ["WeatherStationService"]),
+            name: "WeatherUDPProtocolTests",
+            dependencies: ["WeatherUDPProtocol"]),
+        .testTarget(
+            name: "WeatherRESTClientTests",
+            dependencies: ["WeatherRESTClient"])
     ]
 )

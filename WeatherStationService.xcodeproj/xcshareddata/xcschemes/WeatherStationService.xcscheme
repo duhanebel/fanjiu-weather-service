@@ -32,9 +32,19 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "WeatherStationService::WeatherStationServiceTests"
-               BuildableName = "WeatherStationServiceTests.xctest"
-               BlueprintName = "WeatherStationServiceTests"
+               BlueprintIdentifier = "WeatherStationService::WeatherRESTClientTests"
+               BuildableName = "WeatherRESTClientTests.xctest"
+               BlueprintName = "WeatherRESTClientTests"
+               ReferencedContainer = "container:WeatherStationService.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "WeatherStationService::WeatherUDPProtocolTests"
+               BuildableName = "WeatherUDPProtocolTests.xctest"
+               BlueprintName = "WeatherUDPProtocolTests"
                ReferencedContainer = "container:WeatherStationService.xcodeproj">
             </BuildableReference>
          </TestableReference>

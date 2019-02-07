@@ -20,6 +20,34 @@
                ReferencedContainer = "container:WeatherStationService.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "WeatherStationService::WeatherUDPProtocol"
+               BuildableName = "WeatherUDPProtocol.framework"
+               BlueprintName = "WeatherUDPProtocol"
+               ReferencedContainer = "container:WeatherStationService.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "WeatherStationService::WeatherRESTClient"
+               BuildableName = "WeatherRESTClient.framework"
+               BlueprintName = "WeatherRESTClient"
+               ReferencedContainer = "container:WeatherStationService.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -32,9 +60,19 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "WeatherStationService::WeatherStationServiceTests"
-               BuildableName = "WeatherStationServiceTests.xctest"
-               BlueprintName = "WeatherStationServiceTests"
+               BlueprintIdentifier = "WeatherStationService::WeatherRESTClientTests"
+               BuildableName = "WeatherRESTClientTests.xctest"
+               BlueprintName = "WeatherRESTClientTests"
+               ReferencedContainer = "container:WeatherStationService.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "WeatherStationService::WeatherUDPProtocolTests"
+               BuildableName = "WeatherUDPProtocolTests.xctest"
+               BlueprintName = "WeatherUDPProtocolTests"
                ReferencedContainer = "container:WeatherStationService.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -52,8 +90,7 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "WeatherStationService::WeatherStationService"
@@ -61,7 +98,7 @@
             BlueprintName = "WeatherStationService"
             ReferencedContainer = "container:WeatherStationService.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>

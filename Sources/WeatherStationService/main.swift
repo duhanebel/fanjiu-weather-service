@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import WeatherRESTClient
 
 print("Retrieving forecast")
 
@@ -20,7 +21,7 @@ networkGroup.enter()
 var client = WeatherClient(builder: WeatherRequestBuilder(APIKey: APIKey))
 
 extension APIError : CustomStringConvertible {
-    var description: String {
+    public var description: String {
         switch(self) {
         case .invalidHTTPStatusCode:
             return "Invalid HTTP status code"
@@ -34,25 +35,25 @@ extension APIError : CustomStringConvertible {
     }
 }
 
-var request = WeatherAPIRequest(location: london)
-
-client.send(request) { response in
-    
-    switch(response) {
-    case let .error(error as APIError):
-        print(error.description)
-        exit(-1)
-    case let .error(error):
-        print(error.localizedDescription)
-        exit(-1)
-    case let .success(result):
-        print(result.currently)
-        print(result.forecast[1])
-        print(result.forecast[2])
-        print(result.forecast[3])
-        print(result.forecast[4])
-    }
-    networkGroup.leave()
-}
+//var request = WeatherAPIRequest(location: london)
+//
+//client.send(request) { response in
+//    
+//    switch(response) {
+//    case let .error(error as APIError):
+//        print(error.description)
+//        exit(-1)
+//    case let .error(error):
+//        print(error.localizedDescription)
+//        exit(-1)
+//    case let .success(result):
+//        print(result.currently)
+//        print(result.forecast[1])
+//        print(result.forecast[2])
+//        print(result.forecast[3])
+//        print(result.forecast[4])
+//    }
+//    networkGroup.leave()
+//}
 
 networkGroup.wait()
