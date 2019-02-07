@@ -195,6 +195,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D99C7CF3220C5A0D00518B3C /* UDP Server */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "UDP Server";
+			sourceTree = "<group>";
+		};
+		D99C7CF4220C5A1B00518B3C /* REST Client */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_64 /* WeatherForecastTests.swift */,
+				OBJ_52 /* APIRequestBuilderTests.swift */,
+				OBJ_53 /* BinaryCooderTests.swift */,
+				OBJ_54 /* ChecksumMathTests.swift */,
+				OBJ_55 /* CurrentWeatherPacketTests.swift */,
+				OBJ_56 /* DataHexConversionTests.swift */,
+				OBJ_57 /* FlatRoundingTests.swift */,
+				OBJ_58 /* FloatRoundedTests.swift */,
+				OBJ_59 /* HeaderFooterPacketTests.swift */,
+				OBJ_60 /* NextDaysForecastPacketTests.swift */,
+				OBJ_61 /* TemperatureTests.swift */,
+				OBJ_62 /* TestUtils.swift */,
+				OBJ_63 /* UDPPacketTests.swift */,
+			);
+			path = "REST Client";
+			sourceTree = "<group>";
+		};
 		OBJ_15 /* UDP Server */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,19 +311,8 @@
 		OBJ_51 /* WeatherStationServiceTests */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_52 /* APIRequestBuilderTests.swift */,
-				OBJ_53 /* BinaryCooderTests.swift */,
-				OBJ_54 /* ChecksumMathTests.swift */,
-				OBJ_55 /* CurrentWeatherPacketTests.swift */,
-				OBJ_56 /* DataHexConversionTests.swift */,
-				OBJ_57 /* FlatRoundingTests.swift */,
-				OBJ_58 /* FloatRoundedTests.swift */,
-				OBJ_59 /* HeaderFooterPacketTests.swift */,
-				OBJ_60 /* NextDaysForecastPacketTests.swift */,
-				OBJ_61 /* TemperatureTests.swift */,
-				OBJ_62 /* TestUtils.swift */,
-				OBJ_63 /* UDPPacketTests.swift */,
-				OBJ_64 /* WeatherForecastTests.swift */,
+				D99C7CF4220C5A1B00518B3C /* REST Client */,
+				D99C7CF3220C5A0D00518B3C /* UDP Server */,
 				OBJ_65 /* WeatherStationServiceTests.swift */,
 				OBJ_66 /* XCTestManifests.swift */,
 			);

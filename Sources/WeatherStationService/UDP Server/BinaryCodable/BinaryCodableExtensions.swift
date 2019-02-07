@@ -1,9 +1,5 @@
 import Foundation
 
-
-
-
-
 //extension Array: BinaryCodable where Element : BinaryCodable {
 //    public func binaryEncode(to encoder: BinaryEncoder) throws {
 //
