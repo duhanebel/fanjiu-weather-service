@@ -8,6 +8,20 @@
 
 import Foundation
 
+private struct UDPPacketHeader: BinaryCodable {
+    public let header: Header
+    public let mac: MACAddress
+    public let command: Command
+    public let payloadSize: UInt16
+}
+
+public enum UDPPacketUtils {
+    public static func inspectDataForCommandID(data: PacketDataArray) throws -> CommandID {
+        let header = try BinaryDecoder.decode(UDPPacketHeader.self, data: data)
+        return header.command.id
+    }
+}
+
 public struct UDPPacket<T: BinaryCodable>: BinaryCodable {
     public let header: Header
     public let mac: MACAddress

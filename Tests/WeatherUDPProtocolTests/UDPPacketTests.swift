@@ -60,4 +60,10 @@ class UDPPacketTests: XCTestCase {
         XCTAssertEqual(packet.payload.value, mockPacket.payload.value)
 
     }
+    
+    func testHeaderDecoding() throws {
+        let data = Data(bytes: mockPacketRawData)
+        let commandID = try UDPPacketUtils.inspectDataForCommandID(data: data)
+        XCTAssertEqual(commandID, .responseForecast)
+    }
 }

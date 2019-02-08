@@ -1,7 +1,0 @@
-version: "Apple Swift version 4.2.1 (swiftlang-1000.11.42 clang-1000.11.45.1)"
-options: "c2d29456f809da30f83ab2a68d85dddb"
-build_time: [1549543917, 882911000]
-inputs:
-  "/Users/fabiogallonetto/Development/WeatherStationService/.build/checkouts/BlueSocket.git--2553392031450431476/Sources/Socket/Socket.swift": [1549472901, 0]
-  "/Users/fabiogallonetto/Development/WeatherStationService/.build/checkouts/BlueSocket.git--2553392031450431476/Sources/Socket/SocketProtocols.swift": [1549472901, 0]
-  "/Users/fabiogallonetto/Development/WeatherStationService/.build/checkouts/BlueSocket.git--2553392031450431476/Sources/Socket/SocketUtils.swift": [1549472901, 0]

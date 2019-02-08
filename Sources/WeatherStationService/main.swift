@@ -15,8 +15,8 @@ print("Retrieving forecast")
 let APIKey = "a972d998e8399e6ac25171267918c097"
 let london = Location.London()
 
-var networkGroup = DispatchGroup()
-networkGroup.enter()
+//var networkGroup = DispatchGroup()
+//networkGroup.enter()
 
 var client = WeatherClient(builder: WeatherRequestBuilder(APIKey: APIKey))
 
@@ -56,4 +56,41 @@ extension APIError : CustomStringConvertible {
 //    networkGroup.leave()
 //}
 
-networkGroup.wait()
+let port = 10000
+
+class WeatherUDPProcessor: RequestProcessor {
+
+    
+    let realWeatherServer = (ip: "47.52.149.125", port: 10000)
+    
+    private var clientAwaitingResponse: (ip: String, port: Int)?
+    
+    var dataProcessors: [WeatherUDPRequestProcessor] = []
+    
+    func process(data: Data, from: String, port: Int) throws -> (data: Data, destIP: String, port: Int)? {
+        let dataArray = Array<UInt8>(data)
+        let processor = dataProcessors.first { $0.canHandle(data: dataArray) }
+        if let responseData = try processor?.process(data: dataArray) {
+            return (data: Data(bytes: responseData), destIP: from, port: port)
+        } else {
+            if let clientAwaitingResponse = clientAwaitingResponse,
+                from == realWeatherServer.ip {
+                self.clientAwaitingResponse = nil
+                return (data: data, destIP: clientAwaitingResponse.ip, port: clientAwaitingResponse.port)
+            } else {
+                clientAwaitingResponse = (ip: from, port: port)
+                return (data: data, destIP: realWeatherServer.ip, port: realWeatherServer.port)
+            }
+        }
+    }
+}
+
+let reqProcessor = WeatherUDPProcessor()
+reqProcessor.dataProcessors.append(ForecastUDPRequestProcessor())
+let server = WeatherUDPServer(port: port, requestProcessor: reqProcessor)
+print("Swift Echo Server Sample")
+print("Connect with a command line window by entering 'telnet ::1 \(port)'")
+
+server.run()
+
+//networkGroup.wait()

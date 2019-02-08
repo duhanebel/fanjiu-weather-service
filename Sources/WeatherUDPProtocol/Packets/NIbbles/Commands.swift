@@ -44,6 +44,10 @@ public struct Command: BinaryCodable, StaticNibble {
         self.value = commandID.arrayData
     }
     
+    public var id: CommandID! {
+        return CommandID(arrayData: value)
+    }
+    
     public init(value: PacketDataArray) throws {
         self.value = value
         guard let _ = CommandID(arrayData: value) else {

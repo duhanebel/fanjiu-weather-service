@@ -8,14 +8,41 @@
 
 import Foundation
 
-public struct HelloResponse { }
+public struct HelloResponse: BinaryCodable {
+    public init() {}
+}
 
-public struct Unknown1Response {}
+public struct Unknown1Response: BinaryCodable {
+    public init() {}
+}
 
-public struct Unknown2AResponse {}
-public struct Unknown2BResponse {}
-public struct Unknown2CResponse {}
-public struct Unknown3Response {}
+public struct Unknown2AResponse: BinaryCodable {
+    public let unknown: UInt32
+    public init(unknown: UInt32 = 0x9407c404) {
+        self.unknown = unknown
+    }
+}
+
+public struct Unknown2BResponse: BinaryCodable {
+    public let unknown: UInt8
+    public init(unknown: UInt8 = 0x03) {
+        self.unknown = unknown
+    }
+}
+
+public struct Unknown2CResponse: BinaryCodable {
+    public let unknown: UInt16
+    public init(unknown: UInt16 = 0x5f14) {
+        self.unknown = unknown
+    }
+}
+
+public struct Unknown3Response: BinaryCodable {
+    public let unknown: UInt16
+    public init(unknown: UInt16 = 0x4f4b) { // this is "OK" too
+        self.unknown = unknown
+    }
+}
 
 private let OKMessage = PacketDataArray(hex: "4F:4B")
 public struct LocalDataOKResponse: BinaryCodable, StaticNibble {

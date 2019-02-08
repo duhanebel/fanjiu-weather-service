@@ -1,5 +1,0 @@
-version: "Apple Swift version 4.2.1 (swiftlang-1000.11.42 clang-1000.11.45.1)"
-options: "05dfcfccb27e1a3c222b42c40602e088"
-build_time: [1549543920, 176655000]
-inputs:
-  "/Users/fabiogallonetto/Development/WeatherStationService/Sources/WeatherStationService/main.swift": !dirty [1548526848, 0]

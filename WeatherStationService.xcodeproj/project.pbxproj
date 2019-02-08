@@ -1,1691 +1,1218 @@
 // !$*UTF8*$!
 {
-   archiveVersion = "1";
-   objectVersion = "46";
-   objects = {
-      "OBJ_1" = {
-         isa = "PBXProject";
-         attributes = {
-            LastUpgradeCheck = "9999";
-         };
-         buildConfigurationList = "OBJ_2";
-         compatibilityVersion = "Xcode 3.2";
-         developmentRegion = "English";
-         hasScannedForEncodings = "0";
-         knownRegions = (
-            "en"
-         );
-         mainGroup = "OBJ_5";
-         productRefGroup = "OBJ_70";
-         projectDirPath = ".";
-         targets = (
-            "Socket::Socket",
-            "Socket::SwiftPMPackageDescription",
-            "WeatherStationService::WeatherRESTClient",
-            "WeatherStationService::WeatherRESTClientTests",
-            "WeatherStationService::WeatherStationService",
-            "WeatherStationService::SwiftPMPackageDescription",
-            "WeatherStationService::WeatherStationServicePackageTests::ProductTarget",
-            "WeatherStationService::WeatherUDPProtocol",
-            "WeatherStationService::WeatherUDPProtocolTests"
-         );
-      };
-      "OBJ_10" = {
-         isa = "PBXFileReference";
-         path = "APIError.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_100" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_12";
-      };
-      "OBJ_101" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_13";
-      };
-      "OBJ_102" = {
-         isa = "PBXFrameworksBuildPhase";
-         files = (
-         );
-      };
-      "OBJ_104" = {
-         isa = "XCConfigurationList";
-         buildConfigurations = (
-            "OBJ_105",
-            "OBJ_106"
-         );
-         defaultConfigurationIsVisible = "0";
-         defaultConfigurationName = "Release";
-      };
-      "OBJ_105" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            CLANG_ENABLE_MODULES = "YES";
-            EMBEDDED_CONTENT_CONTAINS_SWIFT = "YES";
-            FRAMEWORK_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
-            );
-            HEADER_SEARCH_PATHS = (
-               "$(inherited)"
-            );
-            INFOPLIST_FILE = "WeatherStationService.xcodeproj/WeatherRESTClientTests_Info.plist";
-            LD_RUNPATH_SEARCH_PATHS = (
-               "$(inherited)",
-               "@loader_path/../Frameworks",
-               "@loader_path/Frameworks"
-            );
-            OTHER_CFLAGS = (
-               "$(inherited)"
-            );
-            OTHER_LDFLAGS = (
-               "$(inherited)"
-            );
-            OTHER_SWIFT_FLAGS = (
-               "$(inherited)"
-            );
-            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-               "$(inherited)"
-            );
-            SWIFT_VERSION = "4.2";
-            TARGET_NAME = "WeatherRESTClientTests";
-         };
-         name = "Debug";
-      };
-      "OBJ_106" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            CLANG_ENABLE_MODULES = "YES";
-            EMBEDDED_CONTENT_CONTAINS_SWIFT = "YES";
-            FRAMEWORK_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
-            );
-            HEADER_SEARCH_PATHS = (
-               "$(inherited)"
-            );
-            INFOPLIST_FILE = "WeatherStationService.xcodeproj/WeatherRESTClientTests_Info.plist";
-            LD_RUNPATH_SEARCH_PATHS = (
-               "$(inherited)",
-               "@loader_path/../Frameworks",
-               "@loader_path/Frameworks"
-            );
-            OTHER_CFLAGS = (
-               "$(inherited)"
-            );
-            OTHER_LDFLAGS = (
-               "$(inherited)"
-            );
-            OTHER_SWIFT_FLAGS = (
-               "$(inherited)"
-            );
-            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-               "$(inherited)"
-            );
-            SWIFT_VERSION = "4.2";
-            TARGET_NAME = "WeatherRESTClientTests";
-         };
-         name = "Release";
-      };
-      "OBJ_107" = {
-         isa = "PBXSourcesBuildPhase";
-         files = (
-            "OBJ_108"
-         );
-      };
-      "OBJ_108" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_49";
-      };
-      "OBJ_109" = {
-         isa = "PBXFrameworksBuildPhase";
-         files = (
-            "OBJ_110"
-         );
-      };
-      "OBJ_11" = {
-         isa = "PBXFileReference";
-         path = "Result.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_110" = {
-         isa = "PBXBuildFile";
-         fileRef = "WeatherStationService::WeatherRESTClient::Product";
-      };
-      "OBJ_111" = {
-         isa = "PBXTargetDependency";
-         target = "WeatherStationService::WeatherRESTClient";
-      };
-      "OBJ_113" = {
-         isa = "XCConfigurationList";
-         buildConfigurations = (
-            "OBJ_114",
-            "OBJ_115"
-         );
-         defaultConfigurationIsVisible = "0";
-         defaultConfigurationName = "Release";
-      };
-      "OBJ_114" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            FRAMEWORK_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
-            );
-            HEADER_SEARCH_PATHS = (
-               "$(inherited)"
-            );
-            INFOPLIST_FILE = "WeatherStationService.xcodeproj/WeatherStationService_Info.plist";
-            LD_RUNPATH_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
-               "@executable_path"
-            );
-            OTHER_CFLAGS = (
-               "$(inherited)"
-            );
-            OTHER_LDFLAGS = (
-               "$(inherited)"
-            );
-            OTHER_SWIFT_FLAGS = (
-               "$(inherited)"
-            );
-            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-               "$(inherited)"
-            );
-            SWIFT_FORCE_DYNAMIC_LINK_STDLIB = "YES";
-            SWIFT_FORCE_STATIC_LINK_STDLIB = "NO";
-            SWIFT_VERSION = "4.2";
-            TARGET_NAME = "WeatherStationService";
-         };
-         name = "Debug";
-      };
-      "OBJ_115" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            FRAMEWORK_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
-            );
-            HEADER_SEARCH_PATHS = (
-               "$(inherited)"
-            );
-            INFOPLIST_FILE = "WeatherStationService.xcodeproj/WeatherStationService_Info.plist";
-            LD_RUNPATH_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
-               "@executable_path"
-            );
-            OTHER_CFLAGS = (
-               "$(inherited)"
-            );
-            OTHER_LDFLAGS = (
-               "$(inherited)"
-            );
-            OTHER_SWIFT_FLAGS = (
-               "$(inherited)"
-            );
-            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-               "$(inherited)"
-            );
-            SWIFT_FORCE_DYNAMIC_LINK_STDLIB = "YES";
-            SWIFT_FORCE_STATIC_LINK_STDLIB = "NO";
-            SWIFT_VERSION = "4.2";
-            TARGET_NAME = "WeatherStationService";
-         };
-         name = "Release";
-      };
-      "OBJ_116" = {
-         isa = "PBXSourcesBuildPhase";
-         files = (
-            "OBJ_117"
-         );
-      };
-      "OBJ_117" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_46";
-      };
-      "OBJ_118" = {
-         isa = "PBXFrameworksBuildPhase";
-         files = (
-            "OBJ_119",
-            "OBJ_120",
-            "OBJ_121"
-         );
-      };
-      "OBJ_119" = {
-         isa = "PBXBuildFile";
-         fileRef = "Socket::Socket::Product";
-      };
-      "OBJ_12" = {
-         isa = "PBXFileReference";
-         path = "WeatherClient.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_120" = {
-         isa = "PBXBuildFile";
-         fileRef = "WeatherStationService::WeatherRESTClient::Product";
-      };
-      "OBJ_121" = {
-         isa = "PBXBuildFile";
-         fileRef = "WeatherStationService::WeatherUDPProtocol::Product";
-      };
-      "OBJ_122" = {
-         isa = "PBXTargetDependency";
-         target = "Socket::Socket";
-      };
-      "OBJ_123" = {
-         isa = "PBXTargetDependency";
-         target = "WeatherStationService::WeatherRESTClient";
-      };
-      "OBJ_124" = {
-         isa = "PBXTargetDependency";
-         target = "WeatherStationService::WeatherUDPProtocol";
-      };
-      "OBJ_127" = {
-         isa = "XCConfigurationList";
-         buildConfigurations = (
-            "OBJ_128",
-            "OBJ_129"
-         );
-         defaultConfigurationIsVisible = "0";
-         defaultConfigurationName = "Release";
-      };
-      "OBJ_128" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            LD = "/usr/bin/true";
-            OTHER_SWIFT_FLAGS = (
-               "-swift-version",
-               "4.2",
-               "-I",
-               "$(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2",
-               "-target",
-               "x86_64-apple-macosx10.10",
-               "-sdk",
-               "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk"
-            );
-            SWIFT_VERSION = "4.2";
-         };
-         name = "Debug";
-      };
-      "OBJ_129" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            LD = "/usr/bin/true";
-            OTHER_SWIFT_FLAGS = (
-               "-swift-version",
-               "4.2",
-               "-I",
-               "$(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2",
-               "-target",
-               "x86_64-apple-macosx10.10",
-               "-sdk",
-               "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk"
-            );
-            SWIFT_VERSION = "4.2";
-         };
-         name = "Release";
-      };
-      "OBJ_13" = {
-         isa = "PBXFileReference";
-         path = "WeatherForecast.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_130" = {
-         isa = "PBXSourcesBuildPhase";
-         files = (
-            "OBJ_131"
-         );
-      };
-      "OBJ_131" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_6";
-      };
-      "OBJ_133" = {
-         isa = "XCConfigurationList";
-         buildConfigurations = (
-            "OBJ_134",
-            "OBJ_135"
-         );
-         defaultConfigurationIsVisible = "0";
-         defaultConfigurationName = "Release";
-      };
-      "OBJ_134" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-         };
-         name = "Debug";
-      };
-      "OBJ_135" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-         };
-         name = "Release";
-      };
-      "OBJ_136" = {
-         isa = "PBXTargetDependency";
-         target = "WeatherStationService::WeatherUDPProtocolTests";
-      };
-      "OBJ_138" = {
-         isa = "PBXTargetDependency";
-         target = "WeatherStationService::WeatherRESTClientTests";
-      };
-      "OBJ_139" = {
-         isa = "XCConfigurationList";
-         buildConfigurations = (
-            "OBJ_140",
-            "OBJ_141"
-         );
-         defaultConfigurationIsVisible = "0";
-         defaultConfigurationName = "Release";
-      };
-      "OBJ_14" = {
-         isa = "PBXGroup";
-         children = (
-            "OBJ_15",
-            "OBJ_16",
-            "OBJ_17",
-            "OBJ_26",
-            "OBJ_27",
-            "OBJ_28",
-            "OBJ_29",
-            "OBJ_44"
-         );
-         name = "WeatherUDPProtocol";
-         path = "Sources/WeatherUDPProtocol";
-         sourceTree = "SOURCE_ROOT";
-      };
-      "OBJ_140" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            ENABLE_TESTABILITY = "YES";
-            FRAMEWORK_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
-            );
-            HEADER_SEARCH_PATHS = (
-               "$(inherited)"
-            );
-            INFOPLIST_FILE = "WeatherStationService.xcodeproj/WeatherUDPProtocol_Info.plist";
-            LD_RUNPATH_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx"
-            );
-            OTHER_CFLAGS = (
-               "$(inherited)"
-            );
-            OTHER_LDFLAGS = (
-               "$(inherited)"
-            );
-            OTHER_SWIFT_FLAGS = (
-               "$(inherited)"
-            );
-            PRODUCT_BUNDLE_IDENTIFIER = "WeatherUDPProtocol";
-            PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-            PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-            SKIP_INSTALL = "YES";
-            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-               "$(inherited)"
-            );
-            SWIFT_VERSION = "4.2";
-            TARGET_NAME = "WeatherUDPProtocol";
-         };
-         name = "Debug";
-      };
-      "OBJ_141" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            ENABLE_TESTABILITY = "YES";
-            FRAMEWORK_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
-            );
-            HEADER_SEARCH_PATHS = (
-               "$(inherited)"
-            );
-            INFOPLIST_FILE = "WeatherStationService.xcodeproj/WeatherUDPProtocol_Info.plist";
-            LD_RUNPATH_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx"
-            );
-            OTHER_CFLAGS = (
-               "$(inherited)"
-            );
-            OTHER_LDFLAGS = (
-               "$(inherited)"
-            );
-            OTHER_SWIFT_FLAGS = (
-               "$(inherited)"
-            );
-            PRODUCT_BUNDLE_IDENTIFIER = "WeatherUDPProtocol";
-            PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-            PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-            SKIP_INSTALL = "YES";
-            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-               "$(inherited)"
-            );
-            SWIFT_VERSION = "4.2";
-            TARGET_NAME = "WeatherUDPProtocol";
-         };
-         name = "Release";
-      };
-      "OBJ_142" = {
-         isa = "PBXSourcesBuildPhase";
-         files = (
-            "OBJ_143",
-            "OBJ_144",
-            "OBJ_145",
-            "OBJ_146",
-            "OBJ_147",
-            "OBJ_148",
-            "OBJ_149",
-            "OBJ_150",
-            "OBJ_151",
-            "OBJ_152",
-            "OBJ_153",
-            "OBJ_154",
-            "OBJ_155",
-            "OBJ_156",
-            "OBJ_157",
-            "OBJ_158",
-            "OBJ_159",
-            "OBJ_160",
-            "OBJ_161",
-            "OBJ_162",
-            "OBJ_163",
-            "OBJ_164",
-            "OBJ_165",
-            "OBJ_166",
-            "OBJ_167",
-            "OBJ_168"
-         );
-      };
-      "OBJ_143" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_15";
-      };
-      "OBJ_144" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_16";
-      };
-      "OBJ_145" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_18";
-      };
-      "OBJ_146" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_19";
-      };
-      "OBJ_147" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_20";
-      };
-      "OBJ_148" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_21";
-      };
-      "OBJ_149" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_23";
-      };
-      "OBJ_15" = {
-         isa = "PBXFileReference";
-         path = "Array+Hex.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_150" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_24";
-      };
-      "OBJ_151" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_25";
-      };
-      "OBJ_152" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_26";
-      };
-      "OBJ_153" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_27";
-      };
-      "OBJ_154" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_28";
-      };
-      "OBJ_155" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_30";
-      };
-      "OBJ_156" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_32";
-      };
-      "OBJ_157" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_33";
-      };
-      "OBJ_158" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_34";
-      };
-      "OBJ_159" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_35";
-      };
-      "OBJ_16" = {
-         isa = "PBXFileReference";
-         path = "Array+SumChecksum.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_160" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_36";
-      };
-      "OBJ_161" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_37";
-      };
-      "OBJ_162" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_38";
-      };
-      "OBJ_163" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_39";
-      };
-      "OBJ_164" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_40";
-      };
-      "OBJ_165" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_41";
-      };
-      "OBJ_166" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_42";
-      };
-      "OBJ_167" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_43";
-      };
-      "OBJ_168" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_44";
-      };
-      "OBJ_169" = {
-         isa = "PBXFrameworksBuildPhase";
-         files = (
-         );
-      };
-      "OBJ_17" = {
-         isa = "PBXGroup";
-         children = (
-            "OBJ_18",
-            "OBJ_19",
-            "OBJ_20",
-            "OBJ_21",
-            "OBJ_22"
-         );
-         name = "BinaryCodable";
-         path = "BinaryCodable";
-         sourceTree = "<group>";
-      };
-      "OBJ_170" = {
-         isa = "XCConfigurationList";
-         buildConfigurations = (
-            "OBJ_171",
-            "OBJ_172"
-         );
-         defaultConfigurationIsVisible = "0";
-         defaultConfigurationName = "Release";
-      };
-      "OBJ_171" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            CLANG_ENABLE_MODULES = "YES";
-            EMBEDDED_CONTENT_CONTAINS_SWIFT = "YES";
-            FRAMEWORK_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
-            );
-            HEADER_SEARCH_PATHS = (
-               "$(inherited)"
-            );
-            INFOPLIST_FILE = "WeatherStationService.xcodeproj/WeatherUDPProtocolTests_Info.plist";
-            LD_RUNPATH_SEARCH_PATHS = (
-               "$(inherited)",
-               "@loader_path/../Frameworks",
-               "@loader_path/Frameworks"
-            );
-            OTHER_CFLAGS = (
-               "$(inherited)"
-            );
-            OTHER_LDFLAGS = (
-               "$(inherited)"
-            );
-            OTHER_SWIFT_FLAGS = (
-               "$(inherited)"
-            );
-            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-               "$(inherited)"
-            );
-            SWIFT_VERSION = "4.2";
-            TARGET_NAME = "WeatherUDPProtocolTests";
-         };
-         name = "Debug";
-      };
-      "OBJ_172" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            CLANG_ENABLE_MODULES = "YES";
-            EMBEDDED_CONTENT_CONTAINS_SWIFT = "YES";
-            FRAMEWORK_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
-            );
-            HEADER_SEARCH_PATHS = (
-               "$(inherited)"
-            );
-            INFOPLIST_FILE = "WeatherStationService.xcodeproj/WeatherUDPProtocolTests_Info.plist";
-            LD_RUNPATH_SEARCH_PATHS = (
-               "$(inherited)",
-               "@loader_path/../Frameworks",
-               "@loader_path/Frameworks"
-            );
-            OTHER_CFLAGS = (
-               "$(inherited)"
-            );
-            OTHER_LDFLAGS = (
-               "$(inherited)"
-            );
-            OTHER_SWIFT_FLAGS = (
-               "$(inherited)"
-            );
-            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-               "$(inherited)"
-            );
-            SWIFT_VERSION = "4.2";
-            TARGET_NAME = "WeatherUDPProtocolTests";
-         };
-         name = "Release";
-      };
-      "OBJ_173" = {
-         isa = "PBXSourcesBuildPhase";
-         files = (
-            "OBJ_174",
-            "OBJ_175",
-            "OBJ_176",
-            "OBJ_177",
-            "OBJ_178",
-            "OBJ_179",
-            "OBJ_180",
-            "OBJ_181",
-            "OBJ_182",
-            "OBJ_183",
-            "OBJ_184",
-            "OBJ_185"
-         );
-      };
-      "OBJ_174" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_51";
-      };
-      "OBJ_175" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_52";
-      };
-      "OBJ_176" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_53";
-      };
-      "OBJ_177" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_54";
-      };
-      "OBJ_178" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_55";
-      };
-      "OBJ_179" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_56";
-      };
-      "OBJ_18" = {
-         isa = "PBXFileReference";
-         path = "BinaryCodable.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_180" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_57";
-      };
-      "OBJ_181" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_58";
-      };
-      "OBJ_182" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_59";
-      };
-      "OBJ_183" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_60";
-      };
-      "OBJ_184" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_61";
-      };
-      "OBJ_185" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_62";
-      };
-      "OBJ_186" = {
-         isa = "PBXFrameworksBuildPhase";
-         files = (
-            "OBJ_187"
-         );
-      };
-      "OBJ_187" = {
-         isa = "PBXBuildFile";
-         fileRef = "WeatherStationService::WeatherUDPProtocol::Product";
-      };
-      "OBJ_188" = {
-         isa = "PBXTargetDependency";
-         target = "WeatherStationService::WeatherUDPProtocol";
-      };
-      "OBJ_19" = {
-         isa = "PBXFileReference";
-         path = "BinaryCodableExtensions.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_2" = {
-         isa = "XCConfigurationList";
-         buildConfigurations = (
-            "OBJ_3",
-            "OBJ_4"
-         );
-         defaultConfigurationIsVisible = "0";
-         defaultConfigurationName = "Release";
-      };
-      "OBJ_20" = {
-         isa = "PBXFileReference";
-         path = "BinaryDecoder.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_21" = {
-         isa = "PBXFileReference";
-         path = "BinaryEncoder.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_22" = {
-         isa = "PBXGroup";
-         children = (
-            "OBJ_23",
-            "OBJ_24",
-            "OBJ_25"
-         );
-         name = "Custom Types";
-         path = "Custom Types";
-         sourceTree = "<group>";
-      };
-      "OBJ_23" = {
-         isa = "PBXFileReference";
-         path = "ArrayUInt8+BinaryEncodable.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_24" = {
-         isa = "PBXFileReference";
-         path = "Date+BinaryCodable.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_25" = {
-         isa = "PBXFileReference";
-         path = "PacketDataArray.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_26" = {
-         isa = "PBXFileReference";
-         path = "Data+Hex.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_27" = {
-         isa = "PBXFileReference";
-         path = "Float+Int16Round.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_28" = {
-         isa = "PBXFileReference";
-         path = "Float+Rounded.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_29" = {
-         isa = "PBXGroup";
-         children = (
-            "OBJ_30",
-            "OBJ_31",
-            "OBJ_39",
-            "OBJ_40",
-            "OBJ_41",
-            "OBJ_42",
-            "OBJ_43"
-         );
-         name = "Packets";
-         path = "Packets";
-         sourceTree = "<group>";
-      };
-      "OBJ_3" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            CLANG_ENABLE_OBJC_ARC = "YES";
-            COMBINE_HIDPI_IMAGES = "YES";
-            COPY_PHASE_STRIP = "NO";
-            DEBUG_INFORMATION_FORMAT = "dwarf";
-            DYLIB_INSTALL_NAME_BASE = "@rpath";
-            ENABLE_NS_ASSERTIONS = "YES";
-            GCC_OPTIMIZATION_LEVEL = "0";
-            GCC_PREPROCESSOR_DEFINITIONS = (
-               "DEBUG=1",
-               "$(inherited)"
-            );
-            MACOSX_DEPLOYMENT_TARGET = "10.10";
-            ONLY_ACTIVE_ARCH = "YES";
-            OTHER_SWIFT_FLAGS = (
-               "-DXcode"
-            );
-            PRODUCT_NAME = "$(TARGET_NAME)";
-            SDKROOT = "macosx";
-            SUPPORTED_PLATFORMS = (
-               "macosx",
-               "iphoneos",
-               "iphonesimulator",
-               "appletvos",
-               "appletvsimulator",
-               "watchos",
-               "watchsimulator"
-            );
-            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-               "SWIFT_PACKAGE",
-               "DEBUG"
-            );
-            SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-            USE_HEADERMAP = "NO";
-         };
-         name = "Debug";
-      };
-      "OBJ_30" = {
-         isa = "PBXFileReference";
-         path = "CurrentWeatherPacket.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_31" = {
-         isa = "PBXGroup";
-         children = (
-            "OBJ_32",
-            "OBJ_33",
-            "OBJ_34",
-            "OBJ_35",
-            "OBJ_36",
-            "OBJ_37",
-            "OBJ_38"
-         );
-         name = "NIbbles";
-         path = "NIbbles";
-         sourceTree = "<group>";
-      };
-      "OBJ_32" = {
-         isa = "PBXFileReference";
-         path = "Checksum.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_33" = {
-         isa = "PBXFileReference";
-         path = "Commands.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_34" = {
-         isa = "PBXFileReference";
-         path = "Countries.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_35" = {
-         isa = "PBXFileReference";
-         path = "HeaderFooter.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_36" = {
-         isa = "PBXFileReference";
-         path = "MacAddress.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_37" = {
-         isa = "PBXFileReference";
-         path = "StaticNibble.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_38" = {
-         isa = "PBXFileReference";
-         path = "Temperature.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_39" = {
-         isa = "PBXFileReference";
-         path = "NextDaysForecastPacket.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_4" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            CLANG_ENABLE_OBJC_ARC = "YES";
-            COMBINE_HIDPI_IMAGES = "YES";
-            COPY_PHASE_STRIP = "YES";
-            DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-            DYLIB_INSTALL_NAME_BASE = "@rpath";
-            GCC_OPTIMIZATION_LEVEL = "s";
-            MACOSX_DEPLOYMENT_TARGET = "10.10";
-            OTHER_SWIFT_FLAGS = (
-               "-DXcode"
-            );
-            PRODUCT_NAME = "$(TARGET_NAME)";
-            SDKROOT = "macosx";
-            SUPPORTED_PLATFORMS = (
-               "macosx",
-               "iphoneos",
-               "iphonesimulator",
-               "appletvos",
-               "appletvsimulator",
-               "watchos",
-               "watchsimulator"
-            );
-            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-               "SWIFT_PACKAGE"
-            );
-            SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-            USE_HEADERMAP = "NO";
-         };
-         name = "Release";
-      };
-      "OBJ_40" = {
-         isa = "PBXFileReference";
-         path = "Requests.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_41" = {
-         isa = "PBXFileReference";
-         path = "Responses.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_42" = {
-         isa = "PBXFileReference";
-         path = "UDPPacket.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_43" = {
-         isa = "PBXFileReference";
-         path = "WeatherForecastBin.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_44" = {
-         isa = "PBXFileReference";
-         path = "UInt16+ByteArray.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_45" = {
-         isa = "PBXGroup";
-         children = (
-            "OBJ_46"
-         );
-         name = "WeatherStationService";
-         path = "Sources/WeatherStationService";
-         sourceTree = "SOURCE_ROOT";
-      };
-      "OBJ_46" = {
-         isa = "PBXFileReference";
-         path = "main.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_47" = {
-         isa = "PBXGroup";
-         children = (
-            "OBJ_48",
-            "OBJ_50"
-         );
-         name = "Tests";
-         path = "";
-         sourceTree = "SOURCE_ROOT";
-      };
-      "OBJ_48" = {
-         isa = "PBXGroup";
-         children = (
-            "OBJ_49"
-         );
-         name = "WeatherRESTClientTests";
-         path = "Tests/WeatherRESTClientTests";
-         sourceTree = "SOURCE_ROOT";
-      };
-      "OBJ_49" = {
-         isa = "PBXFileReference";
-         path = "APIRequestBuilderTests.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_5" = {
-         isa = "PBXGroup";
-         children = (
-            "OBJ_6",
-            "OBJ_7",
-            "OBJ_47",
-            "OBJ_63",
-            "OBJ_70"
-         );
-         path = "";
-         sourceTree = "<group>";
-      };
-      "OBJ_50" = {
-         isa = "PBXGroup";
-         children = (
-            "OBJ_51",
-            "OBJ_52",
-            "OBJ_53",
-            "OBJ_54",
-            "OBJ_55",
-            "OBJ_56",
-            "OBJ_57",
-            "OBJ_58",
-            "OBJ_59",
-            "OBJ_60",
-            "OBJ_61",
-            "OBJ_62"
-         );
-         name = "WeatherUDPProtocolTests";
-         path = "Tests/WeatherUDPProtocolTests";
-         sourceTree = "SOURCE_ROOT";
-      };
-      "OBJ_51" = {
-         isa = "PBXFileReference";
-         path = "BinaryCooderTests.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_52" = {
-         isa = "PBXFileReference";
-         path = "ChecksumMathTests.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_53" = {
-         isa = "PBXFileReference";
-         path = "CurrentWeatherPacketTests.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_54" = {
-         isa = "PBXFileReference";
-         path = "DataHexConversionTests.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_55" = {
-         isa = "PBXFileReference";
-         path = "FlatRoundingTests.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_56" = {
-         isa = "PBXFileReference";
-         path = "FloatRoundedTests.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_57" = {
-         isa = "PBXFileReference";
-         path = "HeaderFooterPacketTests.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_58" = {
-         isa = "PBXFileReference";
-         path = "NextDaysForecastPacketTests.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_59" = {
-         isa = "PBXFileReference";
-         path = "TemperatureTests.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_6" = {
-         isa = "PBXFileReference";
-         explicitFileType = "sourcecode.swift";
-         path = "Package.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_60" = {
-         isa = "PBXFileReference";
-         path = "TestUtils.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_61" = {
-         isa = "PBXFileReference";
-         path = "UDPPacketTests.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_62" = {
-         isa = "PBXFileReference";
-         path = "WeatherForecastTests.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_63" = {
-         isa = "PBXGroup";
-         children = (
-            "OBJ_64"
-         );
-         name = "Dependencies";
-         path = "";
-         sourceTree = "<group>";
-      };
-      "OBJ_64" = {
-         isa = "PBXGroup";
-         children = (
-            "OBJ_65",
-            "OBJ_69"
-         );
-         name = "Socket 1.0.44";
-         path = "";
-         sourceTree = "SOURCE_ROOT";
-      };
-      "OBJ_65" = {
-         isa = "PBXGroup";
-         children = (
-            "OBJ_66",
-            "OBJ_67",
-            "OBJ_68"
-         );
-         name = "Socket";
-         path = ".build/checkouts/BlueSocket.git--2553392031450431476/Sources/Socket";
-         sourceTree = "SOURCE_ROOT";
-      };
-      "OBJ_66" = {
-         isa = "PBXFileReference";
-         path = "Socket.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_67" = {
-         isa = "PBXFileReference";
-         path = "SocketProtocols.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_68" = {
-         isa = "PBXFileReference";
-         path = "SocketUtils.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_69" = {
-         isa = "PBXFileReference";
-         explicitFileType = "sourcecode.swift";
-         name = "Package.swift";
-         path = "/Users/fabiogallonetto/Development/WeatherStationService/.build/checkouts/BlueSocket.git--2553392031450431476/Package.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_7" = {
-         isa = "PBXGroup";
-         children = (
-            "OBJ_8",
-            "OBJ_14",
-            "OBJ_45"
-         );
-         name = "Sources";
-         path = "";
-         sourceTree = "SOURCE_ROOT";
-      };
-      "OBJ_70" = {
-         isa = "PBXGroup";
-         children = (
-            "WeatherStationService::WeatherUDPProtocol::Product",
-            "Socket::Socket::Product",
-            "WeatherStationService::WeatherUDPProtocolTests::Product",
-            "WeatherStationService::WeatherRESTClient::Product",
-            "WeatherStationService::WeatherStationService::Product",
-            "WeatherStationService::WeatherRESTClientTests::Product"
-         );
-         name = "Products";
-         path = "";
-         sourceTree = "BUILT_PRODUCTS_DIR";
-      };
-      "OBJ_78" = {
-         isa = "XCConfigurationList";
-         buildConfigurations = (
-            "OBJ_79",
-            "OBJ_80"
-         );
-         defaultConfigurationIsVisible = "0";
-         defaultConfigurationName = "Release";
-      };
-      "OBJ_79" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            ENABLE_TESTABILITY = "YES";
-            FRAMEWORK_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
-            );
-            HEADER_SEARCH_PATHS = (
-               "$(inherited)"
-            );
-            INFOPLIST_FILE = "WeatherStationService.xcodeproj/Socket_Info.plist";
-            LD_RUNPATH_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx"
-            );
-            OTHER_CFLAGS = (
-               "$(inherited)"
-            );
-            OTHER_LDFLAGS = (
-               "$(inherited)"
-            );
-            OTHER_SWIFT_FLAGS = (
-               "$(inherited)"
-            );
-            PRODUCT_BUNDLE_IDENTIFIER = "Socket";
-            PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-            PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-            SKIP_INSTALL = "YES";
-            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-               "$(inherited)"
-            );
-            SWIFT_VERSION = "4.0";
-            TARGET_NAME = "Socket";
-         };
-         name = "Debug";
-      };
-      "OBJ_8" = {
-         isa = "PBXGroup";
-         children = (
-            "OBJ_9",
-            "OBJ_10",
-            "OBJ_11",
-            "OBJ_12",
-            "OBJ_13"
-         );
-         name = "WeatherRESTClient";
-         path = "Sources/WeatherRESTClient";
-         sourceTree = "SOURCE_ROOT";
-      };
-      "OBJ_80" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            ENABLE_TESTABILITY = "YES";
-            FRAMEWORK_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
-            );
-            HEADER_SEARCH_PATHS = (
-               "$(inherited)"
-            );
-            INFOPLIST_FILE = "WeatherStationService.xcodeproj/Socket_Info.plist";
-            LD_RUNPATH_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx"
-            );
-            OTHER_CFLAGS = (
-               "$(inherited)"
-            );
-            OTHER_LDFLAGS = (
-               "$(inherited)"
-            );
-            OTHER_SWIFT_FLAGS = (
-               "$(inherited)"
-            );
-            PRODUCT_BUNDLE_IDENTIFIER = "Socket";
-            PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-            PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-            SKIP_INSTALL = "YES";
-            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-               "$(inherited)"
-            );
-            SWIFT_VERSION = "4.0";
-            TARGET_NAME = "Socket";
-         };
-         name = "Release";
-      };
-      "OBJ_81" = {
-         isa = "PBXSourcesBuildPhase";
-         files = (
-            "OBJ_82",
-            "OBJ_83",
-            "OBJ_84"
-         );
-      };
-      "OBJ_82" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_66";
-      };
-      "OBJ_83" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_67";
-      };
-      "OBJ_84" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_68";
-      };
-      "OBJ_85" = {
-         isa = "PBXFrameworksBuildPhase";
-         files = (
-         );
-      };
-      "OBJ_87" = {
-         isa = "XCConfigurationList";
-         buildConfigurations = (
-            "OBJ_88",
-            "OBJ_89"
-         );
-         defaultConfigurationIsVisible = "0";
-         defaultConfigurationName = "Release";
-      };
-      "OBJ_88" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            LD = "/usr/bin/true";
-            OTHER_SWIFT_FLAGS = (
-               "-swift-version",
-               "4",
-               "-I",
-               "$(TOOLCHAIN_DIR)/usr/lib/swift/pm/4",
-               "-target",
-               "x86_64-apple-macosx10.10",
-               "-sdk",
-               "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk"
-            );
-            SWIFT_VERSION = "4.0";
-         };
-         name = "Debug";
-      };
-      "OBJ_89" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            LD = "/usr/bin/true";
-            OTHER_SWIFT_FLAGS = (
-               "-swift-version",
-               "4",
-               "-I",
-               "$(TOOLCHAIN_DIR)/usr/lib/swift/pm/4",
-               "-target",
-               "x86_64-apple-macosx10.10",
-               "-sdk",
-               "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk"
-            );
-            SWIFT_VERSION = "4.0";
-         };
-         name = "Release";
-      };
-      "OBJ_9" = {
-         isa = "PBXFileReference";
-         path = "APIClient.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_90" = {
-         isa = "PBXSourcesBuildPhase";
-         files = (
-            "OBJ_91"
-         );
-      };
-      "OBJ_91" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_69";
-      };
-      "OBJ_93" = {
-         isa = "XCConfigurationList";
-         buildConfigurations = (
-            "OBJ_94",
-            "OBJ_95"
-         );
-         defaultConfigurationIsVisible = "0";
-         defaultConfigurationName = "Release";
-      };
-      "OBJ_94" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            ENABLE_TESTABILITY = "YES";
-            FRAMEWORK_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
-            );
-            HEADER_SEARCH_PATHS = (
-               "$(inherited)"
-            );
-            INFOPLIST_FILE = "WeatherStationService.xcodeproj/WeatherRESTClient_Info.plist";
-            LD_RUNPATH_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx"
-            );
-            OTHER_CFLAGS = (
-               "$(inherited)"
-            );
-            OTHER_LDFLAGS = (
-               "$(inherited)"
-            );
-            OTHER_SWIFT_FLAGS = (
-               "$(inherited)"
-            );
-            PRODUCT_BUNDLE_IDENTIFIER = "WeatherRESTClient";
-            PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-            PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-            SKIP_INSTALL = "YES";
-            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-               "$(inherited)"
-            );
-            SWIFT_VERSION = "4.2";
-            TARGET_NAME = "WeatherRESTClient";
-         };
-         name = "Debug";
-      };
-      "OBJ_95" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            ENABLE_TESTABILITY = "YES";
-            FRAMEWORK_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
-            );
-            HEADER_SEARCH_PATHS = (
-               "$(inherited)"
-            );
-            INFOPLIST_FILE = "WeatherStationService.xcodeproj/WeatherRESTClient_Info.plist";
-            LD_RUNPATH_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx"
-            );
-            OTHER_CFLAGS = (
-               "$(inherited)"
-            );
-            OTHER_LDFLAGS = (
-               "$(inherited)"
-            );
-            OTHER_SWIFT_FLAGS = (
-               "$(inherited)"
-            );
-            PRODUCT_BUNDLE_IDENTIFIER = "WeatherRESTClient";
-            PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-            PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-            SKIP_INSTALL = "YES";
-            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-               "$(inherited)"
-            );
-            SWIFT_VERSION = "4.2";
-            TARGET_NAME = "WeatherRESTClient";
-         };
-         name = "Release";
-      };
-      "OBJ_96" = {
-         isa = "PBXSourcesBuildPhase";
-         files = (
-            "OBJ_97",
-            "OBJ_98",
-            "OBJ_99",
-            "OBJ_100",
-            "OBJ_101"
-         );
-      };
-      "OBJ_97" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_9";
-      };
-      "OBJ_98" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_10";
-      };
-      "OBJ_99" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_11";
-      };
-      "Socket::Socket" = {
-         isa = "PBXNativeTarget";
-         buildConfigurationList = "OBJ_78";
-         buildPhases = (
-            "OBJ_81",
-            "OBJ_85"
-         );
-         dependencies = (
-         );
-         name = "Socket";
-         productName = "Socket";
-         productReference = "Socket::Socket::Product";
-         productType = "com.apple.product-type.framework";
-      };
-      "Socket::Socket::Product" = {
-         isa = "PBXFileReference";
-         path = "Socket.framework";
-         sourceTree = "BUILT_PRODUCTS_DIR";
-      };
-      "Socket::SwiftPMPackageDescription" = {
-         isa = "PBXNativeTarget";
-         buildConfigurationList = "OBJ_87";
-         buildPhases = (
-            "OBJ_90"
-         );
-         dependencies = (
-         );
-         name = "SocketPackageDescription";
-         productName = "SocketPackageDescription";
-         productType = "com.apple.product-type.framework";
-      };
-      "WeatherStationService::SwiftPMPackageDescription" = {
-         isa = "PBXNativeTarget";
-         buildConfigurationList = "OBJ_127";
-         buildPhases = (
-            "OBJ_130"
-         );
-         dependencies = (
-         );
-         name = "WeatherStationServicePackageDescription";
-         productName = "WeatherStationServicePackageDescription";
-         productType = "com.apple.product-type.framework";
-      };
-      "WeatherStationService::WeatherRESTClient" = {
-         isa = "PBXNativeTarget";
-         buildConfigurationList = "OBJ_93";
-         buildPhases = (
-            "OBJ_96",
-            "OBJ_102"
-         );
-         dependencies = (
-         );
-         name = "WeatherRESTClient";
-         productName = "WeatherRESTClient";
-         productReference = "WeatherStationService::WeatherRESTClient::Product";
-         productType = "com.apple.product-type.framework";
-      };
-      "WeatherStationService::WeatherRESTClient::Product" = {
-         isa = "PBXFileReference";
-         path = "WeatherRESTClient.framework";
-         sourceTree = "BUILT_PRODUCTS_DIR";
-      };
-      "WeatherStationService::WeatherRESTClientTests" = {
-         isa = "PBXNativeTarget";
-         buildConfigurationList = "OBJ_104";
-         buildPhases = (
-            "OBJ_107",
-            "OBJ_109"
-         );
-         dependencies = (
-            "OBJ_111"
-         );
-         name = "WeatherRESTClientTests";
-         productName = "WeatherRESTClientTests";
-         productReference = "WeatherStationService::WeatherRESTClientTests::Product";
-         productType = "com.apple.product-type.bundle.unit-test";
-      };
-      "WeatherStationService::WeatherRESTClientTests::Product" = {
-         isa = "PBXFileReference";
-         path = "WeatherRESTClientTests.xctest";
-         sourceTree = "BUILT_PRODUCTS_DIR";
-      };
-      "WeatherStationService::WeatherStationService" = {
-         isa = "PBXNativeTarget";
-         buildConfigurationList = "OBJ_113";
-         buildPhases = (
-            "OBJ_116",
-            "OBJ_118"
-         );
-         dependencies = (
-            "OBJ_122",
-            "OBJ_123",
-            "OBJ_124"
-         );
-         name = "WeatherStationService";
-         productName = "WeatherStationService";
-         productReference = "WeatherStationService::WeatherStationService::Product";
-         productType = "com.apple.product-type.tool";
-      };
-      "WeatherStationService::WeatherStationService::Product" = {
-         isa = "PBXFileReference";
-         path = "WeatherStationService";
-         sourceTree = "BUILT_PRODUCTS_DIR";
-      };
-      "WeatherStationService::WeatherStationServicePackageTests::ProductTarget" = {
-         isa = "PBXAggregateTarget";
-         buildConfigurationList = "OBJ_133";
-         buildPhases = (
-         );
-         dependencies = (
-            "OBJ_136",
-            "OBJ_138"
-         );
-         name = "WeatherStationServicePackageTests";
-         productName = "WeatherStationServicePackageTests";
-      };
-      "WeatherStationService::WeatherUDPProtocol" = {
-         isa = "PBXNativeTarget";
-         buildConfigurationList = "OBJ_139";
-         buildPhases = (
-            "OBJ_142",
-            "OBJ_169"
-         );
-         dependencies = (
-         );
-         name = "WeatherUDPProtocol";
-         productName = "WeatherUDPProtocol";
-         productReference = "WeatherStationService::WeatherUDPProtocol::Product";
-         productType = "com.apple.product-type.framework";
-      };
-      "WeatherStationService::WeatherUDPProtocol::Product" = {
-         isa = "PBXFileReference";
-         path = "WeatherUDPProtocol.framework";
-         sourceTree = "BUILT_PRODUCTS_DIR";
-      };
-      "WeatherStationService::WeatherUDPProtocolTests" = {
-         isa = "PBXNativeTarget";
-         buildConfigurationList = "OBJ_170";
-         buildPhases = (
-            "OBJ_173",
-            "OBJ_186"
-         );
-         dependencies = (
-            "OBJ_188"
-         );
-         name = "WeatherUDPProtocolTests";
-         productName = "WeatherUDPProtocolTests";
-         productReference = "WeatherStationService::WeatherUDPProtocolTests::Product";
-         productType = "com.apple.product-type.bundle.unit-test";
-      };
-      "WeatherStationService::WeatherUDPProtocolTests::Product" = {
-         isa = "PBXFileReference";
-         path = "WeatherUDPProtocolTests.xctest";
-         sourceTree = "BUILT_PRODUCTS_DIR";
-      };
-   };
-   rootObject = "OBJ_1";
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		"WeatherStationService::WeatherStationServicePackageTests::ProductTarget" /* WeatherStationServicePackageTests */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = OBJ_133 /* Build configuration list for PBXAggregateTarget "WeatherStationServicePackageTests" */;
+			buildPhases = (
+			);
+			dependencies = (
+				OBJ_136 /* PBXTargetDependency */,
+				OBJ_138 /* PBXTargetDependency */,
+			);
+			name = WeatherStationServicePackageTests;
+			productName = WeatherStationServicePackageTests;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		D961CD0E220C66BA00E19CA5 /* WeatherUDPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961CD0C220C66B700E19CA5 /* WeatherUDPServer.swift */; };
+		D961CD10220C85DB00E19CA5 /* RequestProcessors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961CD0F220C85DB00E19CA5 /* RequestProcessors.swift */; };
+		D961CD12220C8F9E00E19CA5 /* UDPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961CD11220C8F9E00E19CA5 /* UDPClient.swift */; };
+		OBJ_100 /* WeatherClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* WeatherClient.swift */; };
+		OBJ_101 /* WeatherForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* WeatherForecast.swift */; };
+		OBJ_108 /* APIRequestBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_49 /* APIRequestBuilderTests.swift */; };
+		OBJ_110 /* WeatherRESTClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "WeatherStationService::WeatherRESTClient::Product" /* WeatherRESTClient.framework */; };
+		OBJ_117 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_46 /* main.swift */; };
+		OBJ_119 /* Socket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Socket::Socket::Product" /* Socket.framework */; };
+		OBJ_120 /* WeatherRESTClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "WeatherStationService::WeatherRESTClient::Product" /* WeatherRESTClient.framework */; };
+		OBJ_121 /* WeatherUDPProtocol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "WeatherStationService::WeatherUDPProtocol::Product" /* WeatherUDPProtocol.framework */; };
+		OBJ_131 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
+		OBJ_143 /* Array+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* Array+Hex.swift */; };
+		OBJ_144 /* Array+SumChecksum.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* Array+SumChecksum.swift */; };
+		OBJ_145 /* BinaryCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* BinaryCodable.swift */; };
+		OBJ_146 /* BinaryCodableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* BinaryCodableExtensions.swift */; };
+		OBJ_147 /* BinaryDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* BinaryDecoder.swift */; };
+		OBJ_148 /* BinaryEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* BinaryEncoder.swift */; };
+		OBJ_149 /* ArrayUInt8+BinaryEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* ArrayUInt8+BinaryEncodable.swift */; };
+		OBJ_150 /* Date+BinaryCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* Date+BinaryCodable.swift */; };
+		OBJ_151 /* PacketDataArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_25 /* PacketDataArray.swift */; };
+		OBJ_152 /* Data+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* Data+Hex.swift */; };
+		OBJ_153 /* Float+Int16Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* Float+Int16Round.swift */; };
+		OBJ_154 /* Float+Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* Float+Rounded.swift */; };
+		OBJ_155 /* CurrentWeatherPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* CurrentWeatherPacket.swift */; };
+		OBJ_156 /* Checksum.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* Checksum.swift */; };
+		OBJ_157 /* Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* Commands.swift */; };
+		OBJ_158 /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* Countries.swift */; };
+		OBJ_159 /* HeaderFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* HeaderFooter.swift */; };
+		OBJ_160 /* MacAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* MacAddress.swift */; };
+		OBJ_161 /* StaticNibble.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_37 /* StaticNibble.swift */; };
+		OBJ_162 /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_38 /* Temperature.swift */; };
+		OBJ_163 /* NextDaysForecastPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_39 /* NextDaysForecastPacket.swift */; };
+		OBJ_164 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_40 /* Requests.swift */; };
+		OBJ_165 /* Responses.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_41 /* Responses.swift */; };
+		OBJ_166 /* UDPPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_42 /* UDPPacket.swift */; };
+		OBJ_167 /* WeatherForecastBin.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_43 /* WeatherForecastBin.swift */; };
+		OBJ_168 /* UInt16+ByteArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_44 /* UInt16+ByteArray.swift */; };
+		OBJ_174 /* BinaryCooderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_51 /* BinaryCooderTests.swift */; };
+		OBJ_175 /* ChecksumMathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_52 /* ChecksumMathTests.swift */; };
+		OBJ_176 /* CurrentWeatherPacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_53 /* CurrentWeatherPacketTests.swift */; };
+		OBJ_177 /* DataHexConversionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_54 /* DataHexConversionTests.swift */; };
+		OBJ_178 /* FlatRoundingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_55 /* FlatRoundingTests.swift */; };
+		OBJ_179 /* FloatRoundedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_56 /* FloatRoundedTests.swift */; };
+		OBJ_180 /* HeaderFooterPacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_57 /* HeaderFooterPacketTests.swift */; };
+		OBJ_181 /* NextDaysForecastPacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_58 /* NextDaysForecastPacketTests.swift */; };
+		OBJ_182 /* TemperatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_59 /* TemperatureTests.swift */; };
+		OBJ_183 /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_60 /* TestUtils.swift */; };
+		OBJ_184 /* UDPPacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_61 /* UDPPacketTests.swift */; };
+		OBJ_185 /* WeatherForecastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_62 /* WeatherForecastTests.swift */; };
+		OBJ_187 /* WeatherUDPProtocol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "WeatherStationService::WeatherUDPProtocol::Product" /* WeatherUDPProtocol.framework */; };
+		OBJ_82 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_66 /* Socket.swift */; };
+		OBJ_83 /* SocketProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_67 /* SocketProtocols.swift */; };
+		OBJ_84 /* SocketUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_68 /* SocketUtils.swift */; };
+		OBJ_91 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_69 /* Package.swift */; };
+		OBJ_97 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* APIClient.swift */; };
+		OBJ_98 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* APIError.swift */; };
+		OBJ_99 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* Result.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D961CD05220C619500E19CA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Socket::Socket";
+			remoteInfo = Socket;
+		};
+		D961CD06220C619500E19CA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "WeatherStationService::WeatherRESTClient";
+			remoteInfo = WeatherRESTClient;
+		};
+		D961CD07220C619500E19CA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "WeatherStationService::WeatherUDPProtocol";
+			remoteInfo = WeatherUDPProtocol;
+		};
+		D961CD08220C619500E19CA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "WeatherStationService::WeatherRESTClient";
+			remoteInfo = WeatherRESTClient;
+		};
+		D961CD09220C619500E19CA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "WeatherStationService::WeatherUDPProtocol";
+			remoteInfo = WeatherUDPProtocol;
+		};
+		D961CD0A220C619800E19CA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "WeatherStationService::WeatherUDPProtocolTests";
+			remoteInfo = WeatherUDPProtocolTests;
+		};
+		D961CD0B220C619800E19CA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "WeatherStationService::WeatherRESTClientTests";
+			remoteInfo = WeatherRESTClientTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D961CD0C220C66B700E19CA5 /* WeatherUDPServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherUDPServer.swift; sourceTree = "<group>"; };
+		D961CD0F220C85DB00E19CA5 /* RequestProcessors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProcessors.swift; sourceTree = "<group>"; };
+		D961CD11220C8F9E00E19CA5 /* UDPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPClient.swift; sourceTree = "<group>"; };
+		OBJ_10 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		OBJ_11 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		OBJ_12 /* WeatherClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherClient.swift; sourceTree = "<group>"; };
+		OBJ_13 /* WeatherForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecast.swift; sourceTree = "<group>"; };
+		OBJ_15 /* Array+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Hex.swift"; sourceTree = "<group>"; };
+		OBJ_16 /* Array+SumChecksum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+SumChecksum.swift"; sourceTree = "<group>"; };
+		OBJ_18 /* BinaryCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryCodable.swift; sourceTree = "<group>"; };
+		OBJ_19 /* BinaryCodableExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryCodableExtensions.swift; sourceTree = "<group>"; };
+		OBJ_20 /* BinaryDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryDecoder.swift; sourceTree = "<group>"; };
+		OBJ_21 /* BinaryEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryEncoder.swift; sourceTree = "<group>"; };
+		OBJ_23 /* ArrayUInt8+BinaryEncodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArrayUInt8+BinaryEncodable.swift"; sourceTree = "<group>"; };
+		OBJ_24 /* Date+BinaryCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+BinaryCodable.swift"; sourceTree = "<group>"; };
+		OBJ_25 /* PacketDataArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketDataArray.swift; sourceTree = "<group>"; };
+		OBJ_26 /* Data+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Hex.swift"; sourceTree = "<group>"; };
+		OBJ_27 /* Float+Int16Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Int16Round.swift"; sourceTree = "<group>"; };
+		OBJ_28 /* Float+Rounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Rounded.swift"; sourceTree = "<group>"; };
+		OBJ_30 /* CurrentWeatherPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherPacket.swift; sourceTree = "<group>"; };
+		OBJ_32 /* Checksum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checksum.swift; sourceTree = "<group>"; };
+		OBJ_33 /* Commands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commands.swift; sourceTree = "<group>"; };
+		OBJ_34 /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
+		OBJ_35 /* HeaderFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderFooter.swift; sourceTree = "<group>"; };
+		OBJ_36 /* MacAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacAddress.swift; sourceTree = "<group>"; };
+		OBJ_37 /* StaticNibble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticNibble.swift; sourceTree = "<group>"; };
+		OBJ_38 /* Temperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
+		OBJ_39 /* NextDaysForecastPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextDaysForecastPacket.swift; sourceTree = "<group>"; };
+		OBJ_40 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
+		OBJ_41 /* Responses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Responses.swift; sourceTree = "<group>"; };
+		OBJ_42 /* UDPPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPPacket.swift; sourceTree = "<group>"; };
+		OBJ_43 /* WeatherForecastBin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecastBin.swift; sourceTree = "<group>"; };
+		OBJ_44 /* UInt16+ByteArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UInt16+ByteArray.swift"; sourceTree = "<group>"; };
+		OBJ_46 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		OBJ_49 /* APIRequestBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestBuilderTests.swift; sourceTree = "<group>"; };
+		OBJ_51 /* BinaryCooderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryCooderTests.swift; sourceTree = "<group>"; };
+		OBJ_52 /* ChecksumMathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecksumMathTests.swift; sourceTree = "<group>"; };
+		OBJ_53 /* CurrentWeatherPacketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherPacketTests.swift; sourceTree = "<group>"; };
+		OBJ_54 /* DataHexConversionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHexConversionTests.swift; sourceTree = "<group>"; };
+		OBJ_55 /* FlatRoundingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatRoundingTests.swift; sourceTree = "<group>"; };
+		OBJ_56 /* FloatRoundedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatRoundedTests.swift; sourceTree = "<group>"; };
+		OBJ_57 /* HeaderFooterPacketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderFooterPacketTests.swift; sourceTree = "<group>"; };
+		OBJ_58 /* NextDaysForecastPacketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextDaysForecastPacketTests.swift; sourceTree = "<group>"; };
+		OBJ_59 /* TemperatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureTests.swift; sourceTree = "<group>"; };
+		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		OBJ_60 /* TestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
+		OBJ_61 /* UDPPacketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPPacketTests.swift; sourceTree = "<group>"; };
+		OBJ_62 /* WeatherForecastTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecastTests.swift; sourceTree = "<group>"; };
+		OBJ_66 /* Socket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
+		OBJ_67 /* SocketProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketProtocols.swift; sourceTree = "<group>"; };
+		OBJ_68 /* SocketUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketUtils.swift; sourceTree = "<group>"; };
+		OBJ_69 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/fabiogallonetto/Development/WeatherStationService/.build/checkouts/BlueSocket.git--2553392031450431476/Package.swift"; sourceTree = "<group>"; };
+		OBJ_9 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		"Socket::Socket::Product" /* Socket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Socket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"WeatherStationService::WeatherRESTClient::Product" /* WeatherRESTClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WeatherRESTClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"WeatherStationService::WeatherRESTClientTests::Product" /* WeatherRESTClientTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = WeatherRESTClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		"WeatherStationService::WeatherStationService::Product" /* WeatherStationService */ = {isa = PBXFileReference; lastKnownFileType = text; path = WeatherStationService; sourceTree = BUILT_PRODUCTS_DIR; };
+		"WeatherStationService::WeatherUDPProtocol::Product" /* WeatherUDPProtocol.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WeatherUDPProtocol.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"WeatherStationService::WeatherUDPProtocolTests::Product" /* WeatherUDPProtocolTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = WeatherUDPProtocolTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		OBJ_102 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_109 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_110 /* WeatherRESTClient.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_118 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_119 /* Socket.framework in Frameworks */,
+				OBJ_120 /* WeatherRESTClient.framework in Frameworks */,
+				OBJ_121 /* WeatherUDPProtocol.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_169 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_186 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_187 /* WeatherUDPProtocol.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		OBJ_14 /* WeatherUDPProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_15 /* Array+Hex.swift */,
+				OBJ_16 /* Array+SumChecksum.swift */,
+				OBJ_17 /* BinaryCodable */,
+				OBJ_26 /* Data+Hex.swift */,
+				OBJ_27 /* Float+Int16Round.swift */,
+				OBJ_28 /* Float+Rounded.swift */,
+				OBJ_29 /* Packets */,
+				OBJ_44 /* UInt16+ByteArray.swift */,
+			);
+			name = WeatherUDPProtocol;
+			path = Sources/WeatherUDPProtocol;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_17 /* BinaryCodable */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_18 /* BinaryCodable.swift */,
+				OBJ_19 /* BinaryCodableExtensions.swift */,
+				OBJ_20 /* BinaryDecoder.swift */,
+				OBJ_21 /* BinaryEncoder.swift */,
+				OBJ_22 /* Custom Types */,
+			);
+			path = BinaryCodable;
+			sourceTree = "<group>";
+		};
+		OBJ_22 /* Custom Types */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_23 /* ArrayUInt8+BinaryEncodable.swift */,
+				OBJ_24 /* Date+BinaryCodable.swift */,
+				OBJ_25 /* PacketDataArray.swift */,
+			);
+			path = "Custom Types";
+			sourceTree = "<group>";
+		};
+		OBJ_29 /* Packets */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_30 /* CurrentWeatherPacket.swift */,
+				OBJ_31 /* NIbbles */,
+				OBJ_39 /* NextDaysForecastPacket.swift */,
+				OBJ_40 /* Requests.swift */,
+				OBJ_41 /* Responses.swift */,
+				OBJ_42 /* UDPPacket.swift */,
+				OBJ_43 /* WeatherForecastBin.swift */,
+			);
+			path = Packets;
+			sourceTree = "<group>";
+		};
+		OBJ_31 /* NIbbles */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_32 /* Checksum.swift */,
+				OBJ_33 /* Commands.swift */,
+				OBJ_34 /* Countries.swift */,
+				OBJ_35 /* HeaderFooter.swift */,
+				OBJ_36 /* MacAddress.swift */,
+				OBJ_37 /* StaticNibble.swift */,
+				OBJ_38 /* Temperature.swift */,
+			);
+			path = NIbbles;
+			sourceTree = "<group>";
+		};
+		OBJ_45 /* WeatherStationService */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_46 /* main.swift */,
+				D961CD0C220C66B700E19CA5 /* WeatherUDPServer.swift */,
+				D961CD0F220C85DB00E19CA5 /* RequestProcessors.swift */,
+				D961CD11220C8F9E00E19CA5 /* UDPClient.swift */,
+			);
+			name = WeatherStationService;
+			path = Sources/WeatherStationService;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_47 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_48 /* WeatherRESTClientTests */,
+				OBJ_50 /* WeatherUDPProtocolTests */,
+			);
+			name = Tests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_48 /* WeatherRESTClientTests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_49 /* APIRequestBuilderTests.swift */,
+			);
+			name = WeatherRESTClientTests;
+			path = Tests/WeatherRESTClientTests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_5 /*  */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_6 /* Package.swift */,
+				OBJ_7 /* Sources */,
+				OBJ_47 /* Tests */,
+				OBJ_63 /* Dependencies */,
+				OBJ_70 /* Products */,
+			);
+			name = "";
+			sourceTree = "<group>";
+		};
+		OBJ_50 /* WeatherUDPProtocolTests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_51 /* BinaryCooderTests.swift */,
+				OBJ_52 /* ChecksumMathTests.swift */,
+				OBJ_53 /* CurrentWeatherPacketTests.swift */,
+				OBJ_54 /* DataHexConversionTests.swift */,
+				OBJ_55 /* FlatRoundingTests.swift */,
+				OBJ_56 /* FloatRoundedTests.swift */,
+				OBJ_57 /* HeaderFooterPacketTests.swift */,
+				OBJ_58 /* NextDaysForecastPacketTests.swift */,
+				OBJ_59 /* TemperatureTests.swift */,
+				OBJ_60 /* TestUtils.swift */,
+				OBJ_61 /* UDPPacketTests.swift */,
+				OBJ_62 /* WeatherForecastTests.swift */,
+			);
+			name = WeatherUDPProtocolTests;
+			path = Tests/WeatherUDPProtocolTests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_63 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_64 /* Socket 1.0.44 */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		OBJ_64 /* Socket 1.0.44 */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_65 /* Socket */,
+				OBJ_69 /* Package.swift */,
+			);
+			name = "Socket 1.0.44";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_65 /* Socket */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_66 /* Socket.swift */,
+				OBJ_67 /* SocketProtocols.swift */,
+				OBJ_68 /* SocketUtils.swift */,
+			);
+			name = Socket;
+			path = ".build/checkouts/BlueSocket.git--2553392031450431476/Sources/Socket";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_8 /* WeatherRESTClient */,
+				OBJ_14 /* WeatherUDPProtocol */,
+				OBJ_45 /* WeatherStationService */,
+			);
+			name = Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_70 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				"WeatherStationService::WeatherUDPProtocol::Product" /* WeatherUDPProtocol.framework */,
+				"Socket::Socket::Product" /* Socket.framework */,
+				"WeatherStationService::WeatherUDPProtocolTests::Product" /* WeatherUDPProtocolTests.xctest */,
+				"WeatherStationService::WeatherRESTClient::Product" /* WeatherRESTClient.framework */,
+				"WeatherStationService::WeatherStationService::Product" /* WeatherStationService */,
+				"WeatherStationService::WeatherRESTClientTests::Product" /* WeatherRESTClientTests.xctest */,
+			);
+			name = Products;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		OBJ_8 /* WeatherRESTClient */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_9 /* APIClient.swift */,
+				OBJ_10 /* APIError.swift */,
+				OBJ_11 /* Result.swift */,
+				OBJ_12 /* WeatherClient.swift */,
+				OBJ_13 /* WeatherForecast.swift */,
+			);
+			name = WeatherRESTClient;
+			path = Sources/WeatherRESTClient;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		"Socket::Socket" /* Socket */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_78 /* Build configuration list for PBXNativeTarget "Socket" */;
+			buildPhases = (
+				OBJ_81 /* Sources */,
+				OBJ_85 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Socket;
+			productName = Socket;
+			productReference = "Socket::Socket::Product" /* Socket.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"Socket::SwiftPMPackageDescription" /* SocketPackageDescription */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_87 /* Build configuration list for PBXNativeTarget "SocketPackageDescription" */;
+			buildPhases = (
+				OBJ_90 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SocketPackageDescription;
+			productName = SocketPackageDescription;
+			productType = "com.apple.product-type.framework";
+		};
+		"WeatherStationService::SwiftPMPackageDescription" /* WeatherStationServicePackageDescription */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_127 /* Build configuration list for PBXNativeTarget "WeatherStationServicePackageDescription" */;
+			buildPhases = (
+				OBJ_130 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WeatherStationServicePackageDescription;
+			productName = WeatherStationServicePackageDescription;
+			productType = "com.apple.product-type.framework";
+		};
+		"WeatherStationService::WeatherRESTClient" /* WeatherRESTClient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_93 /* Build configuration list for PBXNativeTarget "WeatherRESTClient" */;
+			buildPhases = (
+				OBJ_96 /* Sources */,
+				OBJ_102 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WeatherRESTClient;
+			productName = WeatherRESTClient;
+			productReference = "WeatherStationService::WeatherRESTClient::Product" /* WeatherRESTClient.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"WeatherStationService::WeatherRESTClientTests" /* WeatherRESTClientTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_104 /* Build configuration list for PBXNativeTarget "WeatherRESTClientTests" */;
+			buildPhases = (
+				OBJ_107 /* Sources */,
+				OBJ_109 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_111 /* PBXTargetDependency */,
+			);
+			name = WeatherRESTClientTests;
+			productName = WeatherRESTClientTests;
+			productReference = "WeatherStationService::WeatherRESTClientTests::Product" /* WeatherRESTClientTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		"WeatherStationService::WeatherStationService" /* WeatherStationService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_113 /* Build configuration list for PBXNativeTarget "WeatherStationService" */;
+			buildPhases = (
+				OBJ_116 /* Sources */,
+				OBJ_118 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_122 /* PBXTargetDependency */,
+				OBJ_123 /* PBXTargetDependency */,
+				OBJ_124 /* PBXTargetDependency */,
+			);
+			name = WeatherStationService;
+			productName = WeatherStationService;
+			productReference = "WeatherStationService::WeatherStationService::Product" /* WeatherStationService */;
+			productType = "com.apple.product-type.tool";
+		};
+		"WeatherStationService::WeatherUDPProtocol" /* WeatherUDPProtocol */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_139 /* Build configuration list for PBXNativeTarget "WeatherUDPProtocol" */;
+			buildPhases = (
+				OBJ_142 /* Sources */,
+				OBJ_169 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WeatherUDPProtocol;
+			productName = WeatherUDPProtocol;
+			productReference = "WeatherStationService::WeatherUDPProtocol::Product" /* WeatherUDPProtocol.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"WeatherStationService::WeatherUDPProtocolTests" /* WeatherUDPProtocolTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_170 /* Build configuration list for PBXNativeTarget "WeatherUDPProtocolTests" */;
+			buildPhases = (
+				OBJ_173 /* Sources */,
+				OBJ_186 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_188 /* PBXTargetDependency */,
+			);
+			name = WeatherUDPProtocolTests;
+			productName = WeatherUDPProtocolTests;
+			productReference = "WeatherStationService::WeatherUDPProtocolTests::Product" /* WeatherUDPProtocolTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		OBJ_1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 9999;
+			};
+			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "WeatherStationService" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = OBJ_5 /*  */;
+			productRefGroup = OBJ_70 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				"Socket::Socket" /* Socket */,
+				"Socket::SwiftPMPackageDescription" /* SocketPackageDescription */,
+				"WeatherStationService::WeatherRESTClient" /* WeatherRESTClient */,
+				"WeatherStationService::WeatherRESTClientTests" /* WeatherRESTClientTests */,
+				"WeatherStationService::WeatherStationService" /* WeatherStationService */,
+				"WeatherStationService::SwiftPMPackageDescription" /* WeatherStationServicePackageDescription */,
+				"WeatherStationService::WeatherStationServicePackageTests::ProductTarget" /* WeatherStationServicePackageTests */,
+				"WeatherStationService::WeatherUDPProtocol" /* WeatherUDPProtocol */,
+				"WeatherStationService::WeatherUDPProtocolTests" /* WeatherUDPProtocolTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		OBJ_107 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_108 /* APIRequestBuilderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_116 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				D961CD10220C85DB00E19CA5 /* RequestProcessors.swift in Sources */,
+				OBJ_117 /* main.swift in Sources */,
+				D961CD12220C8F9E00E19CA5 /* UDPClient.swift in Sources */,
+				D961CD0E220C66BA00E19CA5 /* WeatherUDPServer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_130 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_131 /* Package.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_142 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_143 /* Array+Hex.swift in Sources */,
+				OBJ_144 /* Array+SumChecksum.swift in Sources */,
+				OBJ_145 /* BinaryCodable.swift in Sources */,
+				OBJ_146 /* BinaryCodableExtensions.swift in Sources */,
+				OBJ_147 /* BinaryDecoder.swift in Sources */,
+				OBJ_148 /* BinaryEncoder.swift in Sources */,
+				OBJ_149 /* ArrayUInt8+BinaryEncodable.swift in Sources */,
+				OBJ_150 /* Date+BinaryCodable.swift in Sources */,
+				OBJ_151 /* PacketDataArray.swift in Sources */,
+				OBJ_152 /* Data+Hex.swift in Sources */,
+				OBJ_153 /* Float+Int16Round.swift in Sources */,
+				OBJ_154 /* Float+Rounded.swift in Sources */,
+				OBJ_155 /* CurrentWeatherPacket.swift in Sources */,
+				OBJ_156 /* Checksum.swift in Sources */,
+				OBJ_157 /* Commands.swift in Sources */,
+				OBJ_158 /* Countries.swift in Sources */,
+				OBJ_159 /* HeaderFooter.swift in Sources */,
+				OBJ_160 /* MacAddress.swift in Sources */,
+				OBJ_161 /* StaticNibble.swift in Sources */,
+				OBJ_162 /* Temperature.swift in Sources */,
+				OBJ_163 /* NextDaysForecastPacket.swift in Sources */,
+				OBJ_164 /* Requests.swift in Sources */,
+				OBJ_165 /* Responses.swift in Sources */,
+				OBJ_166 /* UDPPacket.swift in Sources */,
+				OBJ_167 /* WeatherForecastBin.swift in Sources */,
+				OBJ_168 /* UInt16+ByteArray.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_173 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_174 /* BinaryCooderTests.swift in Sources */,
+				OBJ_175 /* ChecksumMathTests.swift in Sources */,
+				OBJ_176 /* CurrentWeatherPacketTests.swift in Sources */,
+				OBJ_177 /* DataHexConversionTests.swift in Sources */,
+				OBJ_178 /* FlatRoundingTests.swift in Sources */,
+				OBJ_179 /* FloatRoundedTests.swift in Sources */,
+				OBJ_180 /* HeaderFooterPacketTests.swift in Sources */,
+				OBJ_181 /* NextDaysForecastPacketTests.swift in Sources */,
+				OBJ_182 /* TemperatureTests.swift in Sources */,
+				OBJ_183 /* TestUtils.swift in Sources */,
+				OBJ_184 /* UDPPacketTests.swift in Sources */,
+				OBJ_185 /* WeatherForecastTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_81 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_82 /* Socket.swift in Sources */,
+				OBJ_83 /* SocketProtocols.swift in Sources */,
+				OBJ_84 /* SocketUtils.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_90 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_91 /* Package.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_97 /* APIClient.swift in Sources */,
+				OBJ_98 /* APIError.swift in Sources */,
+				OBJ_99 /* Result.swift in Sources */,
+				OBJ_100 /* WeatherClient.swift in Sources */,
+				OBJ_101 /* WeatherForecast.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		OBJ_111 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "WeatherStationService::WeatherRESTClient" /* WeatherRESTClient */;
+			targetProxy = D961CD08220C619500E19CA5 /* PBXContainerItemProxy */;
+		};
+		OBJ_122 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Socket::Socket" /* Socket */;
+			targetProxy = D961CD05220C619500E19CA5 /* PBXContainerItemProxy */;
+		};
+		OBJ_123 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "WeatherStationService::WeatherRESTClient" /* WeatherRESTClient */;
+			targetProxy = D961CD06220C619500E19CA5 /* PBXContainerItemProxy */;
+		};
+		OBJ_124 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "WeatherStationService::WeatherUDPProtocol" /* WeatherUDPProtocol */;
+			targetProxy = D961CD07220C619500E19CA5 /* PBXContainerItemProxy */;
+		};
+		OBJ_136 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "WeatherStationService::WeatherUDPProtocolTests" /* WeatherUDPProtocolTests */;
+			targetProxy = D961CD0A220C619800E19CA5 /* PBXContainerItemProxy */;
+		};
+		OBJ_138 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "WeatherStationService::WeatherRESTClientTests" /* WeatherRESTClientTests */;
+			targetProxy = D961CD0B220C619800E19CA5 /* PBXContainerItemProxy */;
+		};
+		OBJ_188 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "WeatherStationService::WeatherUDPProtocol" /* WeatherUDPProtocol */;
+			targetProxy = D961CD09220C619500E19CA5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		OBJ_105 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = WeatherStationService.xcodeproj/WeatherRESTClientTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 4.2;
+				TARGET_NAME = WeatherRESTClientTests;
+			};
+			name = Debug;
+		};
+		OBJ_106 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = WeatherStationService.xcodeproj/WeatherRESTClientTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 4.2;
+				TARGET_NAME = WeatherRESTClientTests;
+			};
+			name = Release;
+		};
+		OBJ_114 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = WeatherStationService.xcodeproj/WeatherStationService_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_FORCE_DYNAMIC_LINK_STDLIB = YES;
+				SWIFT_FORCE_STATIC_LINK_STDLIB = NO;
+				SWIFT_VERSION = 4.2;
+				TARGET_NAME = WeatherStationService;
+			};
+			name = Debug;
+		};
+		OBJ_115 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = WeatherStationService.xcodeproj/WeatherStationService_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_FORCE_DYNAMIC_LINK_STDLIB = YES;
+				SWIFT_FORCE_STATIC_LINK_STDLIB = NO;
+				SWIFT_VERSION = 4.2;
+				TARGET_NAME = WeatherStationService;
+			};
+			name = Release;
+		};
+		OBJ_128 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4.2 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		OBJ_129 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4.2 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		OBJ_134 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		OBJ_135 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		OBJ_140 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = WeatherStationService.xcodeproj/WeatherUDPProtocol_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = WeatherUDPProtocol;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 4.2;
+				TARGET_NAME = WeatherUDPProtocol;
+			};
+			name = Debug;
+		};
+		OBJ_141 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = WeatherStationService.xcodeproj/WeatherUDPProtocol_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = WeatherUDPProtocol;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 4.2;
+				TARGET_NAME = WeatherUDPProtocol;
+			};
+			name = Release;
+		};
+		OBJ_171 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = WeatherStationService.xcodeproj/WeatherUDPProtocolTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 4.2;
+				TARGET_NAME = WeatherUDPProtocolTests;
+			};
+			name = Debug;
+		};
+		OBJ_172 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = WeatherStationService.xcodeproj/WeatherUDPProtocolTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 4.2;
+				TARGET_NAME = WeatherUDPProtocolTests;
+			};
+			name = Release;
+		};
+		OBJ_3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "SWIFT_PACKAGE DEBUG";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USE_HEADERMAP = NO;
+			};
+			name = Debug;
+		};
+		OBJ_4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_OPTIMIZATION_LEVEL = s;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				USE_HEADERMAP = NO;
+			};
+			name = Release;
+		};
+		OBJ_79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = WeatherStationService.xcodeproj/Socket_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Socket;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = Socket;
+			};
+			name = Debug;
+		};
+		OBJ_80 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = WeatherStationService.xcodeproj/Socket_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Socket;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = Socket;
+			};
+			name = Release;
+		};
+		OBJ_88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		OBJ_89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		OBJ_94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = WeatherStationService.xcodeproj/WeatherRESTClient_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = WeatherRESTClient;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 4.2;
+				TARGET_NAME = WeatherRESTClient;
+			};
+			name = Debug;
+		};
+		OBJ_95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = WeatherStationService.xcodeproj/WeatherRESTClient_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = WeatherRESTClient;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 4.2;
+				TARGET_NAME = WeatherRESTClient;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		OBJ_104 /* Build configuration list for PBXNativeTarget "WeatherRESTClientTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_105 /* Debug */,
+				OBJ_106 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_113 /* Build configuration list for PBXNativeTarget "WeatherStationService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_114 /* Debug */,
+				OBJ_115 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_127 /* Build configuration list for PBXNativeTarget "WeatherStationServicePackageDescription" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_128 /* Debug */,
+				OBJ_129 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_133 /* Build configuration list for PBXAggregateTarget "WeatherStationServicePackageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_134 /* Debug */,
+				OBJ_135 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_139 /* Build configuration list for PBXNativeTarget "WeatherUDPProtocol" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_140 /* Debug */,
+				OBJ_141 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_170 /* Build configuration list for PBXNativeTarget "WeatherUDPProtocolTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_171 /* Debug */,
+				OBJ_172 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_2 /* Build configuration list for PBXProject "WeatherStationService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_3 /* Debug */,
+				OBJ_4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_78 /* Build configuration list for PBXNativeTarget "Socket" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_79 /* Debug */,
+				OBJ_80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_87 /* Build configuration list for PBXNativeTarget "SocketPackageDescription" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_88 /* Debug */,
+				OBJ_89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_93 /* Build configuration list for PBXNativeTarget "WeatherRESTClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_94 /* Debug */,
+				OBJ_95 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = OBJ_1 /* Project object */;
 }
