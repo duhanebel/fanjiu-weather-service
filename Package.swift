@@ -9,13 +9,11 @@ let package = Package(
       .executable(name: "WeatherStationService", targets: ["WeatherStationService"]),
       .library(name: "WeatherUDPProtocol", targets: ["WeatherUDPProtocol"]),
       .library(name: "WeatherRESTClient", targets: ["WeatherRESTClient"])],
-    dependencies: [
-      .package(url: "https://github.com/IBM-Swift/BlueSocket.git", from:"1.0.8"),
-    ],
+    dependencies: [ ],
     targets: [
         .target(
             name: "WeatherStationService",
-            dependencies: ["Socket", "WeatherUDPProtocol", "WeatherRESTClient"]),
+            dependencies: ["WeatherUDPProtocol", "WeatherRESTClient"]),
         .target(
             name: "WeatherUDPProtocol",
             dependencies: []),

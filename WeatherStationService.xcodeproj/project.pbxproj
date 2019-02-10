@@ -32,9 +32,7 @@
 		OBJ_111 /* APIRequestBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_65 /* APIRequestBuilderTests.swift */; };
 		OBJ_113 /* WeatherRESTClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "WeatherStationService::WeatherRESTClient::Product" /* WeatherRESTClient.framework */; };
 		OBJ_120 /* RequestProcessors.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* RequestProcessors.swift */; };
-		OBJ_121 /* UDPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* UDPClient.swift */; };
 		OBJ_123 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* main.swift */; };
-		OBJ_125 /* Socket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Socket::Socket::Product" /* Socket.framework */; };
 		OBJ_126 /* WeatherRESTClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "WeatherStationService::WeatherRESTClient::Product" /* WeatherRESTClient.framework */; };
 		OBJ_127 /* WeatherUDPProtocol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "WeatherStationService::WeatherUDPProtocol::Product" /* WeatherUDPProtocol.framework */; };
 		OBJ_137 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
@@ -77,20 +75,9 @@
 		OBJ_190 /* UDPPacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_62 /* UDPPacketTests.swift */; };
 		OBJ_191 /* WeatherForecastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_63 /* WeatherForecastTests.swift */; };
 		OBJ_193 /* WeatherUDPProtocol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "WeatherStationService::WeatherUDPProtocol::Product" /* WeatherUDPProtocol.framework */; };
-		OBJ_85 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_69 /* Socket.swift */; };
-		OBJ_86 /* SocketProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_70 /* SocketProtocols.swift */; };
-		OBJ_87 /* SocketUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_71 /* SocketUtils.swift */; };
-		OBJ_94 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_72 /* Package.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D932C3AB220E1D5300857219 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = OBJ_1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = "Socket::Socket";
-			remoteInfo = Socket;
-		};
 		D932C3AC220E1D5300857219 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
@@ -138,7 +125,6 @@
 /* Begin PBXFileReference section */
 		D932C3B1220F472500857219 /* UDPServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPServer.swift; sourceTree = "<group>"; };
 		D932C3B6220F77BA00857219 /* SocketAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketAddress.swift; sourceTree = "<group>"; };
-		OBJ_10 /* UDPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPClient.swift; sourceTree = "<group>"; };
 		OBJ_12 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		OBJ_14 /* Array+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Hex.swift"; sourceTree = "<group>"; };
 		OBJ_15 /* Array+SumChecksum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+SumChecksum.swift"; sourceTree = "<group>"; };
@@ -185,12 +171,7 @@
 		OBJ_62 /* UDPPacketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPPacketTests.swift; sourceTree = "<group>"; };
 		OBJ_63 /* WeatherForecastTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecastTests.swift; sourceTree = "<group>"; };
 		OBJ_65 /* APIRequestBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestBuilderTests.swift; sourceTree = "<group>"; };
-		OBJ_69 /* Socket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
-		OBJ_70 /* SocketProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketProtocols.swift; sourceTree = "<group>"; };
-		OBJ_71 /* SocketUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketUtils.swift; sourceTree = "<group>"; };
-		OBJ_72 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/fabiogallonetto/Development/WeatherStationService/.build/checkouts/BlueSocket.git-1992582111143921431/Package.swift"; sourceTree = "<group>"; };
 		OBJ_9 /* RequestProcessors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProcessors.swift; sourceTree = "<group>"; };
-		"Socket::Socket::Product" /* Socket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Socket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"WeatherStationService::WeatherRESTClient::Product" /* WeatherRESTClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WeatherRESTClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"WeatherStationService::WeatherRESTClientTests::Product" /* WeatherRESTClientTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = WeatherRESTClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		"WeatherStationService::WeatherStationService::Product" /* WeatherStationService */ = {isa = PBXFileReference; lastKnownFileType = text; path = WeatherStationService; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -218,7 +199,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_125 /* Socket.framework in Frameworks */,
 				OBJ_126 /* WeatherRESTClient.framework in Frameworks */,
 				OBJ_127 /* WeatherUDPProtocol.framework in Frameworks */,
 			);
@@ -236,13 +216,6 @@
 			buildActionMask = 0;
 			files = (
 				OBJ_193 /* WeatherUDPProtocol.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		OBJ_88 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 0;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,7 +316,6 @@
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
 				OBJ_50 /* Tests */,
-				OBJ_66 /* Dependencies */,
 				OBJ_73 /* Products */,
 			);
 			name = "";
@@ -387,34 +359,6 @@
 			path = Tests/WeatherRESTClientTests;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_66 /* Dependencies */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_67 /* Socket 1.0.44 */,
-			);
-			name = Dependencies;
-			sourceTree = "<group>";
-		};
-		OBJ_67 /* Socket 1.0.44 */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_68 /* Socket */,
-				OBJ_72 /* Package.swift */,
-			);
-			name = "Socket 1.0.44";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_68 /* Socket */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_69 /* Socket.swift */,
-				OBJ_70 /* SocketProtocols.swift */,
-				OBJ_71 /* SocketUtils.swift */,
-			);
-			name = Socket;
-			path = ".build/checkouts/BlueSocket.git-1992582111143921431/Sources/Socket";
-			sourceTree = SOURCE_ROOT;
-		};
 		OBJ_7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -431,7 +375,6 @@
 				"WeatherStationService::WeatherStationService::Product" /* WeatherStationService */,
 				"WeatherStationService::WeatherUDPProtocolTests::Product" /* WeatherUDPProtocolTests.xctest */,
 				"WeatherStationService::WeatherRESTClient::Product" /* WeatherRESTClient.framework */,
-				"Socket::Socket::Product" /* Socket.framework */,
 				"WeatherStationService::WeatherRESTClientTests::Product" /* WeatherRESTClientTests.xctest */,
 				"WeatherStationService::WeatherUDPProtocol::Product" /* WeatherUDPProtocol.framework */,
 			);
@@ -443,7 +386,6 @@
 			children = (
 				D932C3B0220F471900857219 /* UDPServer */,
 				OBJ_9 /* RequestProcessors.swift */,
-				OBJ_10 /* UDPClient.swift */,
 				OBJ_12 /* main.swift */,
 			);
 			name = WeatherStationService;
@@ -453,36 +395,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		"Socket::Socket" /* Socket */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_81 /* Build configuration list for PBXNativeTarget "Socket" */;
-			buildPhases = (
-				OBJ_84 /* Sources */,
-				OBJ_88 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Socket;
-			productName = Socket;
-			productReference = "Socket::Socket::Product" /* Socket.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		"Socket::SwiftPMPackageDescription" /* SocketPackageDescription */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_90 /* Build configuration list for PBXNativeTarget "SocketPackageDescription" */;
-			buildPhases = (
-				OBJ_93 /* Sources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = SocketPackageDescription;
-			productName = SocketPackageDescription;
-			productType = "com.apple.product-type.framework";
-		};
 		"WeatherStationService::SwiftPMPackageDescription" /* WeatherStationServicePackageDescription */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = OBJ_133 /* Build configuration list for PBXNativeTarget "WeatherStationServicePackageDescription" */;
@@ -540,7 +452,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_128 /* PBXTargetDependency */,
 				OBJ_129 /* PBXTargetDependency */,
 				OBJ_130 /* PBXTargetDependency */,
 			);
@@ -602,8 +513,6 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				"Socket::Socket" /* Socket */,
-				"Socket::SwiftPMPackageDescription" /* SocketPackageDescription */,
 				"WeatherStationService::WeatherRESTClient" /* WeatherRESTClient */,
 				"WeatherStationService::WeatherRESTClientTests" /* WeatherRESTClientTests */,
 				"WeatherStationService::WeatherStationService" /* WeatherStationService */,
@@ -629,7 +538,6 @@
 			buildActionMask = 0;
 			files = (
 				OBJ_120 /* RequestProcessors.swift in Sources */,
-				OBJ_121 /* UDPClient.swift in Sources */,
 				OBJ_123 /* main.swift in Sources */,
 				D932C3B5220F4BE100857219 /* UDPServer.swift in Sources */,
 				D932C3B8220F80CC00857219 /* SocketAddress.swift in Sources */,
@@ -696,24 +604,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_84 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 0;
-			files = (
-				OBJ_85 /* Socket.swift in Sources */,
-				OBJ_86 /* SocketProtocols.swift in Sources */,
-				OBJ_87 /* SocketUtils.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		OBJ_93 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 0;
-			files = (
-				OBJ_94 /* Package.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		OBJ_99 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
@@ -733,11 +623,6 @@
 			isa = PBXTargetDependency;
 			target = "WeatherStationService::WeatherRESTClient" /* WeatherRESTClient */;
 			targetProxy = D932C3AE220E1D5300857219 /* PBXContainerItemProxy */;
-		};
-		OBJ_128 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = "Socket::Socket" /* Socket */;
-			targetProxy = D932C3AB220E1D5300857219 /* PBXContainerItemProxy */;
 		};
 		OBJ_129 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1017,72 +902,6 @@
 			};
 			name = Release;
 		};
-		OBJ_82 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = WeatherStationService.xcodeproj/Socket_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				OTHER_CFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = Socket;
-				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 4.0;
-				TARGET_NAME = Socket;
-			};
-			name = Debug;
-		};
-		OBJ_83 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = WeatherStationService.xcodeproj/Socket_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				OTHER_CFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = Socket;
-				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 4.0;
-				TARGET_NAME = Socket;
-			};
-			name = Release;
-		};
-		OBJ_91 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk";
-				SWIFT_VERSION = 4.0;
-			};
-			name = Debug;
-		};
-		OBJ_92 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk";
-				SWIFT_VERSION = 4.0;
-			};
-			name = Release;
-		};
 		OBJ_97 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1193,24 +1012,6 @@
 			buildConfigurations = (
 				OBJ_3 /* Debug */,
 				OBJ_4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		OBJ_81 /* Build configuration list for PBXNativeTarget "Socket" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				OBJ_82 /* Debug */,
-				OBJ_83 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		OBJ_90 /* Build configuration list for PBXNativeTarget "SocketPackageDescription" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				OBJ_91 /* Debug */,
-				OBJ_92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
