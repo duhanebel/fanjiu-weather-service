@@ -14,6 +14,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "WeatherStationService::WeatherRESTClient"
+               BuildableName = "WeatherRESTClient.framework"
+               BlueprintName = "WeatherRESTClient"
+               ReferencedContainer = "container:WeatherStationService.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "WeatherStationService::WeatherStationService"
                BuildableName = "WeatherStationService"
                BlueprintName = "WeatherStationService"
@@ -31,20 +45,6 @@
                BlueprintIdentifier = "WeatherStationService::WeatherUDPProtocol"
                BuildableName = "WeatherUDPProtocol.framework"
                BlueprintName = "WeatherUDPProtocol"
-               ReferencedContainer = "container:WeatherStationService.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "WeatherStationService::WeatherRESTClient"
-               BuildableName = "WeatherRESTClient.framework"
-               BlueprintName = "WeatherRESTClient"
                ReferencedContainer = "container:WeatherStationService.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -93,9 +93,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "WeatherStationService::WeatherStationService"
-            BuildableName = "WeatherStationService"
-            BlueprintName = "WeatherStationService"
+            BlueprintIdentifier = "WeatherStationService::WeatherRESTClient"
+            BuildableName = "WeatherRESTClient.framework"
+            BlueprintName = "WeatherRESTClient"
             ReferencedContainer = "container:WeatherStationService.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

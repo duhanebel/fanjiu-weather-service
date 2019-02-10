@@ -59,38 +59,56 @@ extension APIError : CustomStringConvertible {
 let port = 10000
 
 class WeatherUDPProcessor: RequestProcessor {
-
     
-    let realWeatherServer = (ip: "47.52.149.125", port: 10000)
+    let realWeatherServer = SocketAddress(with: "47.52.149.125", port: 10000)!
     
-    private var clientAwaitingResponse: (ip: String, port: Int)?
+    private var clientAwaitingResponse: SocketAddress?
     
     var dataProcessors: [WeatherUDPRequestProcessor] = []
     
-    func process(data: Data, from: String, port: Int) throws -> (data: Data, destIP: String, port: Int)? {
+    func process(data: Data, from: SocketAddress) throws -> (data: Data, to: SocketAddress)? {
         let dataArray = Array<UInt8>(data)
         let processor = dataProcessors.first { $0.canHandle(data: dataArray) }
+        if processor == nil {
+            print("Unable to find processors for the data: sending to server")
+        }
         if let responseData = try processor?.process(data: dataArray) {
-            return (data: Data(bytes: responseData), destIP: from, port: port)
+            return (data: Data(bytes: responseData), to: from)
         } else {
             if let clientAwaitingResponse = clientAwaitingResponse,
-                from == realWeatherServer.ip {
+                from == realWeatherServer {
                 self.clientAwaitingResponse = nil
-                return (data: data, destIP: clientAwaitingResponse.ip, port: clientAwaitingResponse.port)
+                return (data: data, to: clientAwaitingResponse)
             } else {
-                clientAwaitingResponse = (ip: from, port: port)
-                return (data: data, destIP: realWeatherServer.ip, port: realWeatherServer.port)
+                clientAwaitingResponse = from
+                return (data: data, to: realWeatherServer)
             }
         }
     }
 }
-
+//
 let reqProcessor = WeatherUDPProcessor()
+reqProcessor.dataProcessors.append(HelloUDPRequestProcessor())
 reqProcessor.dataProcessors.append(ForecastUDPRequestProcessor())
-let server = WeatherUDPServer(port: port, requestProcessor: reqProcessor)
-print("Swift Echo Server Sample")
-print("Connect with a command line window by entering 'telnet ::1 \(port)'")
-
-server.run()
+//let server = WeatherUDPServer(port: port, requestProcessor: reqProcessor)
+//print("Swift Echo Server Sample")
+//print("Connect with a command line window by entering 'telnet ::1 \(port)'")
+//
+//server.run()
 
 //networkGroup.wait()
+
+print()
+print("Hello, World! Echo UDP Server is listenig ...")
+print("Connect any number of clients /nc -u host port, .../ to any of:")
+print()
+
+let server = UDPServer(processor: reqProcessor)
+server.start()
+print("Press CTRL+D to exit")
+print()
+
+
+while let input = readLine(){}
+
+

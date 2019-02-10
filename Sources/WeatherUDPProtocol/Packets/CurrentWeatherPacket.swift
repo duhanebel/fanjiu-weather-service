@@ -9,6 +9,9 @@
 import Foundation
 
 public struct CurrentWeatherPacket: BinaryCodable {
+    public let stationID: UInt8
+    public let country: Country
+    public let date: Date
     struct Padding11 : StaticNibble, BinaryCodable {
         static let length = 11
         let value: PacketDataArray
@@ -28,7 +31,10 @@ public struct CurrentWeatherPacket: BinaryCodable {
     let unknown4: CurrentWeatherPacket.Padding11
     let unknown5: UInt16
     
-    init(unknown1: UInt32, unknown2: UInt8, feelsLike: Temperature, pressure: Float, windSpeed: Float, unknown3: UInt8, windDirection: UInt8, unknown4: CurrentWeatherPacket.Padding11, unknown5: UInt16) {
+    init(stationID: UInt8 = UInt8(1), country: Country, date: Date, unknown1: UInt32, unknown2: UInt8, feelsLike: Temperature, pressure: Float, windSpeed: Float, unknown3: UInt8, windDirection: UInt8, unknown4: CurrentWeatherPacket.Padding11, unknown5: UInt16) {
+        self.stationID = stationID
+        self.country = country
+        self.date = date
         self.unknown1 = unknown1
         self.unknown2 = unknown2
         self.feelsLike = feelsLike
@@ -40,9 +46,12 @@ public struct CurrentWeatherPacket: BinaryCodable {
         self.unknown5 = unknown5
     }
     
-    public init(feelsLike: Float, pressure: Float, windSpeed: Float, windDirection: UInt8) {
+    public init(stationID: UInt8 = UInt8(1), country: Country, date: Date, feelsLike: Float, pressure: Float, windSpeed: Float, windDirection: UInt8) {
         let padding = CurrentWeatherPacket.Padding11()
-        self.init(unknown1: UInt32(0xFFFFFFFF),
+        self.init(stationID: stationID,
+                  country: country,
+                  date: date,
+                  unknown1: UInt32(0xFFFFFFFF),
                   unknown2: UInt8(0xFF),
                   feelsLike: Temperature(fahrenheit: feelsLike),
                   pressure: pressure,

@@ -9,13 +9,19 @@
 import Foundation
 
 public struct NextDaysForecastPacket: BinaryCodable {
+    public let stationID: UInt8
+    public let country: Country
+    public let date: Date
     public let today: WeatherForecastBin
     public let day1: WeatherForecastBin
     public let day2: WeatherForecastBin
     public let day3: WeatherForecastBin
     public let day4: WeatherForecastBin
     
-    public init(today: WeatherForecastBin, day1: WeatherForecastBin, day2: WeatherForecastBin, day3: WeatherForecastBin, day4: WeatherForecastBin) {
+    public init(stationID: UInt8 = UInt8(1), country: Country, date: Date, today: WeatherForecastBin, day1: WeatherForecastBin, day2: WeatherForecastBin, day3: WeatherForecastBin, day4: WeatherForecastBin) {
+        self.stationID = stationID
+        self.country = country
+        self.date = date
         self.today = today
         self.day1 = day1
         self.day2 = day2

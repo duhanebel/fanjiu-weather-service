@@ -15,8 +15,10 @@ public struct Country: BinaryCodable, StaticNibble {
     public init(value: PacketDataArray) throws {
         let uk = PacketDataArray(hex: "0C:13")
         guard value == uk else {
-            throw BinaryDecoder.Error.staticMessageDoesNotMatch(value, value)
+            throw BinaryDecoder.Error.staticMessageDoesNotMatch(value, uk)
         }
         self.value = value
     }
 }
+
+extension Country : Equatable {}

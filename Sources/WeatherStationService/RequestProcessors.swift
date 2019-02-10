@@ -30,7 +30,7 @@ struct HelloUDPRequestProcessor: WeatherUDPRequestProcessor {
     func process(data: PacketDataArray) throws -> PacketDataArray {
         let request = try BinaryDecoder.decode(UDPPacket<HelloRequest>.self, data: data)
         
-        let responsePacket = UDPPacket<HelloResponse>(command: Command(commandID: .responseHello), mac:request.mac, country: request.country, date:Date(), payload: HelloResponse())
+        let responsePacket = UDPPacket<HelloResponse>(command: Command(commandID: .responseHello), mac:request.mac, payload: HelloResponse())
        
         let responseData = try BinaryEncoder.encode(responsePacket)
         return responseData

@@ -9,12 +9,12 @@
 /* Begin PBXAggregateTarget section */
 		"WeatherStationService::WeatherStationServicePackageTests::ProductTarget" /* WeatherStationServicePackageTests */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = OBJ_133 /* Build configuration list for PBXAggregateTarget "WeatherStationServicePackageTests" */;
+			buildConfigurationList = OBJ_139 /* Build configuration list for PBXAggregateTarget "WeatherStationServicePackageTests" */;
 			buildPhases = (
 			);
 			dependencies = (
-				OBJ_136 /* PBXTargetDependency */,
-				OBJ_138 /* PBXTargetDependency */,
+				OBJ_142 /* PBXTargetDependency */,
+				OBJ_144 /* PBXTargetDependency */,
 			);
 			name = WeatherStationServicePackageTests;
 			productName = WeatherStationServicePackageTests;
@@ -22,110 +22,111 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		D961CD0E220C66BA00E19CA5 /* WeatherUDPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961CD0C220C66B700E19CA5 /* WeatherUDPServer.swift */; };
-		D961CD10220C85DB00E19CA5 /* RequestProcessors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961CD0F220C85DB00E19CA5 /* RequestProcessors.swift */; };
-		D961CD12220C8F9E00E19CA5 /* UDPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961CD11220C8F9E00E19CA5 /* UDPClient.swift */; };
-		OBJ_100 /* WeatherClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* WeatherClient.swift */; };
-		OBJ_101 /* WeatherForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* WeatherForecast.swift */; };
-		OBJ_108 /* APIRequestBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_49 /* APIRequestBuilderTests.swift */; };
-		OBJ_110 /* WeatherRESTClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "WeatherStationService::WeatherRESTClient::Product" /* WeatherRESTClient.framework */; };
-		OBJ_117 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_46 /* main.swift */; };
-		OBJ_119 /* Socket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Socket::Socket::Product" /* Socket.framework */; };
-		OBJ_120 /* WeatherRESTClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "WeatherStationService::WeatherRESTClient::Product" /* WeatherRESTClient.framework */; };
-		OBJ_121 /* WeatherUDPProtocol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "WeatherStationService::WeatherUDPProtocol::Product" /* WeatherUDPProtocol.framework */; };
-		OBJ_131 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
-		OBJ_143 /* Array+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* Array+Hex.swift */; };
-		OBJ_144 /* Array+SumChecksum.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* Array+SumChecksum.swift */; };
-		OBJ_145 /* BinaryCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* BinaryCodable.swift */; };
-		OBJ_146 /* BinaryCodableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* BinaryCodableExtensions.swift */; };
-		OBJ_147 /* BinaryDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* BinaryDecoder.swift */; };
-		OBJ_148 /* BinaryEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* BinaryEncoder.swift */; };
-		OBJ_149 /* ArrayUInt8+BinaryEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* ArrayUInt8+BinaryEncodable.swift */; };
-		OBJ_150 /* Date+BinaryCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* Date+BinaryCodable.swift */; };
-		OBJ_151 /* PacketDataArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_25 /* PacketDataArray.swift */; };
-		OBJ_152 /* Data+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* Data+Hex.swift */; };
-		OBJ_153 /* Float+Int16Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* Float+Int16Round.swift */; };
-		OBJ_154 /* Float+Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* Float+Rounded.swift */; };
-		OBJ_155 /* CurrentWeatherPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* CurrentWeatherPacket.swift */; };
-		OBJ_156 /* Checksum.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* Checksum.swift */; };
-		OBJ_157 /* Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* Commands.swift */; };
-		OBJ_158 /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* Countries.swift */; };
-		OBJ_159 /* HeaderFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* HeaderFooter.swift */; };
-		OBJ_160 /* MacAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* MacAddress.swift */; };
-		OBJ_161 /* StaticNibble.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_37 /* StaticNibble.swift */; };
-		OBJ_162 /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_38 /* Temperature.swift */; };
-		OBJ_163 /* NextDaysForecastPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_39 /* NextDaysForecastPacket.swift */; };
-		OBJ_164 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_40 /* Requests.swift */; };
-		OBJ_165 /* Responses.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_41 /* Responses.swift */; };
-		OBJ_166 /* UDPPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_42 /* UDPPacket.swift */; };
-		OBJ_167 /* WeatherForecastBin.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_43 /* WeatherForecastBin.swift */; };
-		OBJ_168 /* UInt16+ByteArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_44 /* UInt16+ByteArray.swift */; };
-		OBJ_174 /* BinaryCooderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_51 /* BinaryCooderTests.swift */; };
-		OBJ_175 /* ChecksumMathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_52 /* ChecksumMathTests.swift */; };
-		OBJ_176 /* CurrentWeatherPacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_53 /* CurrentWeatherPacketTests.swift */; };
-		OBJ_177 /* DataHexConversionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_54 /* DataHexConversionTests.swift */; };
-		OBJ_178 /* FlatRoundingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_55 /* FlatRoundingTests.swift */; };
-		OBJ_179 /* FloatRoundedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_56 /* FloatRoundedTests.swift */; };
-		OBJ_180 /* HeaderFooterPacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_57 /* HeaderFooterPacketTests.swift */; };
-		OBJ_181 /* NextDaysForecastPacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_58 /* NextDaysForecastPacketTests.swift */; };
-		OBJ_182 /* TemperatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_59 /* TemperatureTests.swift */; };
-		OBJ_183 /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_60 /* TestUtils.swift */; };
-		OBJ_184 /* UDPPacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_61 /* UDPPacketTests.swift */; };
-		OBJ_185 /* WeatherForecastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_62 /* WeatherForecastTests.swift */; };
-		OBJ_187 /* WeatherUDPProtocol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "WeatherStationService::WeatherUDPProtocol::Product" /* WeatherUDPProtocol.framework */; };
-		OBJ_82 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_66 /* Socket.swift */; };
-		OBJ_83 /* SocketProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_67 /* SocketProtocols.swift */; };
-		OBJ_84 /* SocketUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_68 /* SocketUtils.swift */; };
-		OBJ_91 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_69 /* Package.swift */; };
-		OBJ_97 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* APIClient.swift */; };
-		OBJ_98 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* APIError.swift */; };
-		OBJ_99 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* Result.swift */; };
+		D932C3B5220F4BE100857219 /* UDPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D932C3B1220F472500857219 /* UDPServer.swift */; };
+		D932C3B8220F80CC00857219 /* SocketAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = D932C3B6220F77BA00857219 /* SocketAddress.swift */; };
+		OBJ_100 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_45 /* APIClient.swift */; };
+		OBJ_101 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_46 /* APIError.swift */; };
+		OBJ_102 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_47 /* Result.swift */; };
+		OBJ_103 /* WeatherClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_48 /* WeatherClient.swift */; };
+		OBJ_104 /* WeatherForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_49 /* WeatherForecast.swift */; };
+		OBJ_111 /* APIRequestBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_65 /* APIRequestBuilderTests.swift */; };
+		OBJ_113 /* WeatherRESTClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "WeatherStationService::WeatherRESTClient::Product" /* WeatherRESTClient.framework */; };
+		OBJ_120 /* RequestProcessors.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* RequestProcessors.swift */; };
+		OBJ_121 /* UDPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* UDPClient.swift */; };
+		OBJ_123 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* main.swift */; };
+		OBJ_125 /* Socket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Socket::Socket::Product" /* Socket.framework */; };
+		OBJ_126 /* WeatherRESTClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "WeatherStationService::WeatherRESTClient::Product" /* WeatherRESTClient.framework */; };
+		OBJ_127 /* WeatherUDPProtocol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "WeatherStationService::WeatherUDPProtocol::Product" /* WeatherUDPProtocol.framework */; };
+		OBJ_137 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
+		OBJ_149 /* Array+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* Array+Hex.swift */; };
+		OBJ_150 /* Array+SumChecksum.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* Array+SumChecksum.swift */; };
+		OBJ_151 /* BinaryCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* BinaryCodable.swift */; };
+		OBJ_152 /* BinaryCodableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* BinaryCodableExtensions.swift */; };
+		OBJ_153 /* BinaryDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* BinaryDecoder.swift */; };
+		OBJ_154 /* BinaryEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* BinaryEncoder.swift */; };
+		OBJ_155 /* ArrayUInt8+BinaryEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* ArrayUInt8+BinaryEncodable.swift */; };
+		OBJ_156 /* Date+BinaryCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* Date+BinaryCodable.swift */; };
+		OBJ_157 /* PacketDataArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* PacketDataArray.swift */; };
+		OBJ_158 /* Data+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_25 /* Data+Hex.swift */; };
+		OBJ_159 /* Float+Int16Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* Float+Int16Round.swift */; };
+		OBJ_160 /* Float+Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* Float+Rounded.swift */; };
+		OBJ_161 /* CurrentWeatherPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_29 /* CurrentWeatherPacket.swift */; };
+		OBJ_162 /* Checksum.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* Checksum.swift */; };
+		OBJ_163 /* Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* Commands.swift */; };
+		OBJ_164 /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* Countries.swift */; };
+		OBJ_165 /* HeaderFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* HeaderFooter.swift */; };
+		OBJ_166 /* MacAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* MacAddress.swift */; };
+		OBJ_167 /* StaticNibble.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* StaticNibble.swift */; };
+		OBJ_168 /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_37 /* Temperature.swift */; };
+		OBJ_169 /* NextDaysForecastPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_38 /* NextDaysForecastPacket.swift */; };
+		OBJ_170 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_39 /* Requests.swift */; };
+		OBJ_171 /* Responses.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_40 /* Responses.swift */; };
+		OBJ_172 /* UDPPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_41 /* UDPPacket.swift */; };
+		OBJ_173 /* WeatherForecastBin.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_42 /* WeatherForecastBin.swift */; };
+		OBJ_174 /* UInt16+ByteArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_43 /* UInt16+ByteArray.swift */; };
+		OBJ_180 /* BinaryCooderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_52 /* BinaryCooderTests.swift */; };
+		OBJ_181 /* ChecksumMathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_53 /* ChecksumMathTests.swift */; };
+		OBJ_182 /* CurrentWeatherPacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_54 /* CurrentWeatherPacketTests.swift */; };
+		OBJ_183 /* DataHexConversionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_55 /* DataHexConversionTests.swift */; };
+		OBJ_184 /* FlatRoundingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_56 /* FlatRoundingTests.swift */; };
+		OBJ_185 /* FloatRoundedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_57 /* FloatRoundedTests.swift */; };
+		OBJ_186 /* HeaderFooterPacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_58 /* HeaderFooterPacketTests.swift */; };
+		OBJ_187 /* NextDaysForecastPacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_59 /* NextDaysForecastPacketTests.swift */; };
+		OBJ_188 /* TemperatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_60 /* TemperatureTests.swift */; };
+		OBJ_189 /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_61 /* TestUtils.swift */; };
+		OBJ_190 /* UDPPacketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_62 /* UDPPacketTests.swift */; };
+		OBJ_191 /* WeatherForecastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_63 /* WeatherForecastTests.swift */; };
+		OBJ_193 /* WeatherUDPProtocol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "WeatherStationService::WeatherUDPProtocol::Product" /* WeatherUDPProtocol.framework */; };
+		OBJ_85 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_69 /* Socket.swift */; };
+		OBJ_86 /* SocketProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_70 /* SocketProtocols.swift */; };
+		OBJ_87 /* SocketUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_71 /* SocketUtils.swift */; };
+		OBJ_94 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_72 /* Package.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D961CD05220C619500E19CA5 /* PBXContainerItemProxy */ = {
+		D932C3AB220E1D5300857219 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Socket::Socket";
 			remoteInfo = Socket;
 		};
-		D961CD06220C619500E19CA5 /* PBXContainerItemProxy */ = {
+		D932C3AC220E1D5300857219 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "WeatherStationService::WeatherRESTClient";
 			remoteInfo = WeatherRESTClient;
 		};
-		D961CD07220C619500E19CA5 /* PBXContainerItemProxy */ = {
+		D932C3AD220E1D5300857219 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "WeatherStationService::WeatherUDPProtocol";
 			remoteInfo = WeatherUDPProtocol;
 		};
-		D961CD08220C619500E19CA5 /* PBXContainerItemProxy */ = {
+		D932C3AE220E1D5300857219 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "WeatherStationService::WeatherRESTClient";
 			remoteInfo = WeatherRESTClient;
 		};
-		D961CD09220C619500E19CA5 /* PBXContainerItemProxy */ = {
+		D932C3AF220E1D5300857219 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "WeatherStationService::WeatherUDPProtocol";
 			remoteInfo = WeatherUDPProtocol;
 		};
-		D961CD0A220C619800E19CA5 /* PBXContainerItemProxy */ = {
+		D932C3B3220F472700857219 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "WeatherStationService::WeatherUDPProtocolTests";
 			remoteInfo = WeatherUDPProtocolTests;
 		};
-		D961CD0B220C619800E19CA5 /* PBXContainerItemProxy */ = {
+		D932C3B4220F472700857219 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
@@ -135,59 +136,60 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D961CD0C220C66B700E19CA5 /* WeatherUDPServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherUDPServer.swift; sourceTree = "<group>"; };
-		D961CD0F220C85DB00E19CA5 /* RequestProcessors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProcessors.swift; sourceTree = "<group>"; };
-		D961CD11220C8F9E00E19CA5 /* UDPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPClient.swift; sourceTree = "<group>"; };
-		OBJ_10 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
-		OBJ_11 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		OBJ_12 /* WeatherClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherClient.swift; sourceTree = "<group>"; };
-		OBJ_13 /* WeatherForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecast.swift; sourceTree = "<group>"; };
-		OBJ_15 /* Array+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Hex.swift"; sourceTree = "<group>"; };
-		OBJ_16 /* Array+SumChecksum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+SumChecksum.swift"; sourceTree = "<group>"; };
-		OBJ_18 /* BinaryCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryCodable.swift; sourceTree = "<group>"; };
-		OBJ_19 /* BinaryCodableExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryCodableExtensions.swift; sourceTree = "<group>"; };
-		OBJ_20 /* BinaryDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryDecoder.swift; sourceTree = "<group>"; };
-		OBJ_21 /* BinaryEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryEncoder.swift; sourceTree = "<group>"; };
-		OBJ_23 /* ArrayUInt8+BinaryEncodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArrayUInt8+BinaryEncodable.swift"; sourceTree = "<group>"; };
-		OBJ_24 /* Date+BinaryCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+BinaryCodable.swift"; sourceTree = "<group>"; };
-		OBJ_25 /* PacketDataArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketDataArray.swift; sourceTree = "<group>"; };
-		OBJ_26 /* Data+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Hex.swift"; sourceTree = "<group>"; };
-		OBJ_27 /* Float+Int16Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Int16Round.swift"; sourceTree = "<group>"; };
-		OBJ_28 /* Float+Rounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Rounded.swift"; sourceTree = "<group>"; };
-		OBJ_30 /* CurrentWeatherPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherPacket.swift; sourceTree = "<group>"; };
-		OBJ_32 /* Checksum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checksum.swift; sourceTree = "<group>"; };
-		OBJ_33 /* Commands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commands.swift; sourceTree = "<group>"; };
-		OBJ_34 /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
-		OBJ_35 /* HeaderFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderFooter.swift; sourceTree = "<group>"; };
-		OBJ_36 /* MacAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacAddress.swift; sourceTree = "<group>"; };
-		OBJ_37 /* StaticNibble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticNibble.swift; sourceTree = "<group>"; };
-		OBJ_38 /* Temperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
-		OBJ_39 /* NextDaysForecastPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextDaysForecastPacket.swift; sourceTree = "<group>"; };
-		OBJ_40 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
-		OBJ_41 /* Responses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Responses.swift; sourceTree = "<group>"; };
-		OBJ_42 /* UDPPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPPacket.swift; sourceTree = "<group>"; };
-		OBJ_43 /* WeatherForecastBin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecastBin.swift; sourceTree = "<group>"; };
-		OBJ_44 /* UInt16+ByteArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UInt16+ByteArray.swift"; sourceTree = "<group>"; };
-		OBJ_46 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		OBJ_49 /* APIRequestBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestBuilderTests.swift; sourceTree = "<group>"; };
-		OBJ_51 /* BinaryCooderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryCooderTests.swift; sourceTree = "<group>"; };
-		OBJ_52 /* ChecksumMathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecksumMathTests.swift; sourceTree = "<group>"; };
-		OBJ_53 /* CurrentWeatherPacketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherPacketTests.swift; sourceTree = "<group>"; };
-		OBJ_54 /* DataHexConversionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHexConversionTests.swift; sourceTree = "<group>"; };
-		OBJ_55 /* FlatRoundingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatRoundingTests.swift; sourceTree = "<group>"; };
-		OBJ_56 /* FloatRoundedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatRoundedTests.swift; sourceTree = "<group>"; };
-		OBJ_57 /* HeaderFooterPacketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderFooterPacketTests.swift; sourceTree = "<group>"; };
-		OBJ_58 /* NextDaysForecastPacketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextDaysForecastPacketTests.swift; sourceTree = "<group>"; };
-		OBJ_59 /* TemperatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureTests.swift; sourceTree = "<group>"; };
+		D932C3B1220F472500857219 /* UDPServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPServer.swift; sourceTree = "<group>"; };
+		D932C3B6220F77BA00857219 /* SocketAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketAddress.swift; sourceTree = "<group>"; };
+		OBJ_10 /* UDPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPClient.swift; sourceTree = "<group>"; };
+		OBJ_12 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		OBJ_14 /* Array+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Hex.swift"; sourceTree = "<group>"; };
+		OBJ_15 /* Array+SumChecksum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+SumChecksum.swift"; sourceTree = "<group>"; };
+		OBJ_17 /* BinaryCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryCodable.swift; sourceTree = "<group>"; };
+		OBJ_18 /* BinaryCodableExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryCodableExtensions.swift; sourceTree = "<group>"; };
+		OBJ_19 /* BinaryDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryDecoder.swift; sourceTree = "<group>"; };
+		OBJ_20 /* BinaryEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryEncoder.swift; sourceTree = "<group>"; };
+		OBJ_22 /* ArrayUInt8+BinaryEncodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArrayUInt8+BinaryEncodable.swift"; sourceTree = "<group>"; };
+		OBJ_23 /* Date+BinaryCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+BinaryCodable.swift"; sourceTree = "<group>"; };
+		OBJ_24 /* PacketDataArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketDataArray.swift; sourceTree = "<group>"; };
+		OBJ_25 /* Data+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Hex.swift"; sourceTree = "<group>"; };
+		OBJ_26 /* Float+Int16Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Int16Round.swift"; sourceTree = "<group>"; };
+		OBJ_27 /* Float+Rounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Rounded.swift"; sourceTree = "<group>"; };
+		OBJ_29 /* CurrentWeatherPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherPacket.swift; sourceTree = "<group>"; };
+		OBJ_31 /* Checksum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checksum.swift; sourceTree = "<group>"; };
+		OBJ_32 /* Commands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commands.swift; sourceTree = "<group>"; };
+		OBJ_33 /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
+		OBJ_34 /* HeaderFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderFooter.swift; sourceTree = "<group>"; };
+		OBJ_35 /* MacAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacAddress.swift; sourceTree = "<group>"; };
+		OBJ_36 /* StaticNibble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticNibble.swift; sourceTree = "<group>"; };
+		OBJ_37 /* Temperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
+		OBJ_38 /* NextDaysForecastPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextDaysForecastPacket.swift; sourceTree = "<group>"; };
+		OBJ_39 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
+		OBJ_40 /* Responses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Responses.swift; sourceTree = "<group>"; };
+		OBJ_41 /* UDPPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPPacket.swift; sourceTree = "<group>"; };
+		OBJ_42 /* WeatherForecastBin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecastBin.swift; sourceTree = "<group>"; };
+		OBJ_43 /* UInt16+ByteArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UInt16+ByteArray.swift"; sourceTree = "<group>"; };
+		OBJ_45 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		OBJ_46 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		OBJ_47 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		OBJ_48 /* WeatherClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherClient.swift; sourceTree = "<group>"; };
+		OBJ_49 /* WeatherForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecast.swift; sourceTree = "<group>"; };
+		OBJ_52 /* BinaryCooderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryCooderTests.swift; sourceTree = "<group>"; };
+		OBJ_53 /* ChecksumMathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecksumMathTests.swift; sourceTree = "<group>"; };
+		OBJ_54 /* CurrentWeatherPacketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherPacketTests.swift; sourceTree = "<group>"; };
+		OBJ_55 /* DataHexConversionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHexConversionTests.swift; sourceTree = "<group>"; };
+		OBJ_56 /* FlatRoundingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatRoundingTests.swift; sourceTree = "<group>"; };
+		OBJ_57 /* FloatRoundedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatRoundedTests.swift; sourceTree = "<group>"; };
+		OBJ_58 /* HeaderFooterPacketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderFooterPacketTests.swift; sourceTree = "<group>"; };
+		OBJ_59 /* NextDaysForecastPacketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextDaysForecastPacketTests.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		OBJ_60 /* TestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
-		OBJ_61 /* UDPPacketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPPacketTests.swift; sourceTree = "<group>"; };
-		OBJ_62 /* WeatherForecastTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecastTests.swift; sourceTree = "<group>"; };
-		OBJ_66 /* Socket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
-		OBJ_67 /* SocketProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketProtocols.swift; sourceTree = "<group>"; };
-		OBJ_68 /* SocketUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketUtils.swift; sourceTree = "<group>"; };
-		OBJ_69 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/fabiogallonetto/Development/WeatherStationService/.build/checkouts/BlueSocket.git--2553392031450431476/Package.swift"; sourceTree = "<group>"; };
-		OBJ_9 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		OBJ_60 /* TemperatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureTests.swift; sourceTree = "<group>"; };
+		OBJ_61 /* TestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
+		OBJ_62 /* UDPPacketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPPacketTests.swift; sourceTree = "<group>"; };
+		OBJ_63 /* WeatherForecastTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecastTests.swift; sourceTree = "<group>"; };
+		OBJ_65 /* APIRequestBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestBuilderTests.swift; sourceTree = "<group>"; };
+		OBJ_69 /* Socket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
+		OBJ_70 /* SocketProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketProtocols.swift; sourceTree = "<group>"; };
+		OBJ_71 /* SocketUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketUtils.swift; sourceTree = "<group>"; };
+		OBJ_72 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/fabiogallonetto/Development/WeatherStationService/.build/checkouts/BlueSocket.git-1992582111143921431/Package.swift"; sourceTree = "<group>"; };
+		OBJ_9 /* RequestProcessors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProcessors.swift; sourceTree = "<group>"; };
 		"Socket::Socket::Product" /* Socket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Socket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"WeatherStationService::WeatherRESTClient::Product" /* WeatherRESTClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WeatherRESTClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"WeatherStationService::WeatherRESTClientTests::Product" /* WeatherRESTClientTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = WeatherRESTClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,47 +199,47 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		OBJ_102 /* Frameworks */ = {
+		OBJ_105 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_109 /* Frameworks */ = {
+		OBJ_112 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_110 /* WeatherRESTClient.framework in Frameworks */,
+				OBJ_113 /* WeatherRESTClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_118 /* Frameworks */ = {
+		OBJ_124 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_119 /* Socket.framework in Frameworks */,
-				OBJ_120 /* WeatherRESTClient.framework in Frameworks */,
-				OBJ_121 /* WeatherUDPProtocol.framework in Frameworks */,
+				OBJ_125 /* Socket.framework in Frameworks */,
+				OBJ_126 /* WeatherRESTClient.framework in Frameworks */,
+				OBJ_127 /* WeatherUDPProtocol.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_169 /* Frameworks */ = {
+		OBJ_175 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_186 /* Frameworks */ = {
+		OBJ_192 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_187 /* WeatherUDPProtocol.framework in Frameworks */,
+				OBJ_193 /* WeatherUDPProtocol.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_85 /* Frameworks */ = {
+		OBJ_88 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
@@ -247,100 +249,92 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		OBJ_14 /* WeatherUDPProtocol */ = {
+		D932C3B0220F471900857219 /* UDPServer */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_15 /* Array+Hex.swift */,
-				OBJ_16 /* Array+SumChecksum.swift */,
-				OBJ_17 /* BinaryCodable */,
-				OBJ_26 /* Data+Hex.swift */,
-				OBJ_27 /* Float+Int16Round.swift */,
-				OBJ_28 /* Float+Rounded.swift */,
-				OBJ_29 /* Packets */,
-				OBJ_44 /* UInt16+ByteArray.swift */,
+				D932C3B1220F472500857219 /* UDPServer.swift */,
+				D932C3B6220F77BA00857219 /* SocketAddress.swift */,
+			);
+			path = UDPServer;
+			sourceTree = "<group>";
+		};
+		OBJ_13 /* WeatherUDPProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_14 /* Array+Hex.swift */,
+				OBJ_15 /* Array+SumChecksum.swift */,
+				OBJ_16 /* BinaryCodable */,
+				OBJ_25 /* Data+Hex.swift */,
+				OBJ_26 /* Float+Int16Round.swift */,
+				OBJ_27 /* Float+Rounded.swift */,
+				OBJ_28 /* Packets */,
+				OBJ_43 /* UInt16+ByteArray.swift */,
 			);
 			name = WeatherUDPProtocol;
 			path = Sources/WeatherUDPProtocol;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_17 /* BinaryCodable */ = {
+		OBJ_16 /* BinaryCodable */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_18 /* BinaryCodable.swift */,
-				OBJ_19 /* BinaryCodableExtensions.swift */,
-				OBJ_20 /* BinaryDecoder.swift */,
-				OBJ_21 /* BinaryEncoder.swift */,
-				OBJ_22 /* Custom Types */,
+				OBJ_17 /* BinaryCodable.swift */,
+				OBJ_18 /* BinaryCodableExtensions.swift */,
+				OBJ_19 /* BinaryDecoder.swift */,
+				OBJ_20 /* BinaryEncoder.swift */,
+				OBJ_21 /* Custom Types */,
 			);
 			path = BinaryCodable;
 			sourceTree = "<group>";
 		};
-		OBJ_22 /* Custom Types */ = {
+		OBJ_21 /* Custom Types */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_23 /* ArrayUInt8+BinaryEncodable.swift */,
-				OBJ_24 /* Date+BinaryCodable.swift */,
-				OBJ_25 /* PacketDataArray.swift */,
+				OBJ_22 /* ArrayUInt8+BinaryEncodable.swift */,
+				OBJ_23 /* Date+BinaryCodable.swift */,
+				OBJ_24 /* PacketDataArray.swift */,
 			);
 			path = "Custom Types";
 			sourceTree = "<group>";
 		};
-		OBJ_29 /* Packets */ = {
+		OBJ_28 /* Packets */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_30 /* CurrentWeatherPacket.swift */,
-				OBJ_31 /* NIbbles */,
-				OBJ_39 /* NextDaysForecastPacket.swift */,
-				OBJ_40 /* Requests.swift */,
-				OBJ_41 /* Responses.swift */,
-				OBJ_42 /* UDPPacket.swift */,
-				OBJ_43 /* WeatherForecastBin.swift */,
+				OBJ_29 /* CurrentWeatherPacket.swift */,
+				OBJ_30 /* NIbbles */,
+				OBJ_38 /* NextDaysForecastPacket.swift */,
+				OBJ_39 /* Requests.swift */,
+				OBJ_40 /* Responses.swift */,
+				OBJ_41 /* UDPPacket.swift */,
+				OBJ_42 /* WeatherForecastBin.swift */,
 			);
 			path = Packets;
 			sourceTree = "<group>";
 		};
-		OBJ_31 /* NIbbles */ = {
+		OBJ_30 /* NIbbles */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_32 /* Checksum.swift */,
-				OBJ_33 /* Commands.swift */,
-				OBJ_34 /* Countries.swift */,
-				OBJ_35 /* HeaderFooter.swift */,
-				OBJ_36 /* MacAddress.swift */,
-				OBJ_37 /* StaticNibble.swift */,
-				OBJ_38 /* Temperature.swift */,
+				OBJ_31 /* Checksum.swift */,
+				OBJ_32 /* Commands.swift */,
+				OBJ_33 /* Countries.swift */,
+				OBJ_34 /* HeaderFooter.swift */,
+				OBJ_35 /* MacAddress.swift */,
+				OBJ_36 /* StaticNibble.swift */,
+				OBJ_37 /* Temperature.swift */,
 			);
 			path = NIbbles;
 			sourceTree = "<group>";
 		};
-		OBJ_45 /* WeatherStationService */ = {
+		OBJ_44 /* WeatherRESTClient */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_46 /* main.swift */,
-				D961CD0C220C66B700E19CA5 /* WeatherUDPServer.swift */,
-				D961CD0F220C85DB00E19CA5 /* RequestProcessors.swift */,
-				D961CD11220C8F9E00E19CA5 /* UDPClient.swift */,
+				OBJ_45 /* APIClient.swift */,
+				OBJ_46 /* APIError.swift */,
+				OBJ_47 /* Result.swift */,
+				OBJ_48 /* WeatherClient.swift */,
+				OBJ_49 /* WeatherForecast.swift */,
 			);
-			name = WeatherStationService;
-			path = Sources/WeatherStationService;
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_47 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_48 /* WeatherRESTClientTests */,
-				OBJ_50 /* WeatherUDPProtocolTests */,
-			);
-			name = Tests;
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_48 /* WeatherRESTClientTests */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_49 /* APIRequestBuilderTests.swift */,
-			);
-			name = WeatherRESTClientTests;
-			path = Tests/WeatherRESTClientTests;
+			name = WeatherRESTClient;
+			path = Sources/WeatherRESTClient;
 			sourceTree = SOURCE_ROOT;
 		};
 		OBJ_5 /*  */ = {
@@ -348,95 +342,112 @@
 			children = (
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
-				OBJ_47 /* Tests */,
-				OBJ_63 /* Dependencies */,
-				OBJ_70 /* Products */,
+				OBJ_50 /* Tests */,
+				OBJ_66 /* Dependencies */,
+				OBJ_73 /* Products */,
 			);
 			name = "";
 			sourceTree = "<group>";
 		};
-		OBJ_50 /* WeatherUDPProtocolTests */ = {
+		OBJ_50 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_51 /* BinaryCooderTests.swift */,
-				OBJ_52 /* ChecksumMathTests.swift */,
-				OBJ_53 /* CurrentWeatherPacketTests.swift */,
-				OBJ_54 /* DataHexConversionTests.swift */,
-				OBJ_55 /* FlatRoundingTests.swift */,
-				OBJ_56 /* FloatRoundedTests.swift */,
-				OBJ_57 /* HeaderFooterPacketTests.swift */,
-				OBJ_58 /* NextDaysForecastPacketTests.swift */,
-				OBJ_59 /* TemperatureTests.swift */,
-				OBJ_60 /* TestUtils.swift */,
-				OBJ_61 /* UDPPacketTests.swift */,
-				OBJ_62 /* WeatherForecastTests.swift */,
+				OBJ_51 /* WeatherUDPProtocolTests */,
+				OBJ_64 /* WeatherRESTClientTests */,
+			);
+			name = Tests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_51 /* WeatherUDPProtocolTests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_52 /* BinaryCooderTests.swift */,
+				OBJ_53 /* ChecksumMathTests.swift */,
+				OBJ_54 /* CurrentWeatherPacketTests.swift */,
+				OBJ_55 /* DataHexConversionTests.swift */,
+				OBJ_56 /* FlatRoundingTests.swift */,
+				OBJ_57 /* FloatRoundedTests.swift */,
+				OBJ_58 /* HeaderFooterPacketTests.swift */,
+				OBJ_59 /* NextDaysForecastPacketTests.swift */,
+				OBJ_60 /* TemperatureTests.swift */,
+				OBJ_61 /* TestUtils.swift */,
+				OBJ_62 /* UDPPacketTests.swift */,
+				OBJ_63 /* WeatherForecastTests.swift */,
 			);
 			name = WeatherUDPProtocolTests;
 			path = Tests/WeatherUDPProtocolTests;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_63 /* Dependencies */ = {
+		OBJ_64 /* WeatherRESTClientTests */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_64 /* Socket 1.0.44 */,
+				OBJ_65 /* APIRequestBuilderTests.swift */,
+			);
+			name = WeatherRESTClientTests;
+			path = Tests/WeatherRESTClientTests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_66 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_67 /* Socket 1.0.44 */,
 			);
 			name = Dependencies;
 			sourceTree = "<group>";
 		};
-		OBJ_64 /* Socket 1.0.44 */ = {
+		OBJ_67 /* Socket 1.0.44 */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_65 /* Socket */,
-				OBJ_69 /* Package.swift */,
+				OBJ_68 /* Socket */,
+				OBJ_72 /* Package.swift */,
 			);
 			name = "Socket 1.0.44";
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_65 /* Socket */ = {
+		OBJ_68 /* Socket */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_66 /* Socket.swift */,
-				OBJ_67 /* SocketProtocols.swift */,
-				OBJ_68 /* SocketUtils.swift */,
+				OBJ_69 /* Socket.swift */,
+				OBJ_70 /* SocketProtocols.swift */,
+				OBJ_71 /* SocketUtils.swift */,
 			);
 			name = Socket;
-			path = ".build/checkouts/BlueSocket.git--2553392031450431476/Sources/Socket";
+			path = ".build/checkouts/BlueSocket.git-1992582111143921431/Sources/Socket";
 			sourceTree = SOURCE_ROOT;
 		};
 		OBJ_7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_8 /* WeatherRESTClient */,
-				OBJ_14 /* WeatherUDPProtocol */,
-				OBJ_45 /* WeatherStationService */,
+				OBJ_8 /* WeatherStationService */,
+				OBJ_13 /* WeatherUDPProtocol */,
+				OBJ_44 /* WeatherRESTClient */,
 			);
 			name = Sources;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_70 /* Products */ = {
+		OBJ_73 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				"WeatherStationService::WeatherUDPProtocol::Product" /* WeatherUDPProtocol.framework */,
-				"Socket::Socket::Product" /* Socket.framework */,
+				"WeatherStationService::WeatherStationService::Product" /* WeatherStationService */,
 				"WeatherStationService::WeatherUDPProtocolTests::Product" /* WeatherUDPProtocolTests.xctest */,
 				"WeatherStationService::WeatherRESTClient::Product" /* WeatherRESTClient.framework */,
-				"WeatherStationService::WeatherStationService::Product" /* WeatherStationService */,
+				"Socket::Socket::Product" /* Socket.framework */,
 				"WeatherStationService::WeatherRESTClientTests::Product" /* WeatherRESTClientTests.xctest */,
+				"WeatherStationService::WeatherUDPProtocol::Product" /* WeatherUDPProtocol.framework */,
 			);
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_8 /* WeatherRESTClient */ = {
+		OBJ_8 /* WeatherStationService */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_9 /* APIClient.swift */,
-				OBJ_10 /* APIError.swift */,
-				OBJ_11 /* Result.swift */,
-				OBJ_12 /* WeatherClient.swift */,
-				OBJ_13 /* WeatherForecast.swift */,
+				D932C3B0220F471900857219 /* UDPServer */,
+				OBJ_9 /* RequestProcessors.swift */,
+				OBJ_10 /* UDPClient.swift */,
+				OBJ_12 /* main.swift */,
 			);
-			name = WeatherRESTClient;
-			path = Sources/WeatherRESTClient;
+			name = WeatherStationService;
+			path = Sources/WeatherStationService;
 			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
@@ -444,10 +455,10 @@
 /* Begin PBXNativeTarget section */
 		"Socket::Socket" /* Socket */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_78 /* Build configuration list for PBXNativeTarget "Socket" */;
+			buildConfigurationList = OBJ_81 /* Build configuration list for PBXNativeTarget "Socket" */;
 			buildPhases = (
-				OBJ_81 /* Sources */,
-				OBJ_85 /* Frameworks */,
+				OBJ_84 /* Sources */,
+				OBJ_88 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -460,9 +471,9 @@
 		};
 		"Socket::SwiftPMPackageDescription" /* SocketPackageDescription */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_87 /* Build configuration list for PBXNativeTarget "SocketPackageDescription" */;
+			buildConfigurationList = OBJ_90 /* Build configuration list for PBXNativeTarget "SocketPackageDescription" */;
 			buildPhases = (
-				OBJ_90 /* Sources */,
+				OBJ_93 /* Sources */,
 			);
 			buildRules = (
 			);
@@ -474,9 +485,9 @@
 		};
 		"WeatherStationService::SwiftPMPackageDescription" /* WeatherStationServicePackageDescription */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_127 /* Build configuration list for PBXNativeTarget "WeatherStationServicePackageDescription" */;
+			buildConfigurationList = OBJ_133 /* Build configuration list for PBXNativeTarget "WeatherStationServicePackageDescription" */;
 			buildPhases = (
-				OBJ_130 /* Sources */,
+				OBJ_136 /* Sources */,
 			);
 			buildRules = (
 			);
@@ -488,10 +499,10 @@
 		};
 		"WeatherStationService::WeatherRESTClient" /* WeatherRESTClient */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_93 /* Build configuration list for PBXNativeTarget "WeatherRESTClient" */;
+			buildConfigurationList = OBJ_96 /* Build configuration list for PBXNativeTarget "WeatherRESTClient" */;
 			buildPhases = (
-				OBJ_96 /* Sources */,
-				OBJ_102 /* Frameworks */,
+				OBJ_99 /* Sources */,
+				OBJ_105 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -504,15 +515,15 @@
 		};
 		"WeatherStationService::WeatherRESTClientTests" /* WeatherRESTClientTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_104 /* Build configuration list for PBXNativeTarget "WeatherRESTClientTests" */;
+			buildConfigurationList = OBJ_107 /* Build configuration list for PBXNativeTarget "WeatherRESTClientTests" */;
 			buildPhases = (
-				OBJ_107 /* Sources */,
-				OBJ_109 /* Frameworks */,
+				OBJ_110 /* Sources */,
+				OBJ_112 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_111 /* PBXTargetDependency */,
+				OBJ_114 /* PBXTargetDependency */,
 			);
 			name = WeatherRESTClientTests;
 			productName = WeatherRESTClientTests;
@@ -521,17 +532,17 @@
 		};
 		"WeatherStationService::WeatherStationService" /* WeatherStationService */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_113 /* Build configuration list for PBXNativeTarget "WeatherStationService" */;
+			buildConfigurationList = OBJ_116 /* Build configuration list for PBXNativeTarget "WeatherStationService" */;
 			buildPhases = (
-				OBJ_116 /* Sources */,
-				OBJ_118 /* Frameworks */,
+				OBJ_119 /* Sources */,
+				OBJ_124 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_122 /* PBXTargetDependency */,
-				OBJ_123 /* PBXTargetDependency */,
-				OBJ_124 /* PBXTargetDependency */,
+				OBJ_128 /* PBXTargetDependency */,
+				OBJ_129 /* PBXTargetDependency */,
+				OBJ_130 /* PBXTargetDependency */,
 			);
 			name = WeatherStationService;
 			productName = WeatherStationService;
@@ -540,10 +551,10 @@
 		};
 		"WeatherStationService::WeatherUDPProtocol" /* WeatherUDPProtocol */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_139 /* Build configuration list for PBXNativeTarget "WeatherUDPProtocol" */;
+			buildConfigurationList = OBJ_145 /* Build configuration list for PBXNativeTarget "WeatherUDPProtocol" */;
 			buildPhases = (
-				OBJ_142 /* Sources */,
-				OBJ_169 /* Frameworks */,
+				OBJ_148 /* Sources */,
+				OBJ_175 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -556,15 +567,15 @@
 		};
 		"WeatherStationService::WeatherUDPProtocolTests" /* WeatherUDPProtocolTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_170 /* Build configuration list for PBXNativeTarget "WeatherUDPProtocolTests" */;
+			buildConfigurationList = OBJ_176 /* Build configuration list for PBXNativeTarget "WeatherUDPProtocolTests" */;
 			buildPhases = (
-				OBJ_173 /* Sources */,
-				OBJ_186 /* Frameworks */,
+				OBJ_179 /* Sources */,
+				OBJ_192 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_188 /* PBXTargetDependency */,
+				OBJ_194 /* PBXTargetDependency */,
 			);
 			name = WeatherUDPProtocolTests;
 			productName = WeatherUDPProtocolTests;
@@ -587,7 +598,7 @@
 				en,
 			);
 			mainGroup = OBJ_5 /*  */;
-			productRefGroup = OBJ_70 /* Products */;
+			productRefGroup = OBJ_73 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -605,157 +616,158 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		OBJ_107 /* Sources */ = {
+		OBJ_110 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_108 /* APIRequestBuilderTests.swift in Sources */,
+				OBJ_111 /* APIRequestBuilderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_116 /* Sources */ = {
+		OBJ_119 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				D961CD10220C85DB00E19CA5 /* RequestProcessors.swift in Sources */,
-				OBJ_117 /* main.swift in Sources */,
-				D961CD12220C8F9E00E19CA5 /* UDPClient.swift in Sources */,
-				D961CD0E220C66BA00E19CA5 /* WeatherUDPServer.swift in Sources */,
+				OBJ_120 /* RequestProcessors.swift in Sources */,
+				OBJ_121 /* UDPClient.swift in Sources */,
+				OBJ_123 /* main.swift in Sources */,
+				D932C3B5220F4BE100857219 /* UDPServer.swift in Sources */,
+				D932C3B8220F80CC00857219 /* SocketAddress.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_130 /* Sources */ = {
+		OBJ_136 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_131 /* Package.swift in Sources */,
+				OBJ_137 /* Package.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_142 /* Sources */ = {
+		OBJ_148 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_143 /* Array+Hex.swift in Sources */,
-				OBJ_144 /* Array+SumChecksum.swift in Sources */,
-				OBJ_145 /* BinaryCodable.swift in Sources */,
-				OBJ_146 /* BinaryCodableExtensions.swift in Sources */,
-				OBJ_147 /* BinaryDecoder.swift in Sources */,
-				OBJ_148 /* BinaryEncoder.swift in Sources */,
-				OBJ_149 /* ArrayUInt8+BinaryEncodable.swift in Sources */,
-				OBJ_150 /* Date+BinaryCodable.swift in Sources */,
-				OBJ_151 /* PacketDataArray.swift in Sources */,
-				OBJ_152 /* Data+Hex.swift in Sources */,
-				OBJ_153 /* Float+Int16Round.swift in Sources */,
-				OBJ_154 /* Float+Rounded.swift in Sources */,
-				OBJ_155 /* CurrentWeatherPacket.swift in Sources */,
-				OBJ_156 /* Checksum.swift in Sources */,
-				OBJ_157 /* Commands.swift in Sources */,
-				OBJ_158 /* Countries.swift in Sources */,
-				OBJ_159 /* HeaderFooter.swift in Sources */,
-				OBJ_160 /* MacAddress.swift in Sources */,
-				OBJ_161 /* StaticNibble.swift in Sources */,
-				OBJ_162 /* Temperature.swift in Sources */,
-				OBJ_163 /* NextDaysForecastPacket.swift in Sources */,
-				OBJ_164 /* Requests.swift in Sources */,
-				OBJ_165 /* Responses.swift in Sources */,
-				OBJ_166 /* UDPPacket.swift in Sources */,
-				OBJ_167 /* WeatherForecastBin.swift in Sources */,
-				OBJ_168 /* UInt16+ByteArray.swift in Sources */,
+				OBJ_149 /* Array+Hex.swift in Sources */,
+				OBJ_150 /* Array+SumChecksum.swift in Sources */,
+				OBJ_151 /* BinaryCodable.swift in Sources */,
+				OBJ_152 /* BinaryCodableExtensions.swift in Sources */,
+				OBJ_153 /* BinaryDecoder.swift in Sources */,
+				OBJ_154 /* BinaryEncoder.swift in Sources */,
+				OBJ_155 /* ArrayUInt8+BinaryEncodable.swift in Sources */,
+				OBJ_156 /* Date+BinaryCodable.swift in Sources */,
+				OBJ_157 /* PacketDataArray.swift in Sources */,
+				OBJ_158 /* Data+Hex.swift in Sources */,
+				OBJ_159 /* Float+Int16Round.swift in Sources */,
+				OBJ_160 /* Float+Rounded.swift in Sources */,
+				OBJ_161 /* CurrentWeatherPacket.swift in Sources */,
+				OBJ_162 /* Checksum.swift in Sources */,
+				OBJ_163 /* Commands.swift in Sources */,
+				OBJ_164 /* Countries.swift in Sources */,
+				OBJ_165 /* HeaderFooter.swift in Sources */,
+				OBJ_166 /* MacAddress.swift in Sources */,
+				OBJ_167 /* StaticNibble.swift in Sources */,
+				OBJ_168 /* Temperature.swift in Sources */,
+				OBJ_169 /* NextDaysForecastPacket.swift in Sources */,
+				OBJ_170 /* Requests.swift in Sources */,
+				OBJ_171 /* Responses.swift in Sources */,
+				OBJ_172 /* UDPPacket.swift in Sources */,
+				OBJ_173 /* WeatherForecastBin.swift in Sources */,
+				OBJ_174 /* UInt16+ByteArray.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_173 /* Sources */ = {
+		OBJ_179 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_174 /* BinaryCooderTests.swift in Sources */,
-				OBJ_175 /* ChecksumMathTests.swift in Sources */,
-				OBJ_176 /* CurrentWeatherPacketTests.swift in Sources */,
-				OBJ_177 /* DataHexConversionTests.swift in Sources */,
-				OBJ_178 /* FlatRoundingTests.swift in Sources */,
-				OBJ_179 /* FloatRoundedTests.swift in Sources */,
-				OBJ_180 /* HeaderFooterPacketTests.swift in Sources */,
-				OBJ_181 /* NextDaysForecastPacketTests.swift in Sources */,
-				OBJ_182 /* TemperatureTests.swift in Sources */,
-				OBJ_183 /* TestUtils.swift in Sources */,
-				OBJ_184 /* UDPPacketTests.swift in Sources */,
-				OBJ_185 /* WeatherForecastTests.swift in Sources */,
+				OBJ_180 /* BinaryCooderTests.swift in Sources */,
+				OBJ_181 /* ChecksumMathTests.swift in Sources */,
+				OBJ_182 /* CurrentWeatherPacketTests.swift in Sources */,
+				OBJ_183 /* DataHexConversionTests.swift in Sources */,
+				OBJ_184 /* FlatRoundingTests.swift in Sources */,
+				OBJ_185 /* FloatRoundedTests.swift in Sources */,
+				OBJ_186 /* HeaderFooterPacketTests.swift in Sources */,
+				OBJ_187 /* NextDaysForecastPacketTests.swift in Sources */,
+				OBJ_188 /* TemperatureTests.swift in Sources */,
+				OBJ_189 /* TestUtils.swift in Sources */,
+				OBJ_190 /* UDPPacketTests.swift in Sources */,
+				OBJ_191 /* WeatherForecastTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_81 /* Sources */ = {
+		OBJ_84 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_82 /* Socket.swift in Sources */,
-				OBJ_83 /* SocketProtocols.swift in Sources */,
-				OBJ_84 /* SocketUtils.swift in Sources */,
+				OBJ_85 /* Socket.swift in Sources */,
+				OBJ_86 /* SocketProtocols.swift in Sources */,
+				OBJ_87 /* SocketUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_90 /* Sources */ = {
+		OBJ_93 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_91 /* Package.swift in Sources */,
+				OBJ_94 /* Package.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_96 /* Sources */ = {
+		OBJ_99 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_97 /* APIClient.swift in Sources */,
-				OBJ_98 /* APIError.swift in Sources */,
-				OBJ_99 /* Result.swift in Sources */,
-				OBJ_100 /* WeatherClient.swift in Sources */,
-				OBJ_101 /* WeatherForecast.swift in Sources */,
+				OBJ_100 /* APIClient.swift in Sources */,
+				OBJ_101 /* APIError.swift in Sources */,
+				OBJ_102 /* Result.swift in Sources */,
+				OBJ_103 /* WeatherClient.swift in Sources */,
+				OBJ_104 /* WeatherForecast.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		OBJ_111 /* PBXTargetDependency */ = {
+		OBJ_114 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "WeatherStationService::WeatherRESTClient" /* WeatherRESTClient */;
-			targetProxy = D961CD08220C619500E19CA5 /* PBXContainerItemProxy */;
+			targetProxy = D932C3AE220E1D5300857219 /* PBXContainerItemProxy */;
 		};
-		OBJ_122 /* PBXTargetDependency */ = {
+		OBJ_128 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Socket::Socket" /* Socket */;
-			targetProxy = D961CD05220C619500E19CA5 /* PBXContainerItemProxy */;
+			targetProxy = D932C3AB220E1D5300857219 /* PBXContainerItemProxy */;
 		};
-		OBJ_123 /* PBXTargetDependency */ = {
+		OBJ_129 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "WeatherStationService::WeatherRESTClient" /* WeatherRESTClient */;
-			targetProxy = D961CD06220C619500E19CA5 /* PBXContainerItemProxy */;
+			targetProxy = D932C3AC220E1D5300857219 /* PBXContainerItemProxy */;
 		};
-		OBJ_124 /* PBXTargetDependency */ = {
+		OBJ_130 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "WeatherStationService::WeatherUDPProtocol" /* WeatherUDPProtocol */;
-			targetProxy = D961CD07220C619500E19CA5 /* PBXContainerItemProxy */;
+			targetProxy = D932C3AD220E1D5300857219 /* PBXContainerItemProxy */;
 		};
-		OBJ_136 /* PBXTargetDependency */ = {
+		OBJ_142 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "WeatherStationService::WeatherUDPProtocolTests" /* WeatherUDPProtocolTests */;
-			targetProxy = D961CD0A220C619800E19CA5 /* PBXContainerItemProxy */;
+			targetProxy = D932C3B3220F472700857219 /* PBXContainerItemProxy */;
 		};
-		OBJ_138 /* PBXTargetDependency */ = {
+		OBJ_144 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "WeatherStationService::WeatherRESTClientTests" /* WeatherRESTClientTests */;
-			targetProxy = D961CD0B220C619800E19CA5 /* PBXContainerItemProxy */;
+			targetProxy = D932C3B4220F472700857219 /* PBXContainerItemProxy */;
 		};
-		OBJ_188 /* PBXTargetDependency */ = {
+		OBJ_194 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "WeatherStationService::WeatherUDPProtocol" /* WeatherUDPProtocol */;
-			targetProxy = D961CD09220C619500E19CA5 /* PBXContainerItemProxy */;
+			targetProxy = D932C3AF220E1D5300857219 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		OBJ_105 /* Debug */ = {
+		OBJ_108 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -776,7 +788,7 @@
 			};
 			name = Debug;
 		};
-		OBJ_106 /* Release */ = {
+		OBJ_109 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -797,7 +809,7 @@
 			};
 			name = Release;
 		};
-		OBJ_114 /* Debug */ = {
+		OBJ_117 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
@@ -818,7 +830,7 @@
 			};
 			name = Debug;
 		};
-		OBJ_115 /* Release */ = {
+		OBJ_118 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
@@ -836,40 +848,40 @@
 				SWIFT_FORCE_STATIC_LINK_STDLIB = NO;
 				SWIFT_VERSION = 4.2;
 				TARGET_NAME = WeatherStationService;
-			};
-			name = Release;
-		};
-		OBJ_128 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 4.2 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk";
-				SWIFT_VERSION = 4.2;
-			};
-			name = Debug;
-		};
-		OBJ_129 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 4.2 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk";
-				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
 		OBJ_134 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4.2 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
 		OBJ_135 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4.2 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
 		OBJ_140 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		OBJ_141 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		OBJ_146 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -893,7 +905,7 @@
 			};
 			name = Debug;
 		};
-		OBJ_141 /* Release */ = {
+		OBJ_147 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -917,7 +929,7 @@
 			};
 			name = Release;
 		};
-		OBJ_171 /* Debug */ = {
+		OBJ_177 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -938,7 +950,7 @@
 			};
 			name = Debug;
 		};
-		OBJ_172 /* Release */ = {
+		OBJ_178 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -1005,7 +1017,7 @@
 			};
 			name = Release;
 		};
-		OBJ_79 /* Debug */ = {
+		OBJ_82 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -1029,7 +1041,7 @@
 			};
 			name = Debug;
 		};
-		OBJ_80 /* Release */ = {
+		OBJ_83 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -1053,7 +1065,7 @@
 			};
 			name = Release;
 		};
-		OBJ_88 /* Debug */ = {
+		OBJ_91 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				LD = /usr/bin/true;
@@ -1062,7 +1074,7 @@
 			};
 			name = Debug;
 		};
-		OBJ_89 /* Release */ = {
+		OBJ_92 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				LD = /usr/bin/true;
@@ -1071,7 +1083,7 @@
 			};
 			name = Release;
 		};
-		OBJ_94 /* Debug */ = {
+		OBJ_97 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -1095,7 +1107,7 @@
 			};
 			name = Debug;
 		};
-		OBJ_95 /* Release */ = {
+		OBJ_98 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -1122,34 +1134,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		OBJ_104 /* Build configuration list for PBXNativeTarget "WeatherRESTClientTests" */ = {
+		OBJ_107 /* Build configuration list for PBXNativeTarget "WeatherRESTClientTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_105 /* Debug */,
-				OBJ_106 /* Release */,
+				OBJ_108 /* Debug */,
+				OBJ_109 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_113 /* Build configuration list for PBXNativeTarget "WeatherStationService" */ = {
+		OBJ_116 /* Build configuration list for PBXNativeTarget "WeatherStationService" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_114 /* Debug */,
-				OBJ_115 /* Release */,
+				OBJ_117 /* Debug */,
+				OBJ_118 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_127 /* Build configuration list for PBXNativeTarget "WeatherStationServicePackageDescription" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				OBJ_128 /* Debug */,
-				OBJ_129 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		OBJ_133 /* Build configuration list for PBXAggregateTarget "WeatherStationServicePackageTests" */ = {
+		OBJ_133 /* Build configuration list for PBXNativeTarget "WeatherStationServicePackageDescription" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				OBJ_134 /* Debug */,
@@ -1158,7 +1161,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_139 /* Build configuration list for PBXNativeTarget "WeatherUDPProtocol" */ = {
+		OBJ_139 /* Build configuration list for PBXAggregateTarget "WeatherStationServicePackageTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				OBJ_140 /* Debug */,
@@ -1167,11 +1170,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_170 /* Build configuration list for PBXNativeTarget "WeatherUDPProtocolTests" */ = {
+		OBJ_145 /* Build configuration list for PBXNativeTarget "WeatherUDPProtocol" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_171 /* Debug */,
-				OBJ_172 /* Release */,
+				OBJ_146 /* Debug */,
+				OBJ_147 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_176 /* Build configuration list for PBXNativeTarget "WeatherUDPProtocolTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_177 /* Debug */,
+				OBJ_178 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1185,29 +1197,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_78 /* Build configuration list for PBXNativeTarget "Socket" */ = {
+		OBJ_81 /* Build configuration list for PBXNativeTarget "Socket" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_79 /* Debug */,
-				OBJ_80 /* Release */,
+				OBJ_82 /* Debug */,
+				OBJ_83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_87 /* Build configuration list for PBXNativeTarget "SocketPackageDescription" */ = {
+		OBJ_90 /* Build configuration list for PBXNativeTarget "SocketPackageDescription" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_88 /* Debug */,
-				OBJ_89 /* Release */,
+				OBJ_91 /* Debug */,
+				OBJ_92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_93 /* Build configuration list for PBXNativeTarget "WeatherRESTClient" */ = {
+		OBJ_96 /* Build configuration list for PBXNativeTarget "WeatherRESTClient" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_94 /* Debug */,
-				OBJ_95 /* Release */,
+				OBJ_97 /* Debug */,
+				OBJ_98 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
