@@ -9,15 +9,21 @@
 import Foundation
 
 // Hardcoded UK
+private let uk = PacketDataArray(hex: "0C:13")
+
 public struct Country: BinaryCodable, StaticNibble {
     public static let length = 2
     public let value: PacketDataArray
     public init(value: PacketDataArray) throws {
-        let uk = PacketDataArray(hex: "0C:13")
+        
         guard value == uk else {
             throw BinaryDecoder.Error.staticMessageDoesNotMatch(value, uk)
         }
         self.value = value
+    }
+    
+    public static var uk: Country {
+        return try! self.init(value: uk)
     }
 }
 

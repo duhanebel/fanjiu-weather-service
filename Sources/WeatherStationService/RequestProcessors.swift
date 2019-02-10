@@ -7,6 +7,7 @@
 
 import Foundation
 import WeatherUDPProtocol
+import WeatherClient
 
 protocol WeatherUDPRequestProcessor {
     static var commands: [CommandID] { get }
@@ -37,16 +38,43 @@ struct HelloUDPRequestProcessor: WeatherUDPRequestProcessor {
     }
 }
 
+protocol weatherProvider {
+    func fetchWeather()
+    var weatherService: WeatherClient
+}
+
 struct ForecastUDPRequestProcessor: WeatherUDPRequestProcessor {
     static var commands = [CommandID.requestForecast]
     
+    var weatherService: WeatherClient
+    
+    init(weatherService: WeatherClient) {
+        self.weatherService = weatherService
+    }
+    
     func process(data: PacketDataArray) throws -> PacketDataArray {
-//        let request = try BinaryDecoder.decode(UDPPacket<HelloRequest>.self, data: data)
-//
-//        let responsePacket = UDPPacket<HelloResponse>(command: Command(commandID: .responseHello), mac:request.mac, country: request.country, date:Date(), payload: HelloResponse())
-//
-//        let responseData = try BinaryEncoder.encode(responsePacket)
-        return PacketDataArray(hex: "00:FF:00")
+        let request = try BinaryDecoder.decode(UDPPacket<HelloRequest>.self, data: data)
+        
+        let APIRequest = WeatherAPIRequest(location: Location.London())
+        client.send(APIRequest) { result in
+            switch(response) {
+                    case let .error(error as APIError):
+                        print(error.description)
+                        exit(-1)
+                    case let .error(error):
+                        print(error.localizedDescription)
+                        exit(-1)
+                    case let .success(result):
+            }
+            
+            // This is async, need to make it sync or find a way out!
+
+        
+        let weatherForecast = CurrentWeatherPacket(country: Country.uk, date: Date(), feelsLike: <#T##Float#>, pressure: <#T##Float#>, windSpeed: <#T##Float#>, windDirection: <#T##UInt8#>)
+        let responsePacket = UDPPacket<HelloResponse>(command: Command(commandID: .responseHello), mac:request.mac, country: request.country, date:Date(), payload: HelloResponse())
+
+        let responseData = try BinaryEncoder.encode(responsePacket)
+        return responseData
     }
 }
 

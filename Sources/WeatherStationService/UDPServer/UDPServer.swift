@@ -14,12 +14,17 @@ import Darwin
 import Foundation
 import Dispatch
 
-protocol RequestProcessor {
+protocol UDPRequestHandler {
     func process(data: Data, from: SocketAddress) throws -> (data: Data, to: SocketAddress)?
 }
 
 
 class UDPServer {
+    
+    enum Error: Swift.Error {
+        case invalidIPv4(String)
+        case unableToBind(String)
+    }
     
     // syncQueue help us print and read/write safely from our internal storage
     // while running, the main queue is blocking with readLine()
@@ -31,44 +36,53 @@ class UDPServer {
     
     var serverSources:[Int32:DispatchSourceRead] = [:]
     
-    var requestProcessor: RequestProcessor
+    var requestProcessor: UDPRequestHandler
     
-    init(processor: RequestProcessor) {
+    init(processor: UDPRequestHandler, bindIP: String?, bindPort: UInt16) throws {
+        if let bindIP = bindIP {
+            guard bindIP.isValidIPv4 else {
+                throw Error.invalidIPv4(bindIP)
+            }
+        }
+        self.bindIP = bindIP
+        self.bindPort = bindPort
         self.requestProcessor = processor
     }
     
     deinit {
         // first stop the server !!
         stop()
-        print("Echo UDP Server deinit")
+        print("UDP Server deinit")
     }
     
-    //let bindIP: String = "10.1.0.16"
-    let bindPort: UInt16 = 10000
+    let bindPort: UInt16
+    let bindIP: String?
     
-    func start() {
+    func start() throws {
         
-        // create buffer for temporary c strings
-        
-        var temp = [CChar](repeating: 0, count: 255)
-        
-        // host name
-        
-        gethostname(&temp, temp.count)
+        //var temp = [CChar](repeating: 0, count: 255)
         
         // create addrinfo based on hints
         // if host name is nil or "" we can connect on localhost
         // if host name is specified ( like "computer.domain" ... "My-MacBook.local" )
         // than localhost is not aviable.
-        // if port is 0, bind will assign some free port for us
+        var temp = [CChar](repeating: 0, count: 255)
+
+        let hosts: [String]
+        if let bindIP = self.bindIP {
+            hosts = [bindIP]
+        } else {
+            gethostname(&temp, temp.count)
+            hosts = ["localhost", String(cString: temp)]
+        }
         
-        let hosts = ["localhost", String(cString: temp)]
         var hints = addrinfo()
         hints.ai_flags = 0
         hints.ai_family = PF_UNSPEC
         hints.ai_socktype = SOCK_DGRAM
         hints.ai_protocol = IPPROTO_UDP
         
+        print("Server bound to:")
         for host in hosts {
             
             print("\t\(host)")
@@ -79,23 +93,20 @@ class UDPServer {
             
             var info: UnsafeMutablePointer<addrinfo>?
             defer {
-                if info != nil
-                {
+                if info != nil {
                     freeaddrinfo(info)
                 }
             }
             
-            let status: Int32 = getaddrinfo(host, String(port), nil, &info)
+            let status: Int32 = getaddrinfo(host, String(bindPort), nil, &info)
             guard status == 0 else {
-                print(errno, String(cString: gai_strerror(errno)))
-                return
+                throw Error.unableToBind(String(cString: gai_strerror(errno)))
             }
             
             var p = info
             var serverSocket: Int32 = 0
             var i = 0
-            var ipFamily = ""
-            
+
             // for each address avaiable
             
             while p != nil {
@@ -113,9 +124,7 @@ class UDPServer {
                     continue
                 }
                 
-                // set port is tricky, because we need to remap ai_addr differently
-                // for inet and for inet6 family
-                
+                // Ignore ipv6
                 guard _info.ai_family == PF_INET else {
                     continue
                 }
@@ -147,27 +156,25 @@ class UDPServer {
                     continue
                 }
                 
-                _info.ai_addr.withMemoryRebound(to: sockaddr_in.self, capacity: 1, { p in
+                
+                try _info.ai_addr.withMemoryRebound(to: sockaddr_in.self, capacity: 1, { p in
                     inet_ntop(AF_INET, &p.pointee.sin_addr, &temp, socklen_t(temp.count))
-                    ipFamily = "IPv4"
                     guard bindPort == p.pointee.sin_port.bigEndian else {
-                        print("Unable to bind to port \(bindPort)")
-                        return
+                        throw Error.unableToBind("Unable to bind to port \(bindPort)")
                     }
                 })
 
-                // !!!!! refuze all listening sockets !!!
+                // Close al lsiening sockets
                 
                 if listen(serverSocket, 5) < 0 {} else {
                     close(serverSocket)
                     continue
                 }
                 
-                print("\tsocket \(serverSocket)\t\(ipFamily)\t\(String(cString: temp))/\(bindPort)")
+                print("\tsocket \(serverSocket)\tIPv4\t\(String(cString: temp))/\(bindPort)")
                 
                 // (6) enable receiving data
                 // by installing event handler for a socket
-                
                 
                 let serverSource = DispatchSource.makeReadSource(fileDescriptor: serverSocket)
                 serverSource.setEventHandler {
@@ -179,9 +186,7 @@ class UDPServer {
                     var buffer = [UInt8](repeating:0, count: 1024)
                     
                     withUnsafeMutablePointer(to: &info, { (pinfo) -> () in
-                        
                         let paddr = UnsafeMutableRawPointer(pinfo).assumingMemoryBound(to: sockaddr.self)
-                        
                         let received = recvfrom(s, &buffer, buffer.count, 0, paddr, &len)
                         
                         guard let address = SocketAddress(with: pinfo.pointee) else {
@@ -195,30 +200,29 @@ class UDPServer {
                         }
                         
                         print("Receive data from: \(address.host!) \(address.port!)")
-                        let receivedData = Data(bytes: buffer)
+                        let receivedData = Data(bytes: buffer, count: received)
                         
                         do {
                             guard let (replyData, replyAddress) = try self.requestProcessor.process(data: receivedData, from: address) else {
-                                print("No reply for this packet")
+                                print("No data to reply for this packet")
                                 return
                             }
 
                             print("Replying to packet")
-    
                             var replyBuffer = Array<UInt8>(replyData)
                             var replyIn_addr = replyAddress.address
                             let replyAddr_in = UnsafeMutableRawPointer(&replyIn_addr).assumingMemoryBound(to: sockaddr.self)
+                            
                             print("Sending to: \(replyAddress.host!):\(replyAddress.port!)")
                             var sentCount = 0
                             repeat {
-                                let sended = sendto(s, &replyBuffer + sentCount, received - sentCount, 0, replyAddr_in, len)
-                                if sended < 0 {
+                                let sent = sendto(s, &replyBuffer + sentCount, received - sentCount, 0, replyAddr_in, len)
+                                guard sent > 0 else {
                                     return
                                 }
-                                sentCount += sended
+                                sentCount += sent
     
                             } while sentCount < replyBuffer.count
-                            
                         } catch {
                             print("Error while processing request data: \(error)")
                             return

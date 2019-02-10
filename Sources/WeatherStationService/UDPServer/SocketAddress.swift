@@ -11,7 +11,7 @@ import Darwin
 #endif
 import Foundation
 
-private extension String {
+extension String {
     private func isValidIPAddress() -> Bool {
         return (URL(string: self) != nil)
     }

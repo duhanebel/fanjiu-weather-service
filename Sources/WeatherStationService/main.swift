@@ -11,7 +11,6 @@ import WeatherRESTClient
 
 print("Retrieving forecast")
 
-
 let APIKey = "a972d998e8399e6ac25171267918c097"
 let london = Location.London()
 
@@ -56,15 +55,24 @@ extension APIError : CustomStringConvertible {
 //    networkGroup.leave()
 //}
 
-let port = 10000
-
-class WeatherUDPProcessor: RequestProcessor {
+class WeatherUDPRequestHandler: UDPRequestHandler {
     
-    let realWeatherServer = SocketAddress(with: "47.52.149.125", port: 10000)!
+    enum Error: Swift.Error {
+        case invalidIP(String)
+    }
+    
+    let realWeatherServer: SocketAddress
     
     private var clientAwaitingResponse: SocketAddress?
     
     var dataProcessors: [WeatherUDPRequestProcessor] = []
+    
+    init(originalServer: String, port: UInt16) throws {
+        guard let address = SocketAddress(with: originalServer, port: port) else {
+            throw Error.invalidIP(originalServer)
+        }
+        self.realWeatherServer = address
+    }
     
     func process(data: Data, from: SocketAddress) throws -> (data: Data, to: SocketAddress)? {
         let dataArray = Array<UInt8>(data)
@@ -87,28 +95,14 @@ class WeatherUDPProcessor: RequestProcessor {
     }
 }
 //
-let reqProcessor = WeatherUDPProcessor()
+let reqProcessor = try! WeatherUDPRequestHandler(originalServer: "47.52.149.125", port: 10000)
 reqProcessor.dataProcessors.append(HelloUDPRequestProcessor())
 reqProcessor.dataProcessors.append(ForecastUDPRequestProcessor())
-//let server = WeatherUDPServer(port: port, requestProcessor: reqProcessor)
-//print("Swift Echo Server Sample")
-//print("Connect with a command line window by entering 'telnet ::1 \(port)'")
-//
-//server.run()
 
-//networkGroup.wait()
 
-print()
-print("Hello, World! Echo UDP Server is listenig ...")
-print("Connect any number of clients /nc -u host port, .../ to any of:")
-print()
-
-let server = UDPServer(processor: reqProcessor)
-server.start()
+let server = try UDPServer(processor: reqProcessor, bindIP: nil, bindPort: 10000)
+try server.start()
 print("Press CTRL+D to exit")
 print()
 
-
-while let input = readLine(){}
-
-
+while let _ = readLine(){}
