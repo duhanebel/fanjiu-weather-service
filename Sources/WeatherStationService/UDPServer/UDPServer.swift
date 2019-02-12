@@ -57,30 +57,20 @@ class UDPServer {
     
     let bindPort: UInt16
     let bindIP: String?
+   
+    static func getHostname() -> String {
+        var buf = [CChar](repeating: 0, count: 255)
+        gethostname(&buf, buf.count)
+        return String(cString:buf)
+    }
     
     func start() throws {
-        
-        //var temp = [CChar](repeating: 0, count: 255)
-        
-        // create addrinfo based on hints
-        // if host name is nil or "" we can connect on localhost
-        // if host name is specified ( like "computer.domain" ... "My-MacBook.local" )
-        // than localhost is not aviable.
-        var temp = [CChar](repeating: 0, count: 255)
-
         let hosts: [String]
         if let bindIP = self.bindIP {
             hosts = [bindIP]
         } else {
-            gethostname(&temp, temp.count)
-            hosts = ["localhost", String(cString: temp)]
+            hosts = ["localhost", UDPServer.getHostname()]
         }
-        
-        var hints = addrinfo()
-        hints.ai_flags = 0
-        hints.ai_family = PF_UNSPEC
-        hints.ai_socktype = SOCK_DGRAM
-        hints.ai_protocol = IPPROTO_UDP
         
         print("Server bound to:")
         for host in hosts {
@@ -93,9 +83,7 @@ class UDPServer {
             
             var info: UnsafeMutablePointer<addrinfo>?
             defer {
-                if info != nil {
-                    freeaddrinfo(info)
-                }
+                if info != nil { freeaddrinfo(info) }
             }
             
             let status: Int32 = getaddrinfo(host, String(bindPort), nil, &info)
@@ -103,138 +91,137 @@ class UDPServer {
                 throw Error.unableToBind(String(cString: gai_strerror(errno)))
             }
             
-            var p = info
-            var serverSocket: Int32 = 0
-            var i = 0
+            var info_cursor = info
 
             // for each address avaiable
-            
-            while p != nil {
-                
-                i += 1
-                
-                // use local copy of info
-                
-                var _info = p!.pointee
-                p = _info.ai_next
-                // (1) create server socket
-                
-                serverSocket = socket(_info.ai_family, _info.ai_socktype, _info.ai_protocol)
-                if serverSocket < 0 {
+            while info_cursor != nil {
+                guard let current_addrinfo = info_cursor?.pointee else { continue }
+                do {
+                    try self.bindTo(address: current_addrinfo)
+                } catch {
+                    info_cursor = current_addrinfo.ai_next
                     continue
                 }
-                
-                // Ignore ipv6
-                guard _info.ai_family == PF_INET else {
-                    continue
-                }
-                
-                _info.ai_addr.withMemoryRebound(to: sockaddr_in.self, capacity: 1, { p in
-                    p.pointee.sin_port = bindPort.bigEndian
-                })
-
-                // (2) bind
-                //
-                // associates a socket with a socket address structure, i.e. a specified local port number and IP address
-                // if port is set to 0, bind will set first free port for us and update
-                
-                if bind(serverSocket, _info.ai_addr, _info.ai_addrlen) < 0 {
-                    close(serverSocket)
-                    continue
-                }
-                
-                // (3) we need to know an actual address and port number after bind
-                
-                if getsockname(serverSocket, _info.ai_addr, &_info.ai_addrlen) < 0 {
-                    close(serverSocket)
-                    continue
-                }
-                
-                // (4) retrieve the address and port from updated _info
-               
-                guard _info.ai_family == PF_INET else {
-                    continue
-                }
-                
-                
-                try _info.ai_addr.withMemoryRebound(to: sockaddr_in.self, capacity: 1, { p in
-                    inet_ntop(AF_INET, &p.pointee.sin_addr, &temp, socklen_t(temp.count))
-                    guard bindPort == p.pointee.sin_port.bigEndian else {
-                        throw Error.unableToBind("Unable to bind to port \(bindPort)")
-                    }
-                })
-
-                // Close al lsiening sockets
-                
-                if listen(serverSocket, 5) < 0 {} else {
-                    close(serverSocket)
-                    continue
-                }
-                
-                print("\tsocket \(serverSocket)\tIPv4\t\(String(cString: temp))/\(bindPort)")
-                
-                // (6) enable receiving data
-                // by installing event handler for a socket
-                
-                let serverSource = DispatchSource.makeReadSource(fileDescriptor: serverSocket)
-                serverSource.setEventHandler {
-                    
-                    var info = sockaddr_storage()
-                    var len = socklen_t(MemoryLayout<sockaddr_storage>.size)
-                    
-                    let s = Int32(serverSource.handle)
-                    var buffer = [UInt8](repeating:0, count: 1024)
-                    
-                    withUnsafeMutablePointer(to: &info, { (pinfo) -> () in
-                        let paddr = UnsafeMutableRawPointer(pinfo).assumingMemoryBound(to: sockaddr.self)
-                        let received = recvfrom(s, &buffer, buffer.count, 0, paddr, &len)
-                        
-                        guard let address = SocketAddress(with: pinfo.pointee) else {
-                            print("Received data but can't parse source IP - discarding")
-                            return
-                        }
-
-                        guard received > 0 else {
-                            print("Received no data")
-                            return
-                        }
-                        
-                        print("Receive data from: \(address.host!) \(address.port!)")
-                        let receivedData = Data(bytes: buffer, count: received)
-                        
-                        do {
-                            guard let (replyData, replyAddress) = try self.requestProcessor.process(data: receivedData, from: address) else {
-                                print("No data to reply for this packet")
-                                return
-                            }
-
-                            print("Replying to packet")
-                            var replyBuffer = Array<UInt8>(replyData)
-                            var replyIn_addr = replyAddress.address
-                            let replyAddr_in = UnsafeMutableRawPointer(&replyIn_addr).assumingMemoryBound(to: sockaddr.self)
-                            
-                            print("Sending to: \(replyAddress.host!):\(replyAddress.port!)")
-                            var sentCount = 0
-                            repeat {
-                                let sent = sendto(s, &replyBuffer + sentCount, received - sentCount, 0, replyAddr_in, len)
-                                guard sent > 0 else {
-                                    return
-                                }
-                                sentCount += sent
-    
-                            } while sentCount < replyBuffer.count
-                        } catch {
-                            print("Error while processing request data: \(error)")
-                            return
-                        }
-                    })
-                }
-                serverSources[serverSocket] = serverSource
-                serverSource.resume()
-                
+                info_cursor = current_addrinfo.ai_next
             }
         }
+    }
+    
+    private enum SocketError: Swift.Error {
+        case unableToBind
+    }
+    
+    private func bindTo(address: addrinfo) throws {
+        // (1) create server socket
+        var address_info = address
+        let serverSocket = socket(address_info.ai_family, address_info.ai_socktype, address_info.ai_protocol)
+        guard serverSocket >= 0 else { throw SocketError.unableToBind }
         
+        // Ignore ipv6
+        guard address_info.ai_family == PF_INET else { return }
+        
+        address_info.ai_addr.withMemoryRebound(to: sockaddr_in.self, capacity: 1, {
+            $0.pointee.sin_port = bindPort.bigEndian
+        })
+        
+        // (2) bind
+        //
+        // associates a socket with a socket address structure, i.e. a specified local port number and IP address
+        // if port is set to 0, bind will set first free port for us and update
+        guard bind(serverSocket, address_info.ai_addr, address_info.ai_addrlen) >= 0 else {
+            close(serverSocket)
+            throw SocketError.unableToBind
+        }
+        
+        // (3) we need to know an actual address and port number after bind
+        guard getsockname(serverSocket, address_info.ai_addr, &address_info.ai_addrlen) >= 0 else {
+            close(serverSocket)
+            throw SocketError.unableToBind
+        }
+        
+        // (4) retrieve the address and port from updated _info
+        guard address_info.ai_family == PF_INET else { return }
+        
+        var buf = Array<CChar>(repeating: 0, count: 255)
+        try address_info.ai_addr.withMemoryRebound(to: sockaddr_in.self, capacity: 1, { p in
+            inet_ntop(AF_INET, &p.pointee.sin_addr, &buf, socklen_t(buf.count))
+            guard bindPort == p.pointee.sin_port.bigEndian else {
+                throw Error.unableToBind("Unable to bind to port \(bindPort)")
+            }
+        })
+        
+        // Close al listening sockets
+        
+        if listen(serverSocket, 5) < 0 {} else {
+            close(serverSocket)
+            throw Error.unableToBind("Unable to bind to port \(bindPort)")
+        }
+        
+        print("\tsocket \(serverSocket)\tIPv4\t\(String(cString: buf))/\(bindPort)")
+        
+        // (6) enable receiving data
+        // by installing event handler for a socket
+        
+        let serverSource = DispatchSource.makeReadSource(fileDescriptor: serverSocket)
+        serverSource.setEventHandler(handler: self.newEventHandler(for: serverSource))
+        
+        serverSources[serverSocket] = serverSource
+        serverSource.resume()
+    }
+
+    private func newEventHandler(for serverSource: DispatchSourceRead) -> DispatchSource.DispatchSourceHandler {
+        return { ()->() in
+            var info = sockaddr_storage()
+            var len = socklen_t(MemoryLayout<sockaddr_storage>.size)
+    
+            let s = Int32(serverSource.handle)
+            var buffer = [UInt8](repeating:0, count: 1024)
+    
+            withUnsafeMutablePointer(to: &info) { (pinfo) -> () in
+                let paddr = UnsafeMutableRawPointer(pinfo).assumingMemoryBound(to: sockaddr.self)
+                let received = recvfrom(s, &buffer, buffer.count, 0, paddr, &len)
+    
+                guard let address = SocketAddress(with: pinfo.pointee) else {
+                    print("Received data but can't parse source IP - discarding")
+                    return
+                }
+    
+                guard received > 0 else {
+                    print("Received no data")
+                    return
+                }
+    
+                print("Receive data from: \(address.host!) \(address.port!)")
+                let receivedData = Data(bytes: buffer, count: received)
+    
+                do {
+                    guard let (replyData, replyAddress) = try self.requestProcessor.process(data: receivedData, from: address) else {
+                        print("No data to reply for this packet")
+                        return
+                    }
+    
+                    print("Replying to packet")
+                    print("Sending to: \(replyAddress.host!):\(replyAddress.port!)")
+                    self.sendData(over: s, data: replyData, to: replyAddress)
+                } catch {
+                    print("Error while processing request data: \(error)")
+                    return
+                }
+            }
+        }
+    }
+    
+    private func sendData(over handle: Int32, data: Data, to address: SocketAddress) {
+        var replyBuffer = Array<UInt8>(data)
+        var reply_addr = address.address
+        let replyAddr_in = UnsafeMutableRawPointer(&reply_addr).assumingMemoryBound(to: sockaddr.self)
+        let replyAddr_len = socklen_t(MemoryLayout.size(ofValue: replyAddr_in))
+        var sentCount = 0
+        repeat {
+            let sent = sendto(handle, &replyBuffer + sentCount, replyBuffer.count - sentCount, 0, replyAddr_in, replyAddr_len)
+            guard sent > 0 else { return }
+            sentCount += sent
+        } while sentCount < replyBuffer.count
     }
     
     func stop() {

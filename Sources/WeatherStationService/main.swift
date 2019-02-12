@@ -97,7 +97,7 @@ class WeatherUDPRequestHandler: UDPRequestHandler {
 //
 let reqProcessor = try! WeatherUDPRequestHandler(originalServer: "47.52.149.125", port: 10000)
 reqProcessor.dataProcessors.append(HelloUDPRequestProcessor())
-reqProcessor.dataProcessors.append(ForecastUDPRequestProcessor())
+//reqProcessor.dataProcessors.append(ForecastUDPRequestProcessor())
 
 
 let server = try UDPServer(processor: reqProcessor, bindIP: nil, bindPort: 10000)
