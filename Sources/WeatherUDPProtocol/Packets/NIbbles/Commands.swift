@@ -36,6 +36,27 @@ public enum CommandID: String {
     }
 }
 
+public extension CommandID {
+    public func responseFor(request: CommandID) -> CommandID? {
+        switch(request) {
+        case .requestHello:
+            return .responseHello
+        case .requestUnknown1:
+            return .responseUnknown1
+        case .requestUnknown3:
+            return .responseUnknown3
+        case .requestForecast:
+            return .responseForecast
+        case .requestCurrentWeather:
+            return .responseCurrentWeather
+        case .requestLocalData:
+            return .responseLocalData
+        default:
+            return nil
+        }
+    }
+}
+
 public struct Command: BinaryCodable, StaticNibble {
     public static var length = 4
     public let value: PacketDataArray

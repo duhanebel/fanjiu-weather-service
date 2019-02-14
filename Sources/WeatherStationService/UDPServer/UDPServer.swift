@@ -14,8 +14,22 @@ import Darwin
 import Foundation
 import Dispatch
 
+
+enum Result<R> {
+    case success(R)
+    case error(Error)
+}
+
+typealias ResultCompletion<T> = (Result<T>) -> Void
+
+struct UDPRequestHandlerResponse {
+    let data: Data
+    let to: SocketAddress
+}
+
 protocol UDPRequestHandler {
-    func process(data: Data, from: SocketAddress) throws -> (data: Data, to: SocketAddress)?
+
+    func process(data: Data, from: SocketAddress, completion: @escaping ResultCompletion<UDPRequestHandlerResponse?>)
 }
 
 
@@ -194,18 +208,22 @@ class UDPServer {
                 print("Receive data from: \(address.host!) \(address.port!)")
                 let receivedData = Data(bytes: buffer, count: received)
     
-                do {
-                    guard let (replyData, replyAddress) = try self.requestProcessor.process(data: receivedData, from: address) else {
-                        print("No data to reply for this packet")
+                self.requestProcessor.process(data: receivedData, from: address) { result in
+                   
+                    switch(result) {
+                    case .error(let error):
+                        print("Error crafting the response: \(error)")
                         return
+                    case .success(let response):
+                        guard let response = response else {
+                            print("No data to reply for this packet")
+                            return
+                        }
+                        print("Replying to packet")
+                        print("Sending to: \(response.to.host!):\(response.to.port!)")
+                        self.sendData(over: s, data: response.data, to: response.to)
+                        
                     }
-    
-                    print("Replying to packet")
-                    print("Sending to: \(replyAddress.host!):\(replyAddress.port!)")
-                    self.sendData(over: s, data: replyData, to: replyAddress)
-                } catch {
-                    print("Error while processing request data: \(error)")
-                    return
                 }
             }
         }

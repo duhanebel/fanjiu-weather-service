@@ -66,7 +66,12 @@ public struct WeatherAPIRequest: APIRequest {
     public typealias Payload = WeatherAPIResponse
     
     public let location: Location
-    public let unitsFormat: UnitsFormat = .ca
+    public let unitsFormat: UnitsFormat
+
+    public init(location: Location, unitsFormat: UnitsFormat = .ca) {
+        self.location = location
+        self.unitsFormat = unitsFormat
+    }
     
     public var path: String {
         return "\(location.latitude),\(location.longitude)"

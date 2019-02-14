@@ -44,10 +44,9 @@ public enum WeatherIcon: String, Decodable {
     case partCloudyNight = "partly-cloudy-night"
 }
 
-
 public struct WeatherForecast: Decodable {
     public let date: Date
-    public let icon: WeatherIcon?
+    public let icon: WeatherIcon
     public let temperatureMin: Float
     public let temperatureMax: Float
     public let pressure: Float
@@ -64,7 +63,7 @@ public struct WeatherForecast: Decodable {
 }
 
 public struct WeatherNow: Decodable {
-    public let icon: WeatherIcon?
+    public let icon: WeatherIcon
     public let temperature: Float
     public let feelsLike: Float
     public let pressure: Float

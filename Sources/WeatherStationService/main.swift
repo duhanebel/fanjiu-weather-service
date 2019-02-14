@@ -17,7 +17,7 @@ let london = Location.London()
 //var networkGroup = DispatchGroup()
 //networkGroup.enter()
 
-var client = WeatherClient(builder: WeatherRequestBuilder(APIKey: APIKey))
+var weatherClient = WeatherClient(builder: WeatherRequestBuilder(APIKey: APIKey))
 
 extension APIError : CustomStringConvertible {
     public var description: String {
@@ -56,9 +56,10 @@ extension APIError : CustomStringConvertible {
 //}
 
 class WeatherUDPRequestHandler: UDPRequestHandler {
-    
+
     enum Error: Swift.Error {
         case invalidIP(String)
+        case noClientWaitingForResponse
     }
     
     let realWeatherServer: SocketAddress
@@ -74,30 +75,46 @@ class WeatherUDPRequestHandler: UDPRequestHandler {
         self.realWeatherServer = address
     }
     
-    func process(data: Data, from: SocketAddress) throws -> (data: Data, to: SocketAddress)? {
+    func process(data: Data, from: SocketAddress, completion: @escaping ResultCompletion<UDPRequestHandlerResponse?>) {
         let dataArray = Array<UInt8>(data)
         let processor = dataProcessors.first { $0.canHandle(data: dataArray) }
-        if processor == nil {
-            print("Unable to find processors for the data: sending to server")
+        guard from != realWeatherServer else {
+            print("Message is coming back from original server... forwarding to client")
+            guard let clientAwaitingResponse = clientAwaitingResponse else {
+                completion(.error(Error.noClientWaitingForResponse))
+                return
+            }
+            
+            completion(.success(UDPRequestHandlerResponse(data: data, to:clientAwaitingResponse)))
+            self.clientAwaitingResponse = nil
+            return
         }
-        if let responseData = try processor?.process(data: dataArray) {
-            return (data: Data(bytes: responseData), to: from)
-        } else {
-            if let clientAwaitingResponse = clientAwaitingResponse,
-                from == realWeatherServer {
-                self.clientAwaitingResponse = nil
-                return (data: data, to: clientAwaitingResponse)
-            } else {
-                clientAwaitingResponse = from
-                return (data: data, to: realWeatherServer)
+        
+        guard processor != nil else {
+            print("Unable to find processors for the data - forwarding packet to original server")
+            completion(.success(UDPRequestHandlerResponse(data: data, to: self.realWeatherServer)))
+            return
+        }
+        
+        // need ot send to server here too, not only ebelow
+        processor?.process(data: dataArray) { result in
+            switch(result) {
+            case .error(let error):
+                completion(.error(error))
+            case .success(let responseData):
+                completion(.success(UDPRequestHandlerResponse(data: Data(bytes: responseData), to: from)))
             }
         }
     }
 }
-//
+
 let reqProcessor = try! WeatherUDPRequestHandler(originalServer: "47.52.149.125", port: 10000)
-reqProcessor.dataProcessors.append(HelloUDPRequestProcessor())
-//reqProcessor.dataProcessors.append(ForecastUDPRequestProcessor())
+//reqProcessor.dataProcessors.append(HelloUDPRequestProcessor()) Might be needed to register the station.. who knows!
+
+
+// Re-route the important ones!
+reqProcessor.dataProcessors.append(ForecastUDPRequestProcessor(weatherService: weatherClient))
+reqProcessor.dataProcessors.append(CurrentWeatherUDPRequestProcessor(weatherService: weatherClient))
 
 
 let server = try UDPServer(processor: reqProcessor, bindIP: nil, bindPort: 10000)

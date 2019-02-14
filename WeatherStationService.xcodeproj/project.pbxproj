@@ -24,6 +24,8 @@
 /* Begin PBXBuildFile section */
 		D932C3B5220F4BE100857219 /* UDPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D932C3B1220F472500857219 /* UDPServer.swift */; };
 		D932C3B8220F80CC00857219 /* SocketAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = D932C3B6220F77BA00857219 /* SocketAddress.swift */; };
+		D9EE0BC02215C62100D7DCF3 /* CurrentWeatherRequestProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EE0BBC2215C61300D7DCF3 /* CurrentWeatherRequestProcessor.swift */; };
+		D9EE0BC12215C62100D7DCF3 /* ForecastRequestProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EE0BBE2215C61C00D7DCF3 /* ForecastRequestProcessor.swift */; };
 		OBJ_100 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_45 /* APIClient.swift */; };
 		OBJ_101 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_46 /* APIError.swift */; };
 		OBJ_102 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_47 /* Result.swift */; };
@@ -31,7 +33,7 @@
 		OBJ_104 /* WeatherForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_49 /* WeatherForecast.swift */; };
 		OBJ_111 /* APIRequestBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_65 /* APIRequestBuilderTests.swift */; };
 		OBJ_113 /* WeatherRESTClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "WeatherStationService::WeatherRESTClient::Product" /* WeatherRESTClient.framework */; };
-		OBJ_120 /* RequestProcessors.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* RequestProcessors.swift */; };
+		OBJ_120 /* KnownRequestProcessors.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* KnownRequestProcessors.swift */; };
 		OBJ_123 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* main.swift */; };
 		OBJ_126 /* WeatherRESTClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "WeatherStationService::WeatherRESTClient::Product" /* WeatherRESTClient.framework */; };
 		OBJ_127 /* WeatherUDPProtocol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "WeatherStationService::WeatherUDPProtocol::Product" /* WeatherUDPProtocol.framework */; };
@@ -125,6 +127,8 @@
 /* Begin PBXFileReference section */
 		D932C3B1220F472500857219 /* UDPServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPServer.swift; sourceTree = "<group>"; };
 		D932C3B6220F77BA00857219 /* SocketAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketAddress.swift; sourceTree = "<group>"; };
+		D9EE0BBC2215C61300D7DCF3 /* CurrentWeatherRequestProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherRequestProcessor.swift; sourceTree = "<group>"; };
+		D9EE0BBE2215C61C00D7DCF3 /* ForecastRequestProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastRequestProcessor.swift; sourceTree = "<group>"; };
 		OBJ_12 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		OBJ_14 /* Array+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Hex.swift"; sourceTree = "<group>"; };
 		OBJ_15 /* Array+SumChecksum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+SumChecksum.swift"; sourceTree = "<group>"; };
@@ -171,7 +175,7 @@
 		OBJ_62 /* UDPPacketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPPacketTests.swift; sourceTree = "<group>"; };
 		OBJ_63 /* WeatherForecastTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecastTests.swift; sourceTree = "<group>"; };
 		OBJ_65 /* APIRequestBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestBuilderTests.swift; sourceTree = "<group>"; };
-		OBJ_9 /* RequestProcessors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProcessors.swift; sourceTree = "<group>"; };
+		OBJ_9 /* KnownRequestProcessors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnownRequestProcessors.swift; sourceTree = "<group>"; };
 		"WeatherStationService::WeatherRESTClient::Product" /* WeatherRESTClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WeatherRESTClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"WeatherStationService::WeatherRESTClientTests::Product" /* WeatherRESTClientTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = WeatherRESTClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		"WeatherStationService::WeatherStationService::Product" /* WeatherStationService */ = {isa = PBXFileReference; lastKnownFileType = text; path = WeatherStationService; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -310,7 +314,7 @@
 			path = Sources/WeatherRESTClient;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -318,7 +322,6 @@
 				OBJ_50 /* Tests */,
 				OBJ_73 /* Products */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_50 /* Tests */ = {
@@ -385,8 +388,10 @@
 			isa = PBXGroup;
 			children = (
 				D932C3B0220F471900857219 /* UDPServer */,
-				OBJ_9 /* RequestProcessors.swift */,
+				OBJ_9 /* KnownRequestProcessors.swift */,
 				OBJ_12 /* main.swift */,
+				D9EE0BBC2215C61300D7DCF3 /* CurrentWeatherRequestProcessor.swift */,
+				D9EE0BBE2215C61C00D7DCF3 /* ForecastRequestProcessor.swift */,
 			);
 			name = WeatherStationService;
 			path = Sources/WeatherStationService;
@@ -508,7 +513,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_73 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -537,8 +542,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_120 /* RequestProcessors.swift in Sources */,
+				OBJ_120 /* KnownRequestProcessors.swift in Sources */,
+				D9EE0BC02215C62100D7DCF3 /* CurrentWeatherRequestProcessor.swift in Sources */,
 				OBJ_123 /* main.swift in Sources */,
+				D9EE0BC12215C62100D7DCF3 /* ForecastRequestProcessor.swift in Sources */,
 				D932C3B5220F4BE100857219 /* UDPServer.swift in Sources */,
 				D932C3B8220F80CC00857219 /* SocketAddress.swift in Sources */,
 			);

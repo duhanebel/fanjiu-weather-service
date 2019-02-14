@@ -31,7 +31,7 @@ public struct CurrentWeatherPacket: BinaryCodable {
     let unknown4: CurrentWeatherPacket.Padding11
     let unknown5: UInt16
     
-    init(stationID: UInt8 = UInt8(1), country: Country, date: Date, unknown1: UInt32, unknown2: UInt8, feelsLike: Temperature, pressure: Float, windSpeed: Float, unknown3: UInt8, windDirection: UInt8, unknown4: CurrentWeatherPacket.Padding11, unknown5: UInt16) {
+    init(stationID: UInt8, country: Country, date: Date, unknown1: UInt32, unknown2: UInt8, feelsLike: Temperature, pressure: Float, windSpeed: Float, unknown3: UInt8, windDirection: UInt8, unknown4: CurrentWeatherPacket.Padding11, unknown5: UInt16) {
         self.stationID = stationID
         self.country = country
         self.date = date
@@ -46,7 +46,7 @@ public struct CurrentWeatherPacket: BinaryCodable {
         self.unknown5 = unknown5
     }
     
-    public init(stationID: UInt8 = UInt8(1), country: Country, date: Date, feelsLike: Float, pressure: Float, windSpeed: Float, windDirection: UInt8) {
+    public init(stationID: UInt8 = UInt8(1), country: Country, date: Date, feelsLike: Float, pressure: Float, windSpeed: Float, windDirectionDegrees: Int) {
         let padding = CurrentWeatherPacket.Padding11()
         self.init(stationID: stationID,
                   country: country,
@@ -57,7 +57,7 @@ public struct CurrentWeatherPacket: BinaryCodable {
                   pressure: pressure,
                   windSpeed: windSpeed,
                   unknown3: UInt8(0xFF),
-                  windDirection: windDirection,
+                  windDirection: UInt8(windDirectionDegrees / 30),
                   unknown4: padding,
                   unknown5: UInt16(0xFFFF))
     }
