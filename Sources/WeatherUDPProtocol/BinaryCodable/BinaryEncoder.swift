@@ -57,7 +57,7 @@ public extension BinaryEncoder {
 public extension BinaryEncoder {
     func encode(_ value: Float) throws {
         let val = value * 10
-        guard let uVal = Int16(exactly: val) else {
+        guard let uVal = Int16(exactly: Int(val)) else {
             throw Error.valueOutOfBounds
         }
         appendBytes(of: uVal)
@@ -65,7 +65,7 @@ public extension BinaryEncoder {
     
     func encode(_ value: Double) throws {
         let val = value * 10
-        guard let uVal = Int16(exactly: val) else {
+        guard let uVal = Int16(exactly: Int(val)) else {
             throw Error.valueOutOfBounds
         }
         appendBytes(of: uVal)

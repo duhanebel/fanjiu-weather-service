@@ -8,8 +8,9 @@
 
 import Foundation
 
-public struct HelloResponse: BinaryCodable {
+public struct HelloResponse: BinaryCodable, Sizeable {
     public init() {}
+    public var size: Int { return 0 }
 }
 
 public struct Unknown1Response: BinaryCodable {

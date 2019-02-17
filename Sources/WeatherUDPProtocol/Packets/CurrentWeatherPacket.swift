@@ -45,7 +45,7 @@ public struct CurrentWeatherPacket: BinaryCodable {
         self.unknown4 = unknown4
         self.unknown5 = unknown5
     }
-    
+   
     public init(stationID: UInt8 = UInt8(1), country: Country, date: Date, feelsLike: Float, pressure: Float, windSpeed: Float, windDirectionDegrees: Int) {
         let padding = CurrentWeatherPacket.Padding11()
         self.init(stationID: stationID,
@@ -61,7 +61,38 @@ public struct CurrentWeatherPacket: BinaryCodable {
                   unknown4: padding,
                   unknown5: UInt16(0xFFFF))
     }
+    
+    public init(stationID: UInt8 = UInt8(1), country: Country, date: Date, feelsLike: Temperature, pressure: Float, windSpeed: Float, windDirectionDegrees: Int) {
+        let padding = CurrentWeatherPacket.Padding11()
+        self.init(stationID: stationID,
+                  country: country,
+                  date: date,
+                  unknown1: UInt32(0xFFFFFFFF),
+                  unknown2: UInt8(0xFF),
+                  feelsLike: feelsLike,
+                  pressure: pressure,
+                  windSpeed: windSpeed,
+                  unknown3: UInt8(0xFF),
+                  windDirection: UInt8(windDirectionDegrees / 30),
+                  unknown4: padding,
+                  unknown5: UInt16(0xFFFF))
+    }
 }
+
+extension CurrentWeatherPacket: Sizeable {
+    public var size: Int {
+        return 1 +  // weather station 1 byte
+            country.size +
+            5 +  // date is 5 bytes
+            4 + 1 + // unknown1&2
+            feelsLike.size +
+            2 + 2 + // pressure and wind speed all UInt16
+            1 + // unknown3
+            1 + // wind direction
+            11 + 2 // unknwon4 and 5
+    }
+}
+
 
 extension CurrentWeatherPacket: Equatable {
     public static func == (lhs: CurrentWeatherPacket, rhs: CurrentWeatherPacket) -> Bool {

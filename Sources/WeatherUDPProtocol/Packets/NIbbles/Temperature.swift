@@ -11,15 +11,19 @@ import Foundation
 public struct Temperature {
     public let fahrenheit: Float
     public var celsius: Float {
-        return ((fahrenheit * 5/9) - 32).rounded(toPlaces: 1) }
+        return ((fahrenheit * 5/9) - 32).rounded() }
     
     public init(celsius: Float) {
-        fahrenheit = ((celsius * 9/5) + 32).rounded(toPlaces: 1)
+        fahrenheit = ((celsius * 9/5) + 32).rounded()
     }
     
     public init(fahrenheit: Float) {
         self.fahrenheit = fahrenheit
     }
+}
+
+extension Temperature: Sizeable {
+    public var size: Int { return MemoryLayout<UInt16>.size }
 }
 
 extension Temperature: Equatable {

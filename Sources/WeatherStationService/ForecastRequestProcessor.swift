@@ -36,6 +36,12 @@ private extension WeatherForecastBin.Icon {
     }
 }
 
+private extension Float {
+    func toFarheneight() {
+        
+    }
+}
+
 struct ForecastUDPRequestProcessor: WeatherUDPRequestProcessor {
     static var commands = [CommandID.requestForecast]
     
@@ -46,8 +52,9 @@ struct ForecastUDPRequestProcessor: WeatherUDPRequestProcessor {
     }
     
     func process(data: PacketDataArray, completion: @escaping ResultCompletion<PacketDataArray>) {
+        let forecastRequest:UDPPacket<ForecastRequest>
         do {
-            _ = try BinaryDecoder.decode(UDPPacket<ForecastRequest>.self, data: data)
+            forecastRequest = try BinaryDecoder.decode(UDPPacket<ForecastRequest>.self, data: data)
         } catch {
             completion(.error(error))
             return
@@ -60,7 +67,7 @@ struct ForecastUDPRequestProcessor: WeatherUDPRequestProcessor {
                 completion(.error(error))
             case let .success(result):
                 do {
-                    let data = try self.processAPIForecast(forecast: result.forecast)
+                    let data = try self.processAPIForecast(forecast: result.forecast, for: forecastRequest)
                     completion(.success(data))
                 } catch {
                     completion(.error(error))
@@ -69,36 +76,36 @@ struct ForecastUDPRequestProcessor: WeatherUDPRequestProcessor {
         }
     }
 
-    private func processAPIForecast(forecast: [WeatherForecast]) throws -> PacketDataArray {
+    private func processAPIForecast(forecast: [WeatherForecast], for request: UDPPacket<ForecastRequest>) throws -> PacketDataArray {
         let today = forecast[0]
         let firstDay = forecast[1]
         let secondDay = forecast[2]
         let thirdDay = forecast[3]
         let forthDay = forecast[4]
         let weatherNow = WeatherForecastBin(icon: WeatherForecastBin.Icon(today.icon),
-                                            tempMax: today.temperatureMax,
-                                            tempMin: today.temperatureMin)
+                                            tempMax: Temperature(celsius: today.temperatureMax),
+                                            tempMin: Temperature(celsius: today.temperatureMin))
         let binForecast1 = WeatherForecastBin(icon: WeatherForecastBin.Icon(firstDay.icon),
-                                              tempMax: firstDay.temperatureMax,
-                                              tempMin: firstDay.temperatureMin)
+                                              tempMax: Temperature(celsius: firstDay.temperatureMax),
+                                              tempMin: Temperature(celsius: firstDay.temperatureMin))
         let binForecast2 = WeatherForecastBin(icon: WeatherForecastBin.Icon(secondDay.icon),
-                                              tempMax: secondDay.temperatureMax,
-                                              tempMin: secondDay.temperatureMin)
+                                              tempMax: Temperature(celsius: secondDay.temperatureMax),
+                                              tempMin: Temperature(celsius: secondDay.temperatureMin))
         let binForecast3 = WeatherForecastBin(icon: WeatherForecastBin.Icon(thirdDay.icon),
-                                              tempMax: thirdDay.temperatureMax,
-                                              tempMin: thirdDay.temperatureMin)
+                                              tempMax: Temperature(celsius: thirdDay.temperatureMax),
+                                              tempMin: Temperature(celsius: thirdDay.temperatureMin))
         let binForecast4 = WeatherForecastBin(icon: WeatherForecastBin.Icon(forthDay.icon),
-                                              tempMax: forthDay.temperatureMax,
-                                              tempMin: forthDay.temperatureMin)
+                                              tempMax: Temperature(celsius: forthDay.temperatureMax),
+                                              tempMin: Temperature(celsius: forthDay.temperatureMin))
         
         let forecast = NextDaysForecastPacket(country: Country.uk,
-                                              date: today.date,
+                                              date: Date(),
                                               today: weatherNow,
                                               day1: binForecast1,
                                               day2: binForecast2,
                                               day3: binForecast3,
                                               day4: binForecast4)
-        
-        return try BinaryEncoder.encode(forecast)
+        let packet = UDPPacket<NextDaysForecastPacket>(command: Command(commandID: .responseForecast), mac: request.mac, payload: forecast)
+        return try BinaryEncoder.encode(packet)
     }
 }

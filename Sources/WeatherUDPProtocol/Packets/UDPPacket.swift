@@ -22,7 +22,11 @@ public enum UDPPacketUtils {
     }
 }
 
-public struct UDPPacket<T: BinaryCodable>: BinaryCodable {
+public protocol Sizeable {
+    var size: Int { get }
+}
+
+public struct UDPPacket<T: BinaryCodable & Sizeable>: BinaryCodable {
     public let header: Header
     public let mac: MACAddress
     public let command: Command
@@ -33,12 +37,8 @@ public struct UDPPacket<T: BinaryCodable>: BinaryCodable {
     
     public init(command: Command, mac: MACAddress, payload: T) {
         // Size is from command onward
-        let commandSize = UInt16(
-            MemoryLayout<UInt8>.size   +  // station ID is 1
-            MemoryLayout<Country>.size +
-            5                          +  // Date is MM:DD:hh:mm:ss
-            MemoryLayout<T>.size)
-        
+        let commandSize = UInt16(payload.size)
+
         self.header = Header.default
         self.command = command
         self.mac = mac
@@ -49,3 +49,4 @@ public struct UDPPacket<T: BinaryCodable>: BinaryCodable {
     }
 }
 
+ 

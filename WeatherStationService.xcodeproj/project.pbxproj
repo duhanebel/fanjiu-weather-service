@@ -26,6 +26,7 @@
 		D932C3B8220F80CC00857219 /* SocketAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = D932C3B6220F77BA00857219 /* SocketAddress.swift */; };
 		D9EE0BC02215C62100D7DCF3 /* CurrentWeatherRequestProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EE0BBC2215C61300D7DCF3 /* CurrentWeatherRequestProcessor.swift */; };
 		D9EE0BC12215C62100D7DCF3 /* ForecastRequestProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EE0BBE2215C61C00D7DCF3 /* ForecastRequestProcessor.swift */; };
+		D9EE0BC42216CD9100D7DCF3 /* api_key.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = D9EE0BC32216CD8D00D7DCF3 /* api_key.txt */; };
 		OBJ_100 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_45 /* APIClient.swift */; };
 		OBJ_101 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_46 /* APIError.swift */; };
 		OBJ_102 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_47 /* Result.swift */; };
@@ -124,11 +125,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D9EE0BC22216CD6200D7DCF3 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				D9EE0BC42216CD9100D7DCF3 /* api_key.txt in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		D932C3B1220F472500857219 /* UDPServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPServer.swift; sourceTree = "<group>"; };
 		D932C3B6220F77BA00857219 /* SocketAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketAddress.swift; sourceTree = "<group>"; };
 		D9EE0BBC2215C61300D7DCF3 /* CurrentWeatherRequestProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherRequestProcessor.swift; sourceTree = "<group>"; };
 		D9EE0BBE2215C61C00D7DCF3 /* ForecastRequestProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastRequestProcessor.swift; sourceTree = "<group>"; };
+		D9EE0BC32216CD8D00D7DCF3 /* api_key.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = api_key.txt; sourceTree = "<group>"; };
 		OBJ_12 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		OBJ_14 /* Array+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Hex.swift"; sourceTree = "<group>"; };
 		OBJ_15 /* Array+SumChecksum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+SumChecksum.swift"; sourceTree = "<group>"; };
@@ -318,6 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
+				D9EE0BC32216CD8D00D7DCF3 /* api_key.txt */,
 				OBJ_7 /* Sources */,
 				OBJ_50 /* Tests */,
 				OBJ_73 /* Products */,
@@ -453,6 +469,7 @@
 			buildPhases = (
 				OBJ_119 /* Sources */,
 				OBJ_124 /* Frameworks */,
+				D9EE0BC22216CD6200D7DCF3 /* CopyFiles */,
 			);
 			buildRules = (
 			);

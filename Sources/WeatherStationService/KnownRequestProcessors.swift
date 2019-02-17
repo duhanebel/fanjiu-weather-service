@@ -26,7 +26,7 @@ extension WeatherUDPRequestProcessor {
 }
 
 struct HelloUDPRequestProcessor: WeatherUDPRequestProcessor {
-    static var commands = [.requestHello]
+    static var commands = [CommandID.requestHello]
     
     func process(data: PacketDataArray, completion: @escaping ResultCompletion<PacketDataArray>) {
         do {

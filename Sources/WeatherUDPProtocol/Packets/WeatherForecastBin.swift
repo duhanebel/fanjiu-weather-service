@@ -39,7 +39,7 @@ public struct WeatherForecastBin {
     public let tempMax: Temperature
     public let tempMin: Temperature
     
-    init(icon: Icon, unknown: UInt16 = 0xFFFF, tempMax: Temperature, tempMin: Temperature) {
+    public init(icon: Icon, unknown: UInt16 = 0xFFFF, tempMax: Temperature, tempMin: Temperature) {
         self.icon = icon
         self.unknown = unknown
         self.tempMax = tempMax
@@ -50,6 +50,10 @@ public struct WeatherForecastBin {
         self.init(icon: icon, tempMax: Temperature(fahrenheit: tempMax),
                   tempMin: Temperature(fahrenheit: tempMin))
     }
+}
+
+extension WeatherForecastBin: Sizeable {
+    public var size: Int { return 1 + 2 + 2 + 2 }
 }
 
 extension WeatherForecastBin: Equatable {

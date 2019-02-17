@@ -56,7 +56,8 @@ extension APIClient {
                 return
             }
             
-            guard let data = data else {
+            guard let data = data,
+                      data.count > 0 else {
                 completion(.error(APIError.noData))
                 return
             }

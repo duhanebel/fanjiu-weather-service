@@ -9,15 +9,10 @@
 import Foundation
 import WeatherRESTClient
 
-print("Retrieving forecast")
-
-let APIKey = "a972d998e8399e6ac25171267918c097"
-let london = Location.London()
-
 //var networkGroup = DispatchGroup()
 //networkGroup.enter()
 
-var weatherClient = WeatherClient(builder: WeatherRequestBuilder(APIKey: APIKey))
+
 
 extension APIError : CustomStringConvertible {
     public var description: String {
@@ -92,6 +87,7 @@ class WeatherUDPRequestHandler: UDPRequestHandler {
         
         guard processor != nil else {
             print("Unable to find processors for the data - forwarding packet to original server")
+            self.clientAwaitingResponse = from
             completion(.success(UDPRequestHandlerResponse(data: data, to: self.realWeatherServer)))
             return
         }
@@ -101,12 +97,25 @@ class WeatherUDPRequestHandler: UDPRequestHandler {
             switch(result) {
             case .error(let error):
                 completion(.error(error))
+                self.clientAwaitingResponse = nil
             case .success(let responseData):
                 completion(.success(UDPRequestHandlerResponse(data: Data(bytes: responseData), to: from)))
             }
         }
     }
 }
+
+
+let APIKey: String
+do {
+    APIKey = try String(contentsOfFile: "api_key.txt").replacingOccurrences(of: "[^A-Za-z0-9]+", with: "", options: [.regularExpression])
+} catch {
+    print("Unable to find api_key.txt")
+    exit(-1)
+}
+
+let london = Location.London()
+var weatherClient = WeatherClient(builder: WeatherRequestBuilder(APIKey: APIKey))
 
 let reqProcessor = try! WeatherUDPRequestHandler(originalServer: "47.52.149.125", port: 10000)
 //reqProcessor.dataProcessors.append(HelloUDPRequestProcessor()) Might be needed to register the station.. who knows!

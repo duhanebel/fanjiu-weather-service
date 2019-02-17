@@ -8,34 +8,40 @@
 
 import Foundation
 
-public struct HelloRequest: BinaryCodable {
+public struct HelloRequest: BinaryCodable, Sizeable {
     public init() {}
+    public var size: Int { return 0 }
 }
 
-public struct Unknown1Request: BinaryCodable {
+public struct Unknown1Request: BinaryCodable, Sizeable {
     public init() {}
+    public var size: Int { return 0 }
 }
 
-public struct Unknown2Request: BinaryCodable {
+public struct Unknown2Request: BinaryCodable, Sizeable {
     public init() {}
+    public var size: Int { return 0 }
 }
 
-public struct Unknown3Request: BinaryCodable {
+public struct Unknown3Request: BinaryCodable, Sizeable {
     let unknown: UInt8
     public init(unknown: UInt8) {
         self.unknown = unknown
     }
+    public var size: Int { return 1 }
 }
 
-public struct ForecastRequest: BinaryCodable {
+public struct ForecastRequest: BinaryCodable, Sizeable {
     public init() {}
+    public var size: Int { return 0 }
 }
 
-public struct CurrentWeatherRequest: BinaryCodable {
+public struct CurrentWeatherRequest: BinaryCodable, Sizeable {
     public init() {}
+    public var size: Int { return 0 }
 }
 
-public struct LocalDataRequest: BinaryCodable {
+public struct LocalDataRequest: BinaryCodable, Sizeable {
     let unknown1: UInt16
     let unknown2: UInt16
     let unknown3: UInt16
@@ -57,6 +63,8 @@ public struct LocalDataRequest: BinaryCodable {
     let unknown19: UInt16
     let unknown20: UInt16
     let unknown21: UInt16
+    
+    public var size: Int { return 42 }
 
     public init(unknown1: UInt16, unknown2: UInt16, unknown3: UInt16, unknown4: UInt16, unknown5: UInt16, unknown6: UInt16, unknown7: UInt16, unknown8: UInt16, unknown9: UInt16, unknown10: UInt16, unknown11: UInt16, unknown12: UInt16, unknown13: UInt16, unknown14: UInt16, unknown15: UInt16, unknown16: UInt16, unknown17: UInt16, unknown18: UInt16, unknown19: UInt16, unknown20: UInt16, unknown21: UInt16) {
         self.unknown1 = unknown1

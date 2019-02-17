@@ -31,3 +31,12 @@ public struct NextDaysForecastPacket: BinaryCodable {
 }
 
 extension NextDaysForecastPacket: Equatable { }
+
+extension NextDaysForecastPacket: Sizeable {
+    public var size: Int {
+        return 1 +  // weather station 1 byte
+               country.size +
+               5 +  // date is 5 bytes
+               5 * today.size // there are 5 WeatherForecastBin
+    }
+}

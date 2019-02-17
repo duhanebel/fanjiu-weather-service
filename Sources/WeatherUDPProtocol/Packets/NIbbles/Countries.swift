@@ -28,3 +28,7 @@ public struct Country: BinaryCodable, StaticNibble {
 }
 
 extension Country : Equatable {}
+
+extension Country: Sizeable {
+    public var size: Int { return Country.length }
+}
