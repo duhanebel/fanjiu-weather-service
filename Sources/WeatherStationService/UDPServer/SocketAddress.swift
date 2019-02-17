@@ -59,8 +59,11 @@ struct SocketAddress {
         guard addressStorage.ss_family == AF_INET else {
             return nil
         }
-        
+#if os(Linux)
+        assert(MemoryLayout<sockaddr_storage>.size == SocketAddress.length)
+#else
         assert(socklen_t(addressStorage.ss_len) == SocketAddress.length)
+#endif
         let address = UnsafeMutableRawPointer(&addressStorage).assumingMemoryBound(to: sockaddr_in.self)
         self.address = address.pointee
             
@@ -86,7 +89,9 @@ struct SocketAddress {
             return nil
         }
         
+#if os(macOS)
         addr_in.sin_len = UInt8(MemoryLayout.size(ofValue: addr_in))
+#endif
         addr_in.sin_family = sa_family_t(AF_INET)
         addr_in.sin_addr.s_addr = inet_addr(address)
         addr_in.sin_port = SocketAddress.porthtons(port: in_port_t(port))
@@ -94,8 +99,12 @@ struct SocketAddress {
     }
     
     private static func porthtons(port: in_port_t) -> in_port_t {
+#if os(Linux)
+        return htons(port)
+#else
         let isLittleEndian = Int(OSHostByteOrder()) == OSLittleEndian
         return isLittleEndian ? _OSSwapInt16(port) : port
+#endif
     }
     
     /// Makes a copy of `address` and calls the given closure with an `UnsafePointer<sockaddr>` to that.

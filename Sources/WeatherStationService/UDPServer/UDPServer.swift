@@ -12,7 +12,11 @@ import Darwin
 #endif
 
 import Foundation
+
 import Dispatch
+#if os(macOS)
+typealias DispatchSourceHandler = DispatchSource.DispatchSourceHandler
+#endif
 
 
 enum Result<R> {
@@ -182,8 +186,7 @@ class UDPServer {
         serverSources[serverSocket] = serverSource
         serverSource.resume()
     }
-
-    private func newEventHandler(for serverSource: DispatchSourceRead) -> DispatchSource.DispatchSourceHandler {
+    private func newEventHandler(for serverSource: DispatchSourceRead) -> DispatchSourceHandler {
         return { ()->() in
             var info = sockaddr_storage()
             var len = socklen_t(MemoryLayout<sockaddr_storage>.size)
