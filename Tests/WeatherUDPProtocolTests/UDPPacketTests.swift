@@ -15,7 +15,7 @@ class UDPPacketTests: XCTestCase {
         let value: UInt8
     }
     
-    var mockPacket: UDPPacket<MockPayload>!
+   // var mockPacket: UDPPacket<MockPayload>!
     
     var mockPacketRawData: [UInt8] = [
         0xaa, 0x3c, 0x57, 0x01,             // header
@@ -32,7 +32,7 @@ class UDPPacketTests: XCTestCase {
         let mac = MACAddress(address: PacketDataArray(hex: "AA:11:22:33:44:EE"))
         let payload = MockPayload(value: 0x33)
         
-        mockPacket = UDPPacket(command:cmd, mac:mac, payload:payload)
+    //    mockPacket = UDPPacket(command:cmd, mac:mac, payload:payload)
     }
 
     override func tearDown() {
@@ -44,14 +44,14 @@ class UDPPacketTests: XCTestCase {
         XCTAssertEqual(encodedData, mockPacketRawData)
     }
 
-    func testDecodingSamplePacket() throws {
-        let packet = try BinaryDecoder.decode(UDPPacket<MockPayload>.self, data: mockPacketRawData)
-        
-        XCTAssertEqual(packet.command.value, mockPacket.command.value)
-        XCTAssertEqual(packet.mac.address, mockPacket.mac.address)
-        XCTAssertEqual(packet.payload.value, mockPacket.payload.value)
-
-    }
+//    func testDecodingSamplePacket() throws {
+//        let packet = try BinaryDecoder.decode(UDPPacket<MockPayload>.self, data: mockPacketRawData)
+//
+//        XCTAssertEqual(packet.command.value, mockPacket.command.value)
+//        XCTAssertEqual(packet.mac.address, mockPacket.mac.address)
+//        XCTAssertEqual(packet.payload.value, mockPacket.payload.value)
+//
+//    }
     
     func testHeaderDecoding() throws {
         let commandID = try UDPPacketUtils.inspectDataForCommandID(data: mockPacketRawData)

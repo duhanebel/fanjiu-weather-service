@@ -12,7 +12,7 @@ extension Array where Element: BinaryInteger, Element.IntegerLiteralType == UInt
     public init(hex: String) {
         self.init()
         
-        let hexNoColons = hex.replacingOccurrences(of: ":", with: "")
+        let hexNoColons = hex.replacingOccurrences(of: ":", with: "").replacingOccurrences(of: " ", with: "")
         let utf8 = Array<Element.IntegerLiteralType>(hexNoColons.utf8)
         let skip0x = hex.hasPrefix("0x") ? 2 : 0
         
