@@ -12,25 +12,21 @@ import WeatherRESTClient
 private extension WeatherForecastBin.Icon {
     init(_ weatherIcon: WeatherIcon) {
         switch(weatherIcon) {
-        case .sunnyDay:
-            fallthrough
-        case .sunnyNight:
+        case .sunnyDay, .sunnyNight:
             self = .sunny
         case .cloudy:
-            self = .cloudy
+            self = .mostlyCloudy //.cloudy
         case .rain:
             self = .heavyRain
         case .snow:
-            self = .heavySnow
+            self = .heavyRain //.heavySnow
         case .sleey:
-            self = .rainAndSnow
+            self = .heavyRain //.rainAndSnow
         case .wind:
-            self = .windy
+            self = .sunny //.windy
         case .fog:
-            self = .foggy
-        case .partCloudyDay:
-            fallthrough
-        case .partCloudyNight:
+            self = .mostlyCloudy //.foggy
+        case .partCloudyDay, .partCloudyNight:
             self = .partiallyCloudy
         }
     }
