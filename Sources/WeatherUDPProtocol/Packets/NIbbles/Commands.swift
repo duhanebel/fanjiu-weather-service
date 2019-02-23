@@ -36,6 +36,46 @@ public enum CommandID: String {
     }
 }
 
+extension CommandID: CustomStringConvertible {
+    public var description: String {
+        switch(self) {
+        case .responseHello:
+            return "RES(Hello)"
+        case .responseUnknown1:
+            return "RES(Unknown1)"
+        case .responseUnknown2a:
+            return "RES(Unknown2a)"
+        case .responseUnknown2b:
+            return "RES(Unknown2b)"
+        case .responseUnknown2c:
+            return "RES(Unknown2c)"
+        case .responseUnknown3:
+            return "RES(Unknown3)"
+        case .responseForecast:
+            return "RES(Forecast)"
+        case .responseCurrentWeather:
+            return "RES(CurrentWeather)"
+        case .responseLocalData:
+            return "RES(LocalData)"
+        case .requestHello:
+            return "REQ(Hello)"
+        case .requestUnknown1:
+            return "REQ(Unknown1)"
+        case .requestUnknown2:
+            return "REQ(Unknown2)"
+        case .requestUnknown3:
+            return "REQ(Unknown3)"
+        case .requestForecast:
+            return "REQ(Forecast)"
+        case .requestCurrentWeather:
+            return "REQ(CurrentWeather)"
+        case .requestLocalData:
+            return "REQ(LocalData)"
+        }
+    }
+
+}
+
 public extension CommandID {
     public func responseFor(request: CommandID) -> CommandID? {
         switch(request) {

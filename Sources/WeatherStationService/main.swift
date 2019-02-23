@@ -8,6 +8,7 @@
 
 import Foundation
 import WeatherRESTClient
+import WeatherUDPProtocol
 
 //var networkGroup = DispatchGroup()
 //networkGroup.enter()
@@ -50,6 +51,7 @@ extension APIError : CustomStringConvertible {
 //    networkGroup.leave()
 //}
 
+
 class WeatherUDPRequestHandler: UDPRequestHandler {
 
     enum Error: Swift.Error {
@@ -72,6 +74,14 @@ class WeatherUDPRequestHandler: UDPRequestHandler {
     
     func process(data: Data, from: SocketAddress, completion: @escaping ResultCompletion<UDPRequestHandlerResponse?>) {
         let dataArray = Array<UInt8>(data)
+        if let cmd = try? UDPPacketUtils.inspectDataForCommandID(data: dataArray) {
+            print("Received command: \(cmd)")
+        } else {
+            print("Received unknown command!")
+        }
+        let dataString = dataArray.reduce("") { $0 + String(format:"%02X", $1) }
+        print("Full data: \(dataString)")
+        
         let processor = dataProcessors.first { $0.canHandle(data: dataArray) }
         guard from != realWeatherServer else {
             print("Message is coming back from original server... forwarding to client")
@@ -79,7 +89,8 @@ class WeatherUDPRequestHandler: UDPRequestHandler {
                 completion(.error(Error.noClientWaitingForResponse))
                 return
             }
-            
+            let dataString = data.reduce("") { $0 + String(format:"%02X", $1) }
+            print("Full response: \(dataString)")
             completion(.success(UDPRequestHandlerResponse(data: data, to:clientAwaitingResponse)))
             self.clientAwaitingResponse = nil
             return
@@ -99,6 +110,9 @@ class WeatherUDPRequestHandler: UDPRequestHandler {
                 completion(.error(error))
                 self.clientAwaitingResponse = nil
             case .success(let responseData):
+                
+                let dataString = responseData.reduce("") { $0 + String(format:"%02X", $1) }
+                print("Full response: \(dataString)")
                 completion(.success(UDPRequestHandlerResponse(data: Data(bytes: responseData), to: from)))
             }
         }

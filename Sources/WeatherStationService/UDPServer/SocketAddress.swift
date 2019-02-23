@@ -140,6 +140,12 @@ extension SocketAddress: Equatable {
         lhs.address.sin_family == rhs.address.sin_family &&
         lhs.address.sin_port == rhs.address.sin_port 
     }
-    
-    
+}
+
+extension SocketAddress: CustomDebugStringConvertible {
+    var debugDescription: String {
+        let host = self.host ?? "X.X.X.X"
+        let port = self.port ?? 0
+        return "Address: \(host):\(port)"
+    }
 }

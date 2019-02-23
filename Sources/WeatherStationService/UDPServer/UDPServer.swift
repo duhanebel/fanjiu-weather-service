@@ -236,11 +236,14 @@ class UDPServer {
         var replyBuffer = Array<UInt8>(data)
         var reply_addr = address.address
         let replyAddr_in = UnsafeMutableRawPointer(&reply_addr).assumingMemoryBound(to: sockaddr.self)
-        let replyAddr_len = socklen_t(MemoryLayout.size(ofValue: replyAddr_in))
+        let replyAddr_len = socklen_t(MemoryLayout<sockaddr>.size)
         var sentCount = 0
         repeat {
             let sent = sendto(handle, &replyBuffer + sentCount, replyBuffer.count - sentCount, 0, replyAddr_in, replyAddr_len)
-            guard sent > 0 else { return }
+            guard sent > 0 else {
+                print("Unable to send packet! Error #:\(errno)")
+                return
+            }
             sentCount += sent
         } while sentCount < replyBuffer.count
     }
