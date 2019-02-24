@@ -17,9 +17,7 @@ public struct Checksum {
 
 extension Checksum: BinaryCodable {
     public func binaryEncode(to encoder: BinaryEncoder) throws {
-        // Data is already organised in little endian so we need to append
-        // it big endian style
-        encoder.appendBytes(of: encoder.calculateChecksum().bigEndian)
+        encoder.appendBytes(of: encoder.calculateChecksum())
     }
     
     public init(fromBinary decoder: BinaryDecoder) throws {

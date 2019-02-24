@@ -15,17 +15,17 @@ private extension WeatherForecastBin.Icon {
         case .sunnyDay, .sunnyNight:
             self = .sunny
         case .cloudy:
-            self = .mostlyCloudy //.cloudy
+            self = .cloudy
         case .rain:
             self = .heavyRain
         case .snow:
-            self = .heavyRain //.heavySnow
+            self = .heavySnow
         case .sleey:
-            self = .heavyRain //.rainAndSnow
+            self = .rainAndSnow
         case .wind:
-            self = .sunny //.windy
+            self = .windy
         case .fog:
-            self = .mostlyCloudy //.foggy
+            self = .foggy
         case .partCloudyDay, .partCloudyNight:
             self = .partiallyCloudy
         }

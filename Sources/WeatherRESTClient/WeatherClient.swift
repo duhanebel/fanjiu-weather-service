@@ -15,6 +15,9 @@ public struct Location {
 
 extension Location {
     public static func London() -> Location {
+        return Location(latitude: 51.51032, longitude: -0.03507)
+    }
+    public static func LondonE14() -> Location {
         return Location(latitude: 51.5102, longitude: 0.0350)
     }
 }
