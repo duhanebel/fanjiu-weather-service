@@ -37,11 +37,38 @@ public enum WeatherIcon: String, Decodable {
     case cloudy = "cloudy"
     case rain = "rain"
     case snow = "snow"
-    case sleey = "sleet"
+    case sleet = "sleet"
     case wind = "wind"
     case fog = "fog"
     case partCloudyDay = "partly-cloudy-day"
     case partCloudyNight = "partly-cloudy-night"
+}
+
+extension WeatherIcon: CustomStringConvertible {
+    public var description: String {
+        switch(self) {
+        case .sunnyDay:
+            return "🌞"
+        case .sunnyNight:
+            return "🌙"
+        case .cloudy:
+            return "☁️"
+        case .rain:
+            return "🌧"
+        case .snow:
+            return "⛄"
+        case .sleet:
+            return "🌨"
+        case .wind:
+            return "🌬"
+        case .fog:
+            return "🌫"
+        case .partCloudyDay:
+            return "⛅"
+        case .partCloudyNight:
+            return "🌚"
+        }
+    }
 }
 
 public struct WeatherForecast: Decodable {
@@ -57,8 +84,17 @@ public struct WeatherForecast: Decodable {
         case icon
         case temperatureMin = "temperatureLow"
         case temperatureMax = "temperatureHigh"
-        case pressure = "windSpeed"
-        case windSpeed = "windBearing"
+        case pressure = "pressure"
+        case windSpeed = "windSpeed"
+    }
+}
+
+extension WeatherForecast: CustomStringConvertible {
+    public var description: String {
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd"
+        let shortDate = df.string(from: date)
+        return "\(shortDate) - \(icon.description) - Max: \(temperatureMax); Min - \(temperatureMin); hPa: \(pressure); wind: \(windSpeed)"
     }
 }
 
@@ -77,5 +113,13 @@ public struct WeatherNow: Decodable {
         case pressure = "pressure"
         case windSpeed = "windSpeed"
         case windDirection = "windBearing"
+    }
+}
+
+extension WeatherNow: CustomStringConvertible {
+    public var description: String {
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd"
+        return "\(icon.description) - Temp: \(temperature); Feels - \(feelsLike); hPa: \(pressure); wind: \(windSpeed); direction: \(windDirection)"
     }
 }

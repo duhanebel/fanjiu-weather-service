@@ -20,11 +20,11 @@ public extension BinaryEncodable {
 public class BinaryEncoder {
     fileprivate var data: [UInt8] = []
     
+    public init() {}
+    
     func calculateChecksum() -> UInt16 {
         return data.sum16CheckSum()
     }
-    
-    public init() {}
 }
 
 /// A convenience function for creating an encoder, encoding a value, and

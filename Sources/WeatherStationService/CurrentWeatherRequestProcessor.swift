@@ -13,9 +13,11 @@ struct CurrentWeatherUDPRequestProcessor: WeatherUDPRequestProcessor {
     static var commands = [CommandID.requestCurrentWeather]
     
     var weatherService: WeatherClient
+    let location: Location
     
-    init(weatherService: WeatherClient) {
+    init(weatherService: WeatherClient, location: Location = Location.London()) {
         self.weatherService = weatherService
+        self.location = location
     }
     
     func process(data: PacketDataArray, completion: @escaping ResultCompletion<PacketDataArray>) {
@@ -27,7 +29,7 @@ struct CurrentWeatherUDPRequestProcessor: WeatherUDPRequestProcessor {
             return
         }
         
-        let APIRequest = WeatherAPIRequest(location: Location.London())
+        let APIRequest = WeatherAPIRequest(location: location, unitsFormat: .us)
         weatherService.send(APIRequest) { response in
             switch(response) {
             case let .error(error):
@@ -43,16 +45,24 @@ struct CurrentWeatherUDPRequestProcessor: WeatherUDPRequestProcessor {
         }
     }
     
-    
     private func processAPIWeather(_ weather: WeatherNow, for request: UDPPacket<CurrentWeatherRequest>) throws -> PacketDataArray {
         let weather = CurrentWeatherPacket(country: Country.uk,
                                           date: Date(),
-                                          feelsLike: Temperature(celsius: weather.feelsLike),
-                                          pressure: weather.pressure,
-                                          windSpeed: weather.windSpeed,
+                                          feelsLike: Temperature(fahrenheit: weather.feelsLike.rounded()),
+                                          pressure: weather.pressure.rounded(),
+                                          windSpeed: (weather.windSpeed.mphToKm.rounded()),
                                           windDirectionDegrees: weather.windDirection)
         
         let packet = UDPPacket<CurrentWeatherPacket>(command: Command(commandID: .responseCurrentWeather), mac: request.mac, payload: weather)
         return try BinaryEncoder.encode(packet)
+    }
+}
+
+extension Float {
+    var mphToKm: Float {
+        return self * 1.60934
+    }
+    var kmToMph: Float {
+        return self / 1.60934
     }
 }

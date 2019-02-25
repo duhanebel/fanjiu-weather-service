@@ -22,5 +22,8 @@ extension Checksum: BinaryCodable {
     
     public init(fromBinary decoder: BinaryDecoder) throws {
         value = try decoder.decode(UInt16.self)
+        guard value == decoder.calculateChecksum() else {
+            throw BinaryDecoder.Error.invalidChecksum
+        }
     }
 }

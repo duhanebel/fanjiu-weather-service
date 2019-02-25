@@ -9,11 +9,13 @@ let package = Package(
       .executable(name: "WeatherStationService", targets: ["WeatherStationService"]),
       .library(name: "WeatherUDPProtocol", targets: ["WeatherUDPProtocol"]),
       .library(name: "WeatherRESTClient", targets: ["WeatherRESTClient"])],
-    dependencies: [ ],
+    dependencies: [
+        .package(url: "https://github.com/apple/swift-package-manager.git", from: "0.3.0")
+    ],
     targets: [
         .target(
             name: "WeatherStationService",
-            dependencies: ["WeatherUDPProtocol", "WeatherRESTClient"]),
+            dependencies: ["WeatherUDPProtocol", "WeatherRESTClient", "Utility"]),
         .target(
             name: "WeatherUDPProtocol",
             dependencies: []),

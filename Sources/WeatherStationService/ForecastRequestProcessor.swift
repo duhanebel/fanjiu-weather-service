@@ -20,7 +20,7 @@ private extension WeatherForecastBin.Icon {
             self = .heavyRain
         case .snow:
             self = .heavySnow
-        case .sleey:
+        case .sleet:
             self = .rainAndSnow
         case .wind:
             self = .windy
@@ -42,9 +42,11 @@ struct ForecastUDPRequestProcessor: WeatherUDPRequestProcessor {
     static var commands = [CommandID.requestForecast]
     
     var weatherService: WeatherClient
+    let location: Location
     
-    init(weatherService: WeatherClient) {
+    init(weatherService: WeatherClient, location: Location = Location.London()) {
         self.weatherService = weatherService
+        self.location = location
     }
     
     func process(data: PacketDataArray, completion: @escaping ResultCompletion<PacketDataArray>) {
@@ -56,7 +58,7 @@ struct ForecastUDPRequestProcessor: WeatherUDPRequestProcessor {
             return
         }
         
-        let APIRequest = WeatherAPIRequest(location: Location.London())
+        let APIRequest = WeatherAPIRequest(location: location, unitsFormat: .us)
         weatherService.send(APIRequest) { response in
             switch(response) {
             case let .error(error):
@@ -79,20 +81,20 @@ struct ForecastUDPRequestProcessor: WeatherUDPRequestProcessor {
         let thirdDay = forecast[3]
         let forthDay = forecast[4]
         let weatherNow = WeatherForecastBin(icon: WeatherForecastBin.Icon(today.icon),
-                                            tempMax: Temperature(celsius: today.temperatureMax),
-                                            tempMin: Temperature(celsius: today.temperatureMin))
+                                            tempMax: Temperature(fahrenheit: today.temperatureMax.rounded()),
+                                            tempMin: Temperature(fahrenheit: today.temperatureMin.rounded()))
         let binForecast1 = WeatherForecastBin(icon: WeatherForecastBin.Icon(firstDay.icon),
-                                              tempMax: Temperature(celsius: firstDay.temperatureMax),
-                                              tempMin: Temperature(celsius: firstDay.temperatureMin))
+                                              tempMax: Temperature(fahrenheit: firstDay.temperatureMax.rounded()),
+                                              tempMin: Temperature(fahrenheit: firstDay.temperatureMin.rounded()))
         let binForecast2 = WeatherForecastBin(icon: WeatherForecastBin.Icon(secondDay.icon),
-                                              tempMax: Temperature(celsius: secondDay.temperatureMax),
-                                              tempMin: Temperature(celsius: secondDay.temperatureMin))
+                                              tempMax: Temperature(fahrenheit: secondDay.temperatureMax.rounded()),
+                                              tempMin: Temperature(fahrenheit: secondDay.temperatureMin.rounded()))
         let binForecast3 = WeatherForecastBin(icon: WeatherForecastBin.Icon(thirdDay.icon),
-                                              tempMax: Temperature(celsius: thirdDay.temperatureMax),
-                                              tempMin: Temperature(celsius: thirdDay.temperatureMin))
+                                              tempMax: Temperature(fahrenheit: thirdDay.temperatureMax.rounded()),
+                                              tempMin: Temperature(fahrenheit: thirdDay.temperatureMin.rounded()))
         let binForecast4 = WeatherForecastBin(icon: WeatherForecastBin.Icon(forthDay.icon),
-                                              tempMax: Temperature(celsius: forthDay.temperatureMax),
-                                              tempMin: Temperature(celsius: forthDay.temperatureMin))
+                                              tempMax: Temperature(fahrenheit: forthDay.temperatureMax.rounded()),
+                                              tempMin: Temperature(fahrenheit: forthDay.temperatureMin.rounded()))
         
         let forecast = NextDaysForecastPacket(country: Country.uk,
                                               date: Date(),

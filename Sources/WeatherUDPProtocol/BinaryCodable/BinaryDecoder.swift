@@ -24,6 +24,10 @@ public class BinaryDecoder {
     public init(data: [UInt8]) {
         self.data = data
     }
+    
+    func calculateChecksum() -> UInt16 {
+        return data.sum16CheckSum()
+    }
 }
 
 /// A convenience function for creating a decoder from some data and decoding it
@@ -69,6 +73,8 @@ public extension BinaryDecoder {
         case invalidDate([UInt8])
         
         case invalidProtocolCommand([UInt8])
+        
+        case invalidChecksum
     }
 }
 
