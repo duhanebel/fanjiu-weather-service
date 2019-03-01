@@ -1,172 +1,230 @@
+Fanju Weather Station UDP Protocol
+==================================
+The protocol is based on UDP over IPv4 and the server listens on port 10000.
+The exchange is in the form of Request/Response, driven by the client.
 
-AA 3C 57 01 00 95 69 F0 51 80 01 01 01 01 00 00 01 04 CC 3E 
-AA 3C 57 01 00 95 69 F0 51 80 52 30 00 00 22 00 01 0C 13 01 16 14 36 21 CE 04 64 CE 04 B0 04 3D 27 50 00 36 0B FF FF FF FF FF FF FF FF FF FF FF A0 00 89 14 CC 3E 
+There are a few Requests/Response that I still don't understand. They seem to be fixed request/responses and they're not influencing the data displayed
+on the screen as far as I can tell.
+I won't describe these here but keep in mind that this proxy will just forward them to the server transparently. Without the weather station won't be
+able to boot.
 
+All the data is sent over the wire in little endian format.
 
-533001003200010c130118091f05004c062f4c063234062ed50463d50463ad0463ffffffffffffffffffffffffffffffffffff01fcfffffffa1f
-533001003200010c130118092005004c062f4c063234062ed50463d50463ad0463ffffffffffffffffffffffffffffffffffff00fcfffffffa1f
-533001003200010c130118092106004c062f4c063234062ed50463d50463ad0463ffffffffffffffffffffffffffffffffffff00fcfffffffc1f
+# Anatomy of a packet
+The packet format is variable in size. But it resembles the following structure:
+```
+ 0                 1                   2                   3
+ 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|                             Header                            |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|                           MACAddress                          |
++                               +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|                               |              Type             |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|                               |              Size             |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|                                                               |
+|                   Payload data (length = size)                |
+|                                                               |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|              CheckSum         |             Footer            |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+```
 
-533001003200010c1301180b0434004906304d063234062ed90463dc0463ad0463ffffffffffffffffffffffffffffffffffff00fcffffff1920
-533001003200010c1301180b0534004906304d063234062ed90463dc0463ad0463ffffffffffffffffffffffffffffffffffff00fcffffff1a20
-533001003200010c1301180b0635004806304d063234062ed90463dc0463ad0463ffffffffffffffffffffffffffffffffffff00fcffffff1b20
-533001003200010c1301180d0e1c004206324d063234062eee0463f00463ad0463ffffffffffffffffffffffffffffffffffff00fcffffff3120
-533001003200010c1301180d0d1b004206324d063234062eee0463f00463ad0463ffffffffffffffffffffffffffffffffffff00fcffffff2f20 3355
-533001003200010c1301180d0c1b004206324d063234062eee0463f00463ad0463ffffffffffffffffffffffffffffffffffff00fcffffff2e20 3099
-533001003200010c1301180d0f1c004206324d063234062eee0463f00463ad0463ffffffffffffffffffffffffffffffffffff00fcffffff3220 3868
-533001003200010c1301180d151f004106324d063234062eef0463f00463ad0463ffffffffffffffffffffffffffffffffffff00fcffffff3b20
-533001003200010c1301180d1c23004006324d063234062ef10463f10463ad0463ffffffffffffffffffffffffffffffffffff00fcffffff4820
-                        ^^^^  ^^                                                                                ^^
+Where:
 
-01 15 17 00 37 - 64 13
-01 16 00 00 23 - 3a 13. Diff: 42
+* **Header:** (32bits) is a constant that starts every message - always `aa:3c:57:01`.
+* **MACAddress:** (48bits) is the MAC address of the weather station. It can be found on the Weather station web interface (see README for more details)
+* **Type:** (32bits) describes the type of message. I strongly think this is a 16bit value followed by another 16bit value where the first defines the kind of message
+            and the second one identifies if it's a request or a response. Since I couldn't pin point this with precision I'm treating the whole 32bit as
+            a single value.
+* **Size:** (16bits) is the size of the payload that follows, up to the checksum excluded. Some messages (like some requests) have no payload and so this is `00:00`.
+* **Payload:** is the payload specific to the message type. See below for details.
+* **Checksum:** (16bits) is the checksum of all the packet, Checksum and Footer excluded. The checksum is calculated by summing up all the bytes and taking a mod 2^16 of the final result.
+* **Footer:** (16bits) is a constant that closes every message - always `cc:3e`.
 
+# Request packets
+Request packets usually don't have much payload. Not all of them are understood but here's the list:
 
-Morning, send data:
-aa:3c:57:01:00:95:69:f0:51:80:53:30:01:00:32:00:01:0c:13:01:16:0a:13:06: 00:55:06:2f:55: 06:2f:55: 06:2f:f5:04:63:f5:04:63:f5:04:63:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:00:fc:ff:ff:ff:a6:20:cc:3e
+## Hello Request (`01:01 01:00`)
+Payload is empty. This message is sent first when the Weather station starts up
 
-0dffff2805e2040dffff2805e2040dffff2805e2040dffff2805e2040dffff2805e204
-Receiving:                                                       18:00:29pm
+## Hello Response (`01:01 01:01`)
+Payload is empty. This is sent back to the Weather station to aknowledge the conversation.
 
-                              52:31:00:00:2b:00:01: 0c:13: 01:18:12:00:1d: 0d:ff:ff:28:05:e2:04: 0d:ff:ff:50:05:c4:04: 0d:ff:ff:64:05:0a:05: 0d:ff:ff:32:05:0a:05: 00:ff:ff:1e:05:ba:04: 0c:13 < evening 24th
+## Current Weather Request (`52:30 01:00`)
+Payload is empty. This message is sent periodically (every hour or so) together with the Weather Forecast Request to update the current weather
+conditions (on the top half of the weather station).
 
-                              52:31:00:00:2b:00:01: 14:13: 01:19:04:1b:36: 06:ff:ff:82:05:14:05: 08:ff:ff:1e:05:ec:04: 01:ff:ff:50:05:d8:04: 06:ff:ff:5a:05:00:05: 01:ff:ff:6e:05:00:05: 0e:13
-                              52:31:00:00:2b:00:01: 14:13: 01:19:04:25:08: 08:ff:ff:aa:05:50:05: 08:ff:ff:78:05:5a:05: 10:ff:ff:78:05:50:05: 06:ff:ff:8c:05:3c:05: 08:ff:ff:82:05:46:05: 98:13
-                              52:31:00:00:2b:00:01: 14:13: 01:19:04:2c:0c: 06:ff:ff:f6:04:2e:04: 06:ff:ff:00:05:e8:03: 08:ff:ff:1e:05:60:04: 06:ff:ff:1e:05:fc:03: 08:ff:ff:3c:05:38:04: 83:13
-0dffff2805e204
-523100002b0001 0c13 01190f3804 0dffff2805e2040dffff2805e2040dffff2805e2040dffff2805e2040dffff2805e204 0c13
-52300000220001:0c13:01190f373b:78055b5a056405d127a000220bffffffffffffffffffffffa0005614
+## Current Weather Response (`52:30 00:00`)
+The payload looks like this:
+```
+ 0                 1                   2                   3
+ 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|       Id      |            Country            |               |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+               +
+|                              Date                             |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|                Unknown                |       Feels like      |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|       |            Pressure           |       Wind speed      |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|       |    Unknown    | Wind direction|1 1 1 1 1 1 1 1 1 1 1 1|
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+                       +
+|1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1|
++1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1|
+|1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1|
++                       +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|1 1 1 1 1 1 1 1 1 1 1 1|            Unknown            |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+```
 
-Current weather (first message):
-                               
-                              52300000220001 0c13          01:18:12:00:18: 28:05:5c:0a:05: 1e:05: c2:27: 3c:00: b8:0b:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:a0:00:3c:13 London 6pm
-                              52300000220001 1413          01:19:04:1b:31: 28:05:59:00:05: 0a:05: 00:28: 5a:00: e8:03:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:5a:00:89:12 Shanghai
-                              52300000220001 1413.         01:19:04:2c:07: 74:04:1a:70:03: 2e:04: 19:24: 5a:00: 16:0d:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:64:00:64:12 yuanping 4am
-                              52300000220001 1413          01:19:04:25:03: 5a:05:4d:14:05: 3c:05: 8b:25: 28:00: 92:09:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:64:00:e1:12 chengdu 4:37
-                              52300000220001 0c13          01:19:12:32:0c: 78:05:5b:5a:05: 64:05: d1:27: a0:00: 22:0b:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:a0:00:25:14
-                                                                                           ^^^^^  ^^^^^  ^^^^^.    ^^ direction (0 top 1,2,3,4 etc)
-										                                            feels-like(F)  hpa*10 wind-speed * 10   
-Weather forecast (second message):
-                              53:30:01:00:32:00: 01: 0c:13: 01:19:0e:25:2d: 00:4d:06:32:4e:06:33:49:06: 31:85:05:63:88:05:63:85:05: 63:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:ff:01:fc:ff:ff:ff:8b:1f                                                     
-aa:3c:57:01:00:95:69:f0:51:80:52:30:00:00:22:00: 01: 0c:13: 01:16:0a:13:01: d8:04:62:ce:04:c4:04: 61:27:82:00:f6:09:ff: ff:ff:ff:ff:ff:ff:ff: ff:ff:ff:a0:00:6c:15: cc:3e < morning
-aa:3c:57:01:00:95:69:f0:51:80:52:31:00:00:2b:00: 01: 0c:13: 01:16:0a:13:06: 0d:ff:ff:1e:05:ce:04: 0d:ff:ff:0a:05:a6:04: 0d:ff:ff:1e:05:ec:04: 00:ff:ff:28:05:74:04: 0d:ff:ff:46:05:4c:04: 30:13:  < morning
-                                          ^^^^^      ^^^^^  ^^^^^^^^^^^^^^  ^^                    ^^                                                                                      ^^^^^
-                                          pk-size    country  01-22 10:19:01  icon                  icon 00: sun, 0d rain                                                                   checksum (sum of the rest)   
-
-
-08:ff:ff:0a:05:7e:04:0d:ff:ff:0a:05:7e:04:0d:ff:ff:0a:05:7e:04:00:ff:ff:0a:05:7e:04:00:ff:ff:0a:05:7e:04:0c:13
-
-0d:ff:ff:1e:05:ce:04: Now 5 0.7
-0d:ff:ff:0a:05:a6:04: Wed 4 -2
-0d:ff:ff:1e:05:ec:04: Thu 5  2.  Morning 22nd
-00:ff:ff:28:05:74:04: Fri 6 -4
-0d:ff:ff:46:05:4c:04: Sat 7 -7
-         Max.  Min
-0d:ff:ff:28:05:e2:04: Now
-0d:ff:ff:50:05:c4:04: Fri 8  0
-0d:ff:ff:64:05:0a:05: Sat 9  4   Evening 24th
-0d:ff:ff:32:05:0a:05: Sun 6  4
-00:ff:ff:1e:05:ba:04: Mon 5 -1 
-
-06:ff:ff:82:05:14:05:
-08:ff:ff:1e:05:ec:04: 5  2
-01:ff:ff:50:05:d8:04: 8  1     Evening 24 Shanghai
-06:ff:ff:5a:05:00:05: 8  3
-01:ff:ff:6e:05:00:05: 9  3
-
-08:ff:ff:aa:05:50:05: 
-08:ff:ff:78:05:5a:05: 10 8
-10:ff:ff:78:05:50:05: 10 8    Evening 24 chengdu
-06:ff:ff:8c:05:3c:05: 11 7
-08:ff:ff:82:05:46:05: 11 7
-
-06:ff:ff:f6:04:2e:04: 3 -12
-06:ff:ff:00:05:e8:03: 3 -12
-08:ff:ff:1e:05:60:04: 5 -6      Evening 24 yuanping
-06:ff:ff:1e:05:fc:03: 5 -11
-08:ff:ff:3c:05:38:04: 7 -8
-
-       042e   1070 -8
--8.  = 0438 = 1080 -8
--7.x = 044c = 1100 -7
-              1110 -6.5
-              1120 -6
-              1130 -5    <-----
-              1140 -4.5
-              1150 -4
-              1160 -3.5
-              1170 -3
-              1180 -2.5
--2.x = 04a6 = 1190 -2            29
-              1200 -1.5          30 
--1.x = 04ba = 1210 -1            31  IT’S FARENHEIGT!
- 0.x = 04c4 = 1220 0      <----  32
-              1230 1             33
- 1.x = 04d8 = 1240 1.5           34
-              1250 2             35 
- 2.x = 04ec = 1260 2.5           36
- 3   = 04f6 = 1270 3             37
-       0500 = 1280 3.5           38
- 4.x = 050a = 1290 4             39
-              1300 4.5           40
- 5.x = 051e = 1310 5       <———  41
- 6   = 0528 = 1320 6             42
-              1330 6.5           43
- 7   = 053c = 1340 7
-       0546 = 1350 7.5
- 8   = 0550 = 1360 8
-       055a = 1370 8.5
- 9   = 0564 = 1380 9
-       056e = 1390 9.5
- 10  = 0578 = 1400 10     <———
- 11  = 0582 = 1410 11
-       058c = 1420 11.5
-
-Formula: ((X + OFF) - 1220)/20
-Where OFF =  ((X - 1120)/100*10 + 10)
-
-X + ((x -1120)/1000 + 10) - 1220)/10
-
-04 a6 = -2.5
-04 BA = -1.5 
-04 b0 = -1
-04 c4 = 0
-04 d8 = 1
-04 e2 = 2
-04 ec = 2.5
-04 f6 = 3 ?
-05 0a = 4
-05 1e = 5
-05 32 = 6
-05 46 = 7
-05 5A = 8
-05 64 = 8.5
-05 6E = 9
-
-Preambole:
-aa:3c:57:01:00:95:69:f0:51:80:
-            ^^^^^^^^^^^^^^^^^
-            MAC address device
+Where: 
+* **ID:** (8bits) is... not too sure about this one. It's always set to 0x01 so I expected it to be some kind of ID in case multiple weather station share the same MAC? It's safe to assume this to be a costant 0x01
+* **Country:** (16bits)  is the code identifying the country where the Weather station resides. See below for values.
+* **Date:** (40bits) is the current date displayed in the top left corner. See below for the format.
+* **Feels like:** (16bits) is the "feels like" temperature displayed in the top right corner of the weather station. See "temperature format" for more info.
+* **Pressure:** (16bits) is the pressure in hpa. See floating point format.
+* **Wind speed:** (16bits)  is the wind speed in km/h. See floating point format.
+* **Wind direction:** (8bits) is the direction of the wind displayed in the clock like wind gauge on the left on the display.
 
 
-Command type:
-Ask for time:    aa:3c:57:01:00:95:69:f0:51:80:52:30:
-Ask for weather: aa:3c:57:01:00:95:69:f0:51:80:52:31:
+#### Country List
+| Value   | Description  |
+|---------|--------------|
+| 0x130c  | UK           |
+| 0x1413  | China        |
 
-Response type: 
-reply for time:    aa:3c:57:01:00:95:69:f0:51:80:52:30:00:00:22:00:01:0c:13:
-reply for weather: aa:3c:57:01:00:95:69:f0:51:80:52:31:00:00:2b:00:01:0c:13:
+### Date format
+The date is encoded over 40bits in the following format:
+```
+ 0                 1                   2                   3                   4
+ 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|     Month     |     Day       |      Hour     |    Minutes    |     Seconds   |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+```
+There is no concept of year because it's not displayed anyway.
+
+*NOTE:* The date/time is sent twice: once on the current weather and once on the forecast request. It's not clear to me which one is picked up but I
+        expect to be the first one
+
+### Floating point format (wind speed, pressure, etc)
+Floating point nunmber are limited to 1 digit of precision and stored in an UInt16 using the following formula: 
+
+`10 * value`
+
+I assume because this
+way the number is representable with an integer.
+There's no precision on the weather station display so all number are rounded down/up to the closest integer.
+
+### Wind direction format
+The wind is represented by an integer from 0 to 11 where each number represent one position on the wind clock on the display. Starting from 0 at the top
+and following clock-wise.
+
+## Weather Forecast Request (`52:31 01:00`)
+Payload is empty. This message is sent periodically (every hour or so) to update the forecast displayed (at the bottom of the weather station).
+
+## Weather Forecast Response (`52:31 00:00`)
+The payload looks like this:
+```
+ 0                 1                   2                   3
+ 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|       Id      |            Country            |               |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+               +
+|                              Date                             |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|                        Today's weather                        |
++                                               +-+-+-+-+-+-+-+-+
+|                                               |               |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+               +
+|                       Tomorrow's weather                      |
++                               +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|                               |                               |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+                               +
+|                       Weather in 2 days                       |
++               +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|               |                                               |
++-+-+-+-+-+-+-+-+                                               +
+|                        Weather in 3 days                      |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|                       Weather in 4 days                       |
++                                               +-+-+-+-+-+-+-+-+
+|                                               |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+```
+Where:
+* **ID:** see "Current Weather Response"
+* **Country**: see "Current Weather Response"
+* **Date:** see "Current Weather Response"
+* **Weather nibbles**: these 5 blocks contain the current weather conditions and the forecast for the next 4 days. [See below](###Weather-Forecast-nibble-format) for the format.
 
 
+### Weather Forecast nibble format
+The format of the weather in the Weather packet looks like this:
+```
+ 0                 1                   2                   3
+ 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|      Icon     |1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1|    TempMax    |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|               |            TempMin            |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+```
 
-Request:
-Current status: 52:30:01:00:00:00 8004
-Forecast:       52:31:01:00:00:00 8104
-                                  ^^^^ checksum
+#### Icon values
+These are the possible icon values:
+
+| Value |Description       |
+|-------|------------------|
+| 0x00  | Sunny            |
+| 0x06  | Mostly Sunny     |
+| 0x08  | Mostly Cloudy    |
+| 0x??  | Cloudy           |
+| 0x??  | Patchy Rain      |
+| 0x??  | Mostly Rain      |
+| 0x??  | Showers          |
+| 0x0D  | Heavy Rain       |
+| 0x10  | Thunder Rain     |
+| 0x??  | Rain & Hail      |
+| 0x??  | Hail             |
+| 0x??  | Snow & hail      |
+| 0x??  | Patchy snow      |
+| 0x??  | Mostly snow      |
+| 0x??  | Snow shower      |
+| 0x??  | Heavy snow       |
+| 0x??  | Rain & snow      |
+| 0x??  | Foggy            |
+| 0x??  | Windy            |
+
+#### Temperature format
+Temperature is sent in Fahrenheit but the format is not straightforward. The data is stored as a UInt16 following the formula:
+
+`(90 + temperature) * 10`
+
+This allow for 1 digit precision that is discarded by the weather station that seems to round up/down to the closest integer.
+
+**Example**: A sunny day with a min temperature of 25 (-4C) and a max of 42 (+6C) would be sent as:
+`00:ff:ff:28:05:74:04:`
+Note how the temperature values are stored as little endian.
+
+### Local Weather Upload Request (`53:30 01:00`)
+This is sent by the weather station every minute or so and the payload contains the data of the internal and external sensor. I haven't spent any time
+understanding this for now but it shouldn't be too hard to reverse it.
+
+### Local Weather Upload Response (`53:30 00:00`)
+Payload is empty. This seems to be a generic "OK" response that the server sends to signify that the data of the previous request has been accepted
 
 
-Evening exercise - 6pm
+# Sample exchange
+This is a sample exchange between the weather station and the server when booting up. Please note that the request `57:00 01:00` is repeated multiple
+times but the server returns different responses. This is the only request that has not a 1:1 match to the response.
 
+```
+[Station boot]
 2019-01-24 18:00:16,674
 2019-01-24 18:00:16,675 REQUEST: 0101 0100 0000 0004
 2019-01-24 18:00:16,973 RESPONSE: Received from server: 0101 0101 0000 0104
@@ -187,142 +245,11 @@ Evening exercise - 6pm
 2019-01-24 18:00:19,446 RESPONSE: Received from server: 5132 0000 0200 4f4b 1c05
 2019-01-24 18:00:24,146
 2019-01-24 18:00:24,147 REQUEST: 5230 0100 0000 8004
-2019-01-24 18:00:24,443 RESPONSE: Received from server: 5230 0000 2200 01 0c13011812001828055c0a051e05c2273c00b80bffffffffffffffffffffffa000 3c13
+2019-01-24 18:00:24,443 RESPONSE: Received from server: 5230 0000 2200 01 0c13011812001828055c0a051e05c2273c00b80bffffffffffffffffffffffa000
 2019-01-24 18:00:29,147
 2019-01-24 18:00:29,149 REQUEST: 5231 0100 0000 8104
-2019-01-24 18:00:29,446 RESPONSE: Received from server: 5231 0000 2b00 01 0c13011812001d0dffff2805e2040dffff5005c4040dffff64050a050dffff32050a0500ffff1e05ba04 0c13
+2019-01-24 18:00:29,446 RESPONSE: Received from server: 5231 0000 2b00 01 0c13011812001d0dffff2805e2040dffff5005c4040dffff64050a050dffff32050a0500ffff1e05ba04
 2019-01-24 18:00:29,802
-2019-01-24 18:00:29,803 REQUEST: 5330 0100 3200 01 0c13 011812001d 00320631320631320631ffffffffffffffffffffffffffffffffffffffffffffffffffffff00ffffffff 3725
+2019-01-24 18:00:29,803 REQUEST: 5330 0100 3200 01 0c13 011812001d 00320631320631320631ffffffffffffffffffffffffffffffffffffffffffffffffffffff00ffffffff3725
 2019-01-24 18:00:30,128 RESPONSE: Received from server: 5330 0000 0200 4f4b 1c05
-
-8 pm - shanghai 
-2019-01-24 20:27:42,366 REQUEST: 0101010000000004
-2019-01-24 20:27:42,664 RESPONSE: Received from server: 0101010100000104
-2019-01-24 20:27:42,843
-2019-01-24 20:27:42,844 REQUEST: 0202010000000204
-2019-01-24 20:27:43,152 RESPONSE: Received from server: 0202000100000204
-2019-01-24 20:27:43,334
-2019-01-24 20:27:43,335 REQUEST: 5700010000005504
-2019-01-24 20:27:43,632 RESPONSE: Received from server: 5032000104009407c404e705
-2019-01-24 20:27:43,821
-2019-01-24 20:27:43,821 REQUEST: 5700010000005504
-2019-01-24 20:27:44,120 RESPONSE: Received from server: 433200010100037704
-2019-01-24 20:27:44,362
-2019-01-24 20:27:44,363 REQUEST: 5700010000005504
-2019-01-24 20:27:44,661 RESPONSE: Received from server: 5033000102005f14f604
-2019-01-24 20:27:44,882
-2019-01-24 20:27:44,883 REQUEST: 513201000100028404
-2019-01-24 20:27:45,182 RESPONSE: Received from server: 5132000002004f4b1c05
-2019-01-24 20:27:49,833
-2019-01-24 20:27:49,834 REQUEST: 5230010000008004
-2019-01-24 20:27:50,140 RESPONSE: Received from server: 5230000022000114130119041b3128055900050a0500285a00e803ffffffffffffffffffffff5a008912
-2019-01-24 20:27:54,825
-2019-01-24 20:27:54,826 REQUEST: 5231010000008104
-2019-01-24 20:27:55,126 RESPONSE: Received from server: 523100002b000114130119041b3606ffff8205140508ffff1e05ec0401ffff5005d80406ffff5a05000501ffff6e0500050e13
-2019-01-24 20:27:55,592
-2019-01-24 20:27:55,594 REQUEST: 5330010032000114130119041b3600500632500632500632ffffffffffffffffffffffffffffffffffffffffffffffffffffff01ffffffffc425
-2019-01-24 20:27:55,896 RESPONSE: Received from server: 5330000002004f4b1c05
-
-
-8:30pm - chengdu
-2019-01-24 20:36:55,932 REQUEST: 0101010000000004
-2019-01-24 20:36:56,230 RESPONSE: Received from server: 0101010100000104
-2019-01-24 20:36:56,434
-2019-01-24 20:36:56,436 REQUEST: 0202010000000204
-2019-01-24 20:36:56,744 RESPONSE: Received from server: 0202000100000204
-2019-01-24 20:36:56,945
-2019-01-24 20:36:56,947 REQUEST: 5700010000005504
-2019-01-24 20:36:57,246 RESPONSE: Received from server: 5032000104009407c404e705
-2019-01-24 20:36:57,456
-2019-01-24 20:36:57,457 REQUEST: 5700010000005504
-2019-01-24 20:36:57,763 RESPONSE: Received from server: 433200010100037704
-2019-01-24 20:36:57,972
-2019-01-24 20:36:57,974 REQUEST: 5700010000005504
-2019-01-24 20:36:58,271 RESPONSE: Received from server: 5033000102005f14f604
-2019-01-24 20:36:58,458
-2019-01-24 20:36:58,460 REQUEST: 513201000100028404
-2019-01-24 20:36:58,760 RESPONSE: Received from server: 5132000002004f4b1c05
-2019-01-24 20:37:03,452
-2019-01-24 20:37:03,453 REQUEST: 5230010000008004
-2019-01-24 20:37:03,781 RESPONSE: Received from server: 52300000220001141301190425035a054d14053c058b2528009209ffffffffffffffffffffff6400e112
-2019-01-24 20:37:08,420
-2019-01-24 20:37:08,421 REQUEST: 5231010000008104
-2019-01-24 20:37:08,721 RESPONSE: Received from server: 523100002b00011413011904250808ffffaa05500508ffff78055a0510ffff7805500506ffff8c053c0508ffff820546059813
-2019-01-24 20:37:09,092
-2019-01-24 20:37:09,094 REQUEST: 5330010032000114130119042508004f06324f06324f0632ffffffffffffffffffffffffffffffffffffffffffffffffffffff01ffffffff9d25
-2019-01-24 20:37:09,395 RESPONSE: Received from server: 5330000002004f4b1c05
-
-Yuanping
-2019-01-24 20:43:59,937
-2019-01-24 20:43:59,938 REQUEST: 0101010000000004
-2019-01-24 20:44:00,239 RESPONSE: Received from server: 0101010100000104
-2019-01-24 20:44:00,455
-2019-01-24 20:44:00,456 REQUEST: 0202010000000204
-2019-01-24 20:44:00,766 RESPONSE: Received from server: 0202000100000204
-2019-01-24 20:44:00,971
-2019-01-24 20:44:00,972 REQUEST: 5700010000005504
-2019-01-24 20:44:01,271 RESPONSE: Received from server: 5032000104009407c404e705
-2019-01-24 20:44:01,458
-2019-01-24 20:44:01,459 REQUEST: 5700010000005504
-2019-01-24 20:44:01,758 RESPONSE: Received from server: 433200010100037704
-2019-01-24 20:44:01,943
-2019-01-24 20:44:01,944 REQUEST: 5700010000005504
-2019-01-24 20:44:02,241 RESPONSE: Received from server: 5033000102005f14f604
-2019-01-24 20:44:02,452
-2019-01-24 20:44:02,452 REQUEST: 513201000100028404
-2019-01-24 20:44:02,750 RESPONSE: Received from server: 5132 0000 0200 4f4b 1c05
-2019-01-24 20:44:07,458
-2019-01-24 20:44:07,459 REQUEST: 5230010000008004
-2019-01-24 20:44:07,785 RESPONSE: Received from server: 5230000022000114130119042c0774041a70032e0419245a00160dffffffffffffffffffffff64006412
-2019-01-24 20:44:12,437
-2019-01-24 20:44:12,438 REQUEST: 5231010000008104
-2019-01-24 20:44:12,736 RESPONSE: Received from server: 523100002b000114130119042c0c06fffff6042e0406ffff0005e80308ffff1e05600406ffff1e05fc0308ffff3c0538048313
-2019-01-24 20:44:13,073
-2019-01-24 20:44:13,074 REQUEST: 5330010032000114130119042c0c004f06324f06324f0632ffffffffffffffffffffffffffffffffffffffffffffffffffffff01ffffffffa825
-2019-01-24 20:44:13,375 RESPONSE: Received from server: 5330 0000 0200 4f4b 1c05
-
-
-Home - after restart
-2019-02-07 17:04:21,132 REQUEST: 0101010000000004
-2019-02-07 17:04:21,436 RESPONSE: Received from server: 0101010100000104
-2019-02-07 17:04:21,616
-2019-02-07 17:04:21,617 REQUEST: 0202010000000204
-2019-02-07 17:04:21,933 RESPONSE: Received from server: 0202000100000204
-2019-02-07 17:04:22,137
-2019-02-07 17:04:22,138 REQUEST: 5700010000005504
-2019-02-07 17:04:22,444 RESPONSE: Received from server: 5032000104009407c404e705
-2019-02-07 17:04:22,630
-2019-02-07 17:04:22,631 REQUEST: 5700010000005504
-2019-02-07 17:04:22,939 RESPONSE: Received from server: 433200010100037704
-2019-02-07 17:04:23,119
-2019-02-07 17:04:23,120 REQUEST: 5700010000005504
-2019-02-07 17:04:23,435 RESPONSE: Received from server: 5033000102005f14f604
-2019-02-07 17:04:23,645
-
-2019-02-07 17:04:23,646 REQUEST: 5700010000005504
-2019-02-07 17:04:23,950 RESPONSE: Received from server: 433300010100007504
-2019-02-07 17:04:24,136
-2019-02-07 17:04:24,137 REQUEST: 5700010000005504
-2019-02-07 17:04:24,439 RESPONSE: Received from server: 2100000100001f04
-2019-02-07 17:04:24,632
-2019-02-07 17:04:24,633 REQUEST: 5700010000005504
-2019-02-07 17:04:24,937 RESPONSE: Received from server: 2201000100002104
-2019-02-07 17:04:25,128
-2019-02-07 17:04:25,129 REQUEST: 5700010000005504
-2019-02-07 17:04:25,432 RESPONSE: Received from server: 2300000100002104
-2019-02-07 17:04:25,649
-2019-02-07 17:04:25,650 REQUEST: 5700010000005504
-2019-02-07 17:04:25,952 RESPONSE: Received from server: 2400000100002204
-2019-02-07 17:04:26,160
-2019-02-07 17:04:26,160 REQUEST: 5700010000005504
-2019-02-07 17:04:26,477 RESPONSE: Received from server: 5700000000005404
-2019-02-07 17:04:31,101
-
-2019-02-07 17:04:31,102 REQUEST: 5230010000008004
-2019-02-07 17:04:31,408 RESPONSE: Received from server: 523000002200010c13020711041f78054b2805640595270401280affffffffffffffffffffffa000e412
-2019-02-07 17:04:36,134
-2019-02-07 17:04:36,135 REQUEST: 5231010000008104
-2019-02-07 17:04:36,439 RESPONSE: Received from server: 523100002b00010c13020711042406ffff78053c050dffff780546050dffff640546050dffff4605140506ffff3c05f6040f13
-2019-02-07 17:04:36,861
-2019-02-07 17:04:36,862 REQUEST: 533001003200010c1302071104240052063552063552063552054d52054d52054dffffffffffffffffffffffffffffffffffff01fcffffff901e
-2019-02-07 17:04:37,178 RESPONSE: Received from server: 5330000002004f4b1c05
+```

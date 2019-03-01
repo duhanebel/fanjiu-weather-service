@@ -1,7 +1,6 @@
 
 import CoreFoundation
 
-
 /// A protocol for types which can be encoded to binary.
 public protocol BinaryEncodable: Encodable {
     func binaryEncode(to encoder: BinaryEncoder) throws
@@ -12,16 +11,16 @@ public protocol BinaryEncodable: Encodable {
 /// compiler.
 public extension BinaryEncodable {
     func binaryEncode(to encoder: BinaryEncoder) throws {
-        try self.encode(to: encoder)
+        try encode(to: encoder)
     }
 }
 
 /// The actual binary encoder class.
 public class BinaryEncoder {
     fileprivate var data: [UInt8] = []
-    
+
     public init() {}
-    
+
     func calculateChecksum() -> UInt16 {
         return data.sum16CheckSum()
     }
@@ -45,10 +44,10 @@ public extension BinaryEncoder {
         /// require `BinaryEncodable` because `BinaryEncoder` doesn't support full keyed
         /// coding functionality.)
         case typeNotConformingToBinaryEncodable(Encodable.Type)
-        
+
         /// Attempted to encode a type which is not `Encodable`.
         case typeNotConformingToEncodable(Any.Type)
-        
+
         case valueOutOfBounds
     }
 }
@@ -62,7 +61,7 @@ public extension BinaryEncoder {
         }
         appendBytes(of: uVal)
     }
-    
+
     func encode(_ value: Double) throws {
         let val = value * 10
         guard let uVal = Int16(exactly: Int(val)) else {
@@ -70,7 +69,7 @@ public extension BinaryEncoder {
         }
         appendBytes(of: uVal)
     }
-    
+
     func encode(_ encodable: Encodable) throws {
         switch encodable {
         case let v as Int:
@@ -83,12 +82,12 @@ public extension BinaryEncoder {
             try encode(v)
         case let binary as BinaryEncodable:
             try binary.binaryEncode(to: self)
-            
+
         default:
             throw Error.typeNotConformingToBinaryEncodable(type(of: encodable))
         }
     }
-    
+
     /// Append the raw bytes of the parameter to the encoder's data. No byte-swapping
     /// or other encoding is done.
     func appendBytes<T>(of: T) {
@@ -101,71 +100,71 @@ public extension BinaryEncoder {
 
 extension BinaryEncoder: Encoder {
     public var codingPath: [CodingKey] { return [] }
-    
-    public var userInfo: [CodingUserInfoKey : Any] { return [:] }
-    
-    public func container<Key>(keyedBy type: Key.Type) -> KeyedEncodingContainer<Key> where Key : CodingKey {
+
+    public var userInfo: [CodingUserInfoKey: Any] { return [:] }
+
+    public func container<Key>(keyedBy _: Key.Type) -> KeyedEncodingContainer<Key> where Key: CodingKey {
         return KeyedEncodingContainer(KeyedContainer<Key>(encoder: self))
     }
-    
+
     public func unkeyedContainer() -> UnkeyedEncodingContainer {
         return UnkeyedContanier(encoder: self)
     }
-    
+
     public func singleValueContainer() -> SingleValueEncodingContainer {
         return UnkeyedContanier(encoder: self)
     }
-    
+
     private struct KeyedContainer<Key: CodingKey>: KeyedEncodingContainerProtocol {
         var encoder: BinaryEncoder
-        
+
         var codingPath: [CodingKey] { return [] }
-        
-        func encode<T>(_ value: T, forKey key: Key) throws where T : Encodable {
+
+        func encode<T>(_ value: T, forKey _: Key) throws where T: Encodable {
             try encoder.encode(value)
         }
-        
-        func encodeNil(forKey key: Key) throws {}
-        
-        func nestedContainer<NestedKey>(keyedBy keyType: NestedKey.Type, forKey key: Key) -> KeyedEncodingContainer<NestedKey> where NestedKey : CodingKey {
+
+        func encodeNil(forKey _: Key) throws {}
+
+        func nestedContainer<NestedKey>(keyedBy keyType: NestedKey.Type, forKey _: Key) -> KeyedEncodingContainer<NestedKey> where NestedKey: CodingKey {
             return encoder.container(keyedBy: keyType)
         }
-        
-        func nestedUnkeyedContainer(forKey key: Key) -> UnkeyedEncodingContainer {
+
+        func nestedUnkeyedContainer(forKey _: Key) -> UnkeyedEncodingContainer {
             return encoder.unkeyedContainer()
         }
-        
+
         func superEncoder() -> Encoder {
             return encoder
         }
-        
-        func superEncoder(forKey key: Key) -> Encoder {
+
+        func superEncoder(forKey _: Key) -> Encoder {
             return encoder
         }
     }
-    
+
     private struct UnkeyedContanier: UnkeyedEncodingContainer, SingleValueEncodingContainer {
         var encoder: BinaryEncoder
-        
+
         var codingPath: [CodingKey] { return [] }
-        
+
         var count: Int { return 0 }
 
-        func nestedContainer<NestedKey>(keyedBy keyType: NestedKey.Type) -> KeyedEncodingContainer<NestedKey> where NestedKey : CodingKey {
+        func nestedContainer<NestedKey>(keyedBy keyType: NestedKey.Type) -> KeyedEncodingContainer<NestedKey> where NestedKey: CodingKey {
             return encoder.container(keyedBy: keyType)
         }
-        
+
         func nestedUnkeyedContainer() -> UnkeyedEncodingContainer {
             return self
         }
-        
+
         func superEncoder() -> Encoder {
             return encoder
         }
-        
+
         func encodeNil() throws {}
-        
-        func encode<T>(_ value: T) throws where T : Encodable {
+
+        func encode<T>(_ value: T) throws where T: Encodable {
             try encoder.encode(value)
         }
     }
